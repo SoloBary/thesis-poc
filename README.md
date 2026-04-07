@@ -4,6 +4,7 @@
 - Kyverno (Admission Control)  
 - Trivy Operator (Image Scanning)  
 - Prometheus + Grafana + Loki (Monitoring)  
-- Istio + Kiali (Service Mesh)  
+- Istio + Kiali (Service Mesh)
+  
 ***Target***  
 - kube-goat (Deliberately vulnerable K8s application)  
