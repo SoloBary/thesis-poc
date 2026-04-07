@@ -1,0 +1,56 @@
+USER-SUPPLIED VALUES:
+customRules:
+  custom-rules.yaml: |-
+    - list: known_drop_and_execute_containers
+      items:
+        - quay.io/prometheus/node-exporter
+        - quay.io/prometheus-operator/prometheus-operator
+        - registry.k8s.io/kube-state-metrics/kube-state-metrics
+        - quay.io/kiwigrid/k8s-sidecar
+        - ghcr.io/jkroepke/kube-webhook-certgen
+        - ghcr.io/aquasecurity/trivy-operator
+        - ghcr.io/aquasecurity/trivy
+      override:
+        items: append
+
+    - macro: known_drop_and_execute_activities
+      condition: >
+        or k8s.ns.name in (kube-system, monitoring, falco, trivy-system)
+        or (proc.name in (mount, umount) and proc.pname in (mount-product-f, runc, containerd-shim))
+        or (proc.name in (mount, umount) and container.image.repository = "")
+      override:
+        condition: append
+
+    - rule: Contact K8S API Server From Container
+      enabled: false
+      override:
+        enabled: replace
+
+    - rule: Redirect STDOUT/STDIN to Network Connection in Container
+      enabled: false
+      override:
+        enabled: replace
+
+    - rule: Disallowed SSH Connection Non Standard Port
+      enabled: false
+      override:
+        enabled: replace
+driver:
+  kind: modern_ebpf
+falco:
+  http_output:
+    enabled: true
+    url: http://falcosidekick:2801
+  json_output: true
+  metrics:
+    enabled: true
+    interval: 15s
+    kernel_event_counters_enabled: true
+    output_rule: false
+    resource_utilization_enabled: true
+  webserver:
+    enabled: true
+    listen_port: 8765
+    prometheus_metrics_enabled: true
+falcosidekick:
+  enabled: false

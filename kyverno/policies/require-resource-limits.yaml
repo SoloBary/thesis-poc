@@ -1,0 +1,98 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"kyverno.io/v1","kind":"ClusterPolicy","metadata":{"annotations":{},"name":"require-resource-limits"},"spec":{"rules":[{"match":{"any":[{"resources":{"kinds":["Pod"]}}]},"name":"require-limits","validate":{"message":"Resource limits are required.","pattern":{"spec":{"containers":[{"resources":{"limits":{"cpu":"?*","memory":"?*"}}}]}}}}],"validationFailureAction":"Enforce"}}
+  creationTimestamp: "2026-04-06T19:19:12Z"
+  generation: 1
+  name: require-resource-limits
+  resourceVersion: "2214063"
+  uid: 0fad4ced-5209-49f7-b6f4-acf324f45637
+spec:
+  admission: true
+  background: true
+  emitWarning: false
+  rules:
+  - match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    name: require-limits
+    skipBackgroundRequests: true
+    validate:
+      allowExistingViolations: true
+      message: Resource limits are required.
+      pattern:
+        spec:
+          containers:
+          - resources:
+              limits:
+                cpu: ?*
+                memory: ?*
+  validationFailureAction: Enforce
+status:
+  autogen:
+    rules:
+    - match:
+        any:
+        - resources:
+            kinds:
+            - DaemonSet
+            - Deployment
+            - Job
+            - ReplicaSet
+            - ReplicationController
+            - StatefulSet
+        resources: {}
+      name: autogen-require-limits
+      skipBackgroundRequests: true
+      validate:
+        allowExistingViolations: true
+        message: Resource limits are required.
+        pattern:
+          spec:
+            template:
+              spec:
+                containers:
+                - resources:
+                    limits:
+                      cpu: ?*
+                      memory: ?*
+    - match:
+        any:
+        - resources:
+            kinds:
+            - CronJob
+        resources: {}
+      name: autogen-cronjob-require-limits
+      skipBackgroundRequests: true
+      validate:
+        allowExistingViolations: true
+        message: Resource limits are required.
+        pattern:
+          spec:
+            jobTemplate:
+              spec:
+                template:
+                  spec:
+                    containers:
+                    - resources:
+                        limits:
+                          cpu: ?*
+                          memory: ?*
+  conditions:
+  - lastTransitionTime: "2026-04-06T19:19:13Z"
+    message: Ready
+    reason: Succeeded
+    status: "True"
+    type: Ready
+  rulecount:
+    generate: 0
+    mutate: 0
+    validate: 1
+    verifyimages: 0
+  validatingadmissionpolicy:
+    generated: false
+    message: ""

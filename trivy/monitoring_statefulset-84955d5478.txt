@@ -1,0 +1,181 @@
+apiVersion: aquasecurity.github.io/v1alpha1
+kind: VulnerabilityReport
+metadata:
+  annotations:
+    trivy-operator.aquasecurity.github.io/report-ttl: 24h0m0s
+  creationTimestamp: "2026-04-06T14:07:31Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/managed-by: trivy-operator
+    resource-spec-hash: 5f9b4447bf
+    trivy-operator.container.name: alertmanager
+    trivy-operator.resource.kind: StatefulSet
+    trivy-operator.resource.name: alertmanager-prometheus-kube-prometheus-alertmanager
+    trivy-operator.resource.namespace: monitoring
+  name: statefulset-84955d5478
+  namespace: monitoring
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: false
+    controller: true
+    kind: StatefulSet
+    name: alertmanager-prometheus-kube-prometheus-alertmanager
+    uid: 0df4ce90-e3ce-4252-8d1e-ce3fe013e063
+  resourceVersion: "2139781"
+  uid: 734dcd85-56cb-44f2-a695-d0b0e8a32d08
+report:
+  artifact:
+    digest: sha256:88b605de9aba0410775c1eb3438f951115054e0d307f23f274a4c705f51630c1
+    repository: prometheus/alertmanager
+    tag: v0.31.1
+  os:
+    family: ""
+  registry:
+    server: quay.io
+  scanner:
+    name: Trivy
+    vendor: Aqua Security
+    version: 0.69.3
+  summary:
+    criticalCount: 2
+    highCount: 4
+    lowCount: 2
+    mediumCount: 2
+    noneCount: 0
+    unknownCount: 0
+  updateTimestamp: "2026-04-06T14:07:31Z"
+  vulnerabilities:
+  - fixedVersion: 1.40.0
+    installedVersion: v1.39.0
+    lastModifiedDate: "2026-02-27T20:32:10Z"
+    links: []
+    packagePURL: pkg:golang/go.opentelemetry.io/otel/sdk@v1.39.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-24051
+    publishedDate: "2026-02-02T23:16:07Z"
+    resource: go.opentelemetry.io/otel/sdk
+    score: 7
+    severity: HIGH
+    target: ""
+    title: OpenTelemetry Go SDK Vulnerable to Arbitrary Code Execution via PATH Hijacking
+    vulnerabilityID: CVE-2026-24051
+  - fixedVersion: 1.79.3
+    installedVersion: v1.78.0
+    lastModifiedDate: "2026-03-23T14:32:02Z"
+    links: []
+    packagePURL: pkg:golang/google.golang.org/grpc@v1.78.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-33186
+    publishedDate: "2026-03-20T23:16:45Z"
+    resource: google.golang.org/grpc
+    score: 8.1
+    severity: CRITICAL
+    target: ""
+    title: 'google.golang.org/grpc/grpc-go: google.golang.org/grpc/authz: gRPC-Go:
+      Authorization bypass due to improper HTTP/2 path validation'
+    vulnerabilityID: CVE-2026-33186
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.25.7
+    lastModifiedDate: "2026-03-10T18:18:37Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.25.7
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-25679
+    publishedDate: "2026-03-06T22:16:00Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'net/url: Incorrect parsing of IPv6 host literals in net/url'
+    vulnerabilityID: CVE-2026-25679
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.25.7
+    lastModifiedDate: "2026-03-16T16:16:13Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.25.7
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-27142
+    publishedDate: "2026-03-06T22:16:01Z"
+    resource: stdlib
+    score: 5.4
+    severity: MEDIUM
+    target: ""
+    title: 'html/template: URLs in meta content attribute actions are not escaped
+      in html/template'
+    vulnerabilityID: CVE-2026-27142
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.25.7
+    lastModifiedDate: "2026-03-09T15:15:57Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.25.7
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-27139
+    publishedDate: "2026-03-06T22:16:01Z"
+    resource: stdlib
+    score: 2.5
+    severity: LOW
+    target: ""
+    title: 'os: FileInfo can escape from a Root in golang os module'
+    vulnerabilityID: CVE-2026-27139
+  - fixedVersion: 1.40.0
+    installedVersion: v1.39.0
+    lastModifiedDate: "2026-02-27T20:32:10Z"
+    links: []
+    packagePURL: pkg:golang/go.opentelemetry.io/otel/sdk@v1.39.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-24051
+    publishedDate: "2026-02-02T23:16:07Z"
+    resource: go.opentelemetry.io/otel/sdk
+    score: 7
+    severity: HIGH
+    target: ""
+    title: OpenTelemetry Go SDK Vulnerable to Arbitrary Code Execution via PATH Hijacking
+    vulnerabilityID: CVE-2026-24051
+  - fixedVersion: 1.79.3
+    installedVersion: v1.78.0
+    lastModifiedDate: "2026-03-23T14:32:02Z"
+    links: []
+    packagePURL: pkg:golang/google.golang.org/grpc@v1.78.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-33186
+    publishedDate: "2026-03-20T23:16:45Z"
+    resource: google.golang.org/grpc
+    score: 8.1
+    severity: CRITICAL
+    target: ""
+    title: 'google.golang.org/grpc/grpc-go: google.golang.org/grpc/authz: gRPC-Go:
+      Authorization bypass due to improper HTTP/2 path validation'
+    vulnerabilityID: CVE-2026-33186
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.25.7
+    lastModifiedDate: "2026-03-10T18:18:37Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.25.7
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-25679
+    publishedDate: "2026-03-06T22:16:00Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'net/url: Incorrect parsing of IPv6 host literals in net/url'
+    vulnerabilityID: CVE-2026-25679
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.25.7
+    lastModifiedDate: "2026-03-16T16:16:13Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.25.7
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-27142
+    publishedDate: "2026-03-06T22:16:01Z"
+    resource: stdlib
+    score: 5.4
+    severity: MEDIUM
+    target: ""
+    title: 'html/template: URLs in meta content attribute actions are not escaped
+      in html/template'
+    vulnerabilityID: CVE-2026-27142
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.25.7
+    lastModifiedDate: "2026-03-09T15:15:57Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.25.7
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-27139
+    publishedDate: "2026-03-06T22:16:01Z"
+    resource: stdlib
+    score: 2.5
+    severity: LOW
+    target: ""
+    title: 'os: FileInfo can escape from a Root in golang os module'
+    vulnerabilityID: CVE-2026-27139

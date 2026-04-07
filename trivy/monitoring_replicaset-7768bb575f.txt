@@ -1,0 +1,100 @@
+apiVersion: aquasecurity.github.io/v1alpha1
+kind: VulnerabilityReport
+metadata:
+  annotations:
+    trivy-operator.aquasecurity.github.io/report-ttl: 24h0m0s
+  creationTimestamp: "2026-04-06T14:16:11Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/managed-by: trivy-operator
+    resource-spec-hash: 79946fb9f
+    trivy-operator.container.name: kube-prometheus-stack
+    trivy-operator.resource.kind: ReplicaSet
+    trivy-operator.resource.name: prometheus-kube-prometheus-operator-b8b68cf8b
+    trivy-operator.resource.namespace: monitoring
+  name: replicaset-7768bb575f
+  namespace: monitoring
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: false
+    controller: true
+    kind: ReplicaSet
+    name: prometheus-kube-prometheus-operator-b8b68cf8b
+    uid: ceecce1b-aa89-4692-b290-3836cecc59d1
+  resourceVersion: "2142341"
+  uid: 7946ec67-23b3-4575-83b3-4717ea3bcee3
+report:
+  artifact:
+    digest: sha256:fea93ca9be807eee2f51f4d997b7a2bf073d4051d9012b45b3c84a7b9e8b3f25
+    repository: prometheus-operator/prometheus-operator
+    tag: v0.89.0
+  os:
+    family: ""
+  registry:
+    server: quay.io
+  scanner:
+    name: Trivy
+    vendor: Aqua Security
+    version: 0.69.3
+  summary:
+    criticalCount: 1
+    highCount: 1
+    lowCount: 1
+    mediumCount: 1
+    noneCount: 0
+    unknownCount: 0
+  updateTimestamp: "2026-04-06T14:16:11Z"
+  vulnerabilities:
+  - fixedVersion: 1.24.13, 1.25.7, 1.26.0-rc.3
+    installedVersion: v1.25.6
+    lastModifiedDate: "2026-02-20T17:25:50Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.25.6
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-68121
+    publishedDate: "2026-02-05T18:16:10Z"
+    resource: stdlib
+    score: 7.4
+    severity: CRITICAL
+    target: ""
+    title: 'crypto/tls: Unexpected session resumption in crypto/tls'
+    vulnerabilityID: CVE-2025-68121
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.25.6
+    lastModifiedDate: "2026-03-10T18:18:37Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.25.6
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-25679
+    publishedDate: "2026-03-06T22:16:00Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'net/url: Incorrect parsing of IPv6 host literals in net/url'
+    vulnerabilityID: CVE-2026-25679
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.25.6
+    lastModifiedDate: "2026-03-16T16:16:13Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.25.6
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-27142
+    publishedDate: "2026-03-06T22:16:01Z"
+    resource: stdlib
+    score: 6.1
+    severity: MEDIUM
+    target: ""
+    title: 'html/template: URLs in meta content attribute actions are not escaped
+      in html/template'
+    vulnerabilityID: CVE-2026-27142
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.25.6
+    lastModifiedDate: "2026-03-09T15:15:57Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.25.6
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-27139
+    publishedDate: "2026-03-06T22:16:01Z"
+    resource: stdlib
+    score: 2.5
+    severity: LOW
+    target: ""
+    title: 'os: FileInfo can escape from a Root in golang os module'
+    vulnerabilityID: CVE-2026-27139

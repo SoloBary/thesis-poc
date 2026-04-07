@@ -1,0 +1,14 @@
+# Block latest tag
+kubectl run test-latest --image=nginx:latest -n default
+
+# Block privileged
+kubectl run test-privileged --image=nginx:1.25 -n default --overrides='{"spec":{"containers":[{"name":"test","image":"nginx:1.25","securityContext":{"privileged":true}}]}}'
+
+# Block hostNetwork
+kubectl run test-hostnet --image=nginx:1.25 -n default --overrides='{"spec":{"hostNetwork":true,"containers":[{"name":"test","image":"nginx:1.25"}]}}'
+
+# Block root user
+kubectl run test-root --image=nginx:1.25 -n default --overrides='{"spec":{"containers":[{"name":"test","image":"nginx:1.25","securityContext":{"runAsNonRoot":false,"runAsUser":0}}]}}'
+
+# Block no resource limits
+kubectl run test-nolimits --image=nginx:1.25 -n default

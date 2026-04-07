@@ -1,0 +1,19 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: block-host-namespaces
+spec:
+  validationFailureAction: Enforce
+  rules:
+  - name: block-host-namespaces
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    validate:
+      message: "Host namespaces (hostNetwork, hostPID) are not allowed."
+      pattern:
+        spec:
+          =(hostNetwork): "false"
+          =(hostPID): "false"

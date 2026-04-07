@@ -1,0 +1,1512 @@
+apiVersion: aquasecurity.github.io/v1alpha1
+kind: VulnerabilityReport
+metadata:
+  annotations:
+    trivy-operator.aquasecurity.github.io/report-ttl: 24h0m0s
+  creationTimestamp: "2026-04-06T14:17:25Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/managed-by: trivy-operator
+    resource-spec-hash: 5b87489864
+    trivy-operator.container.name: poor-registry
+    trivy-operator.resource.kind: ReplicaSet
+    trivy-operator.resource.name: poor-registry-deployment-57597689b5
+    trivy-operator.resource.namespace: default
+  name: replicaset-poor-registry-deployment-57597689b5-poor-registry
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: false
+    controller: true
+    kind: ReplicaSet
+    name: poor-registry-deployment-57597689b5
+    uid: 908daa59-4f72-4fc1-b255-11fd148912d7
+  resourceVersion: "2142806"
+  uid: f7c2f024-2322-4731-9ac4-f702be9db162
+report:
+  artifact:
+    digest: sha256:fc084e703a55522f8c35afca155c679e330d8e0aef097f2a9f1b1f678d5b6839
+    repository: madhuakula/k8s-goat-poor-registry
+    tag: latest
+  os:
+    eosl: true
+    family: alpine
+    name: 3.15.4
+  registry:
+    server: index.docker.io
+  scanner:
+    name: Trivy
+    vendor: Aqua Security
+    version: 0.69.3
+  summary:
+    criticalCount: 5
+    highCount: 47
+    lowCount: 2
+    mediumCount: 55
+    noneCount: 0
+    unknownCount: 0
+  updateTimestamp: "2026-04-06T14:17:25Z"
+  vulnerabilities:
+  - fixedVersion: 1.1.1t-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-11-04T20:16:15Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-4450
+    publishedDate: "2023-02-08T20:15:23Z"
+    resource: libcrypto1.1
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'openssl: double free after calling PEM_read_bio_ex'
+    vulnerabilityID: CVE-2022-4450
+  - fixedVersion: 1.1.1t-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-11-04T20:16:15Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-0215
+    publishedDate: "2023-02-08T20:15:24Z"
+    resource: libcrypto1.1
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'openssl: use-after-free following BIO_new_NDEF'
+    vulnerabilityID: CVE-2023-0215
+  - fixedVersion: 1.1.1t-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-11-04T20:16:16Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-0286
+    publishedDate: "2023-02-08T20:15:24Z"
+    resource: libcrypto1.1
+    score: 7.4
+    severity: HIGH
+    target: ""
+    title: 'openssl: X.400 address type confusion in X.509 GeneralName'
+    vulnerabilityID: CVE-2023-0286
+  - fixedVersion: 1.1.1t-r2
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-05-05T16:15:26Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-0464
+    publishedDate: "2023-03-22T17:15:13Z"
+    resource: libcrypto1.1
+    score: 5.9
+    severity: HIGH
+    target: ""
+    title: 'openssl: Denial of service by excessive resource usage in verifying X509
+      policy constraints'
+    vulnerabilityID: CVE-2023-0464
+  - fixedVersion: 1.1.1q-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2024-11-21T07:00:18Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-2097
+    publishedDate: "2022-07-05T11:15:08Z"
+    resource: libcrypto1.1
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: AES OCB fails to encrypt some bytes'
+    vulnerabilityID: CVE-2022-2097
+  - fixedVersion: 1.1.1t-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-11-04T20:16:14Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-4304
+    publishedDate: "2023-02-08T20:15:23Z"
+    resource: libcrypto1.1
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: timing attack in RSA Decryption implementation'
+    vulnerabilityID: CVE-2022-4304
+  - fixedVersion: 1.1.1t-r2
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-02-18T21:15:13Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-0465
+    publishedDate: "2023-03-28T15:15:06Z"
+    resource: libcrypto1.1
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Invalid certificate policies in leaf certificates are silently
+      ignored'
+    vulnerabilityID: CVE-2023-0465
+  - fixedVersion: 1.1.1u-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-03-19T16:15:21Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-2650
+    publishedDate: "2023-05-30T14:15:09Z"
+    resource: libcrypto1.1
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Possible DoS translating ASN.1 object identifiers'
+    vulnerabilityID: CVE-2023-2650
+  - fixedVersion: 1.1.1u-r2
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-04-23T17:16:36Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-3446
+    publishedDate: "2023-07-19T12:15:10Z"
+    resource: libcrypto1.1
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Excessive time spent checking DH keys and parameters'
+    vulnerabilityID: CVE-2023-3446
+  - fixedVersion: 1.1.1v-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-05-05T16:15:47Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-3817
+    publishedDate: "2023-07-31T16:15:10Z"
+    resource: libcrypto1.1
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'OpenSSL: Excessive time spent checking DH q parameter value'
+    vulnerabilityID: CVE-2023-3817
+  - fixedVersion: 1.1.1w-r1
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-12-02T20:15:49Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-5678
+    publishedDate: "2023-11-06T16:15:42Z"
+    resource: libcrypto1.1
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Generating excessively long X9.42 DH keys or checking excessively
+      long X9.42 DH keys or parameters may be very slow'
+    vulnerabilityID: CVE-2023-5678
+  - fixedVersion: 1.1.1t-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-11-04T20:16:15Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-4450
+    publishedDate: "2023-02-08T20:15:23Z"
+    resource: libssl1.1
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'openssl: double free after calling PEM_read_bio_ex'
+    vulnerabilityID: CVE-2022-4450
+  - fixedVersion: 1.1.1t-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-11-04T20:16:15Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-0215
+    publishedDate: "2023-02-08T20:15:24Z"
+    resource: libssl1.1
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'openssl: use-after-free following BIO_new_NDEF'
+    vulnerabilityID: CVE-2023-0215
+  - fixedVersion: 1.1.1t-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-11-04T20:16:16Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-0286
+    publishedDate: "2023-02-08T20:15:24Z"
+    resource: libssl1.1
+    score: 7.4
+    severity: HIGH
+    target: ""
+    title: 'openssl: X.400 address type confusion in X.509 GeneralName'
+    vulnerabilityID: CVE-2023-0286
+  - fixedVersion: 1.1.1t-r2
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-05-05T16:15:26Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-0464
+    publishedDate: "2023-03-22T17:15:13Z"
+    resource: libssl1.1
+    score: 5.9
+    severity: HIGH
+    target: ""
+    title: 'openssl: Denial of service by excessive resource usage in verifying X509
+      policy constraints'
+    vulnerabilityID: CVE-2023-0464
+  - fixedVersion: 1.1.1q-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2024-11-21T07:00:18Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-2097
+    publishedDate: "2022-07-05T11:15:08Z"
+    resource: libssl1.1
+    score: 7.5
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: AES OCB fails to encrypt some bytes'
+    vulnerabilityID: CVE-2022-2097
+  - fixedVersion: 1.1.1t-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-11-04T20:16:14Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-4304
+    publishedDate: "2023-02-08T20:15:23Z"
+    resource: libssl1.1
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: timing attack in RSA Decryption implementation'
+    vulnerabilityID: CVE-2022-4304
+  - fixedVersion: 1.1.1t-r2
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-02-18T21:15:13Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-0465
+    publishedDate: "2023-03-28T15:15:06Z"
+    resource: libssl1.1
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Invalid certificate policies in leaf certificates are silently
+      ignored'
+    vulnerabilityID: CVE-2023-0465
+  - fixedVersion: 1.1.1u-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-03-19T16:15:21Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-2650
+    publishedDate: "2023-05-30T14:15:09Z"
+    resource: libssl1.1
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Possible DoS translating ASN.1 object identifiers'
+    vulnerabilityID: CVE-2023-2650
+  - fixedVersion: 1.1.1u-r2
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-04-23T17:16:36Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-3446
+    publishedDate: "2023-07-19T12:15:10Z"
+    resource: libssl1.1
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Excessive time spent checking DH keys and parameters'
+    vulnerabilityID: CVE-2023-3446
+  - fixedVersion: 1.1.1v-r0
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-05-05T16:15:47Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-3817
+    publishedDate: "2023-07-31T16:15:10Z"
+    resource: libssl1.1
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'OpenSSL: Excessive time spent checking DH q parameter value'
+    vulnerabilityID: CVE-2023-3817
+  - fixedVersion: 1.1.1w-r1
+    installedVersion: 1.1.1n-r0
+    lastModifiedDate: "2025-12-02T20:15:49Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl1.1@1.1.1n-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-5678
+    publishedDate: "2023-11-06T16:15:42Z"
+    resource: libssl1.1
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Generating excessively long X9.42 DH keys or checking excessively
+      long X9.42 DH keys or parameters may be very slow'
+    vulnerabilityID: CVE-2023-5678
+  - fixedVersion: 1.2.12-r2
+    installedVersion: 1.2.12-r0
+    lastModifiedDate: "2025-05-30T20:15:30Z"
+    links: []
+    packagePURL: pkg:apk/alpine/zlib@1.2.12-r0?arch=x86_64&distro=3.15.4
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-37434
+    publishedDate: "2022-08-05T07:15:07Z"
+    resource: zlib
+    score: 7
+    severity: CRITICAL
+    target: ""
+    title: 'zlib: heap-based buffer over-read and overflow in inflate() in inflate.c
+      via a large gzip header extra field'
+    vulnerabilityID: CVE-2022-37434
+  - fixedVersion: 1.19.8, 1.20.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-02-12T17:15:14Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-24538
+    publishedDate: "2023-04-06T16:15:07Z"
+    resource: stdlib
+    score: 9.8
+    severity: CRITICAL
+    target: ""
+    title: 'golang: html/template: backticks not treated as string delimiters'
+    vulnerabilityID: CVE-2023-24538
+  - fixedVersion: 1.19.9, 1.20.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-01-24T17:15:10Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-24540
+    publishedDate: "2023-05-11T16:15:09Z"
+    resource: stdlib
+    score: 8.1
+    severity: CRITICAL
+    target: ""
+    title: 'golang: html/template: improper handling of JavaScript whitespace'
+    vulnerabilityID: CVE-2023-24540
+  - fixedVersion: 1.21.11, 1.22.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:59:42Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-24790
+    publishedDate: "2024-06-05T16:15:10Z"
+    resource: stdlib
+    score: 9.8
+    severity: CRITICAL
+    target: ""
+    title: 'golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped
+      IPv6 addresses'
+    vulnerabilityID: CVE-2024-24790
+  - fixedVersion: 1.24.13, 1.25.7, 1.26.0-rc.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-02-20T17:25:50Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-68121
+    publishedDate: "2026-02-05T18:16:10Z"
+    resource: stdlib
+    score: 7.4
+    severity: CRITICAL
+    target: ""
+    title: 'crypto/tls: Unexpected session resumption in crypto/tls'
+    vulnerabilityID: CVE-2025-68121
+  - fixedVersion: 1.17.9, 1.18.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T06:50:50Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-24675
+    publishedDate: "2022-04-20T10:15:07Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: encoding/pem: fix stack overflow in Decode'
+    vulnerabilityID: CVE-2022-24675
+  - fixedVersion: 1.18.6, 1.19.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T06:56:07Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-27664
+    publishedDate: "2022-09-06T18:15:12Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: net/http: handle server errors after sending GOAWAY'
+    vulnerabilityID: CVE-2022-27664
+  - fixedVersion: 1.17.12, 1.18.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T06:56:48Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-28131
+    publishedDate: "2022-08-10T20:15:32Z"
+    resource: stdlib
+    score: 7.3
+    severity: HIGH
+    target: ""
+    title: 'golang: encoding/xml: stack exhaustion in Decoder.Skip'
+    vulnerabilityID: CVE-2022-28131
+  - fixedVersion: 1.17.9, 1.18.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T06:57:10Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-28327
+    publishedDate: "2022-04-20T10:15:08Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: crypto/elliptic: panic caused by oversized scalar'
+    vulnerabilityID: CVE-2022-28327
+  - fixedVersion: 1.18.7, 1.19.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:01:51Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-2879
+    publishedDate: "2022-10-14T15:15:17Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: archive/tar: github.com/vbatts/tar-split: unbounded memory consumption
+      when reading headers'
+    vulnerabilityID: CVE-2022-2879
+  - fixedVersion: 1.18.7, 1.19.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:01:51Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-2880
+    publishedDate: "2022-10-14T15:15:18Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: net/http/httputil: ReverseProxy should not forward unparseable
+      query parameters'
+    vulnerabilityID: CVE-2022-2880
+  - fixedVersion: 1.17.11, 1.18.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T06:59:42Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-29804
+    publishedDate: "2022-08-10T20:15:34Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'ELSA-2022-17957: ol8addon security update (IMPORTANT)'
+    vulnerabilityID: CVE-2022-29804
+  - fixedVersion: 1.17.11, 1.18.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-03-06T18:16:11Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-30580
+    publishedDate: "2022-08-10T20:15:40Z"
+    resource: stdlib
+    score: 7.8
+    severity: HIGH
+    target: ""
+    title: 'golang: os/exec: Code injection in Cmd.Start'
+    vulnerabilityID: CVE-2022-30580
+  - fixedVersion: 1.17.12, 1.18.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-03-06T18:16:13Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-30630
+    publishedDate: "2022-08-10T20:15:40Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: io/fs: stack exhaustion in Glob'
+    vulnerabilityID: CVE-2022-30630
+  - fixedVersion: 1.17.12, 1.18.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-10-20T18:15:36Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-30631
+    publishedDate: "2022-08-10T20:15:41Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: compress/gzip: stack exhaustion in Reader.Read'
+    vulnerabilityID: CVE-2022-30631
+  - fixedVersion: 1.17.12, 1.18.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:03:04Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-30632
+    publishedDate: "2022-08-10T20:15:41Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: path/filepath: stack exhaustion in Glob'
+    vulnerabilityID: CVE-2022-30632
+  - fixedVersion: 1.17.12, 1.18.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-03-06T18:16:13Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-30633
+    publishedDate: "2022-08-10T20:15:42Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: encoding/xml: stack exhaustion in Unmarshal'
+    vulnerabilityID: CVE-2022-30633
+  - fixedVersion: 1.17.11, 1.18.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:03:04Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-30634
+    publishedDate: "2022-07-15T20:15:08Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'ELSA-2022-17957: ol8addon security update (IMPORTANT)'
+    vulnerabilityID: CVE-2022-30634
+  - fixedVersion: 1.17.12, 1.18.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-03-06T18:16:14Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-30635
+    publishedDate: "2022-08-10T20:15:42Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: encoding/gob: stack exhaustion in Decoder.Decode'
+    vulnerabilityID: CVE-2022-30635
+  - fixedVersion: 1.17.13, 1.18.5
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:05:53Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-32189
+    publishedDate: "2022-08-10T20:15:47Z"
+    resource: stdlib
+    score: 6.5
+    severity: HIGH
+    target: ""
+    title: 'golang: math/big: decoding big.Float and big.Rat types can panic if the
+      encoded message is too short, potentially allowing a denial of service'
+    vulnerabilityID: CVE-2022-32189
+  - fixedVersion: 1.18.7, 1.19.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:23:43Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-41715
+    publishedDate: "2022-10-14T15:16:20Z"
+    resource: stdlib
+    score: 6.5
+    severity: HIGH
+    target: ""
+    title: 'golang: regexp/syntax: limit memory used by parsing regexps'
+    vulnerabilityID: CVE-2022-41715
+  - fixedVersion: 1.18.8, 1.19.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:23:43Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-41716
+    publishedDate: "2022-11-02T16:15:11Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: Due to unsanitized NUL values, attackers may be able to maliciously se
+      ...
+    vulnerabilityID: CVE-2022-41716
+  - fixedVersion: 1.18.9, 1.19.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-04-23T16:15:25Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-41720
+    publishedDate: "2022-12-07T17:15:10Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: os, net/http: avoid escapes from os.DirFS and http.Dir on Windows'
+    vulnerabilityID: CVE-2022-41720
+  - fixedVersion: 1.19.6, 1.20.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:23:44Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-41722
+    publishedDate: "2023-02-28T18:15:09Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: path/filepath: path-filepath filepath.Clean path traversal'
+    vulnerabilityID: CVE-2022-41722
+  - fixedVersion: 1.19.6, 1.20.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-05-05T16:15:20Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-41723
+    publishedDate: "2023-02-28T18:15:09Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang.org/x/net/http2: avoid quadratic complexity in HPACK decoding'
+    vulnerabilityID: CVE-2022-41723
+  - fixedVersion: 1.19.6, 1.20.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:23:44Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-41724
+    publishedDate: "2023-02-28T18:15:10Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: crypto/tls: large handshake records may cause panics'
+    vulnerabilityID: CVE-2022-41724
+  - fixedVersion: 1.19.6, 1.20.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:23:44Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-41725
+    publishedDate: "2023-02-28T18:15:10Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: net/http, mime/multipart: denial of service from excessive resource
+      consumption'
+    vulnerabilityID: CVE-2022-41725
+  - fixedVersion: 1.19.8, 1.20.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-02-12T18:15:19Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-24534
+    publishedDate: "2023-04-06T16:15:07Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: net/http, net/textproto: denial of service from excessive memory
+      allocation'
+    vulnerabilityID: CVE-2023-24534
+  - fixedVersion: 1.19.8, 1.20.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-02-12T18:15:20Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-24536
+    publishedDate: "2023-04-06T16:15:07Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: net/http, net/textproto, mime/multipart: denial of service from
+      excessive resource consumption'
+    vulnerabilityID: CVE-2023-24536
+  - fixedVersion: 1.19.8, 1.20.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-02-12T17:15:13Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-24537
+    publishedDate: "2023-04-06T16:15:07Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: go/parser: Infinite loop in parsing'
+    vulnerabilityID: CVE-2023-24537
+  - fixedVersion: 1.19.9, 1.20.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-01-24T17:15:10Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-24539
+    publishedDate: "2023-05-11T16:15:09Z"
+    resource: stdlib
+    score: 7.3
+    severity: HIGH
+    target: ""
+    title: 'golang: html/template: improper sanitization of CSS values'
+    vulnerabilityID: CVE-2023-24539
+  - fixedVersion: 1.19.9, 1.20.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-01-24T17:15:12Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-29400
+    publishedDate: "2023-05-11T16:15:09Z"
+    resource: stdlib
+    score: 7.3
+    severity: HIGH
+    target: ""
+    title: 'golang: html/template: improper handling of empty HTML attributes'
+    vulnerabilityID: CVE-2023-29400
+  - fixedVersion: 1.19.10, 1.20.5
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-01-06T20:15:25Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-29403
+    publishedDate: "2023-06-08T21:15:16Z"
+    resource: stdlib
+    score: 7.8
+    severity: HIGH
+    target: ""
+    title: 'golang: runtime: unexpected behavior of setuid/setgid binaries'
+    vulnerabilityID: CVE-2023-29403
+  - fixedVersion: 1.20.10, 1.21.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:15:09Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-39325
+    publishedDate: "2023-10-11T22:15:09Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: net/http, x/net/http2: rapid stream resets can cause excessive
+      work (CVE-2023-44487)'
+    vulnerabilityID: CVE-2023-39325
+  - fixedVersion: 1.20.11, 1.21.4, 1.20.12, 1.21.5
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:26:41Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-45283
+    publishedDate: "2023-11-09T17:15:08Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: The filepath package does not recognize paths with a \??\ prefix as sp
+      ...
+    vulnerabilityID: CVE-2023-45283
+  - fixedVersion: 1.20.0
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:26:42Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-45287
+    publishedDate: "2023-12-05T17:15:08Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: crypto/tls: Timing Side Channel attack in RSA based TLS key exchanges.'
+    vulnerabilityID: CVE-2023-45287
+  - fixedVersion: 1.21.9, 1.22.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-11-04T19:16:01Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-45288
+    publishedDate: "2024-04-04T21:15:16Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: net/http, x/net/http2: unlimited number of CONTINUATION frames
+      causes DoS'
+    vulnerabilityID: CVE-2023-45288
+  - fixedVersion: 1.22.7, 1.23.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T09:18:12Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-34156
+    publishedDate: "2024-09-06T21:15:12Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'encoding/gob: golang: Calling Decoder.Decode on a message which contains
+      deeply nested structures can cause a panic due to stack exhaustion'
+    vulnerabilityID: CVE-2024-34156
+  - fixedVersion: 1.23.12, 1.24.6
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-01-29T19:11:50Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-47907
+    publishedDate: "2025-08-07T16:15:30Z"
+    resource: stdlib
+    score: 7
+    severity: HIGH
+    target: ""
+    title: 'database/sql: Postgres Scan Race Condition'
+    vulnerabilityID: CVE-2025-47907
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-11-04T22:16:33Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58183
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: archive/tar: Unbounded allocation when parsing GNU sparse map'
+    vulnerabilityID: CVE-2025-58183
+  - fixedVersion: 1.24.12, 1.25.6
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-02-06T18:47:34Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61726
+    publishedDate: "2026-01-28T20:16:09Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: net/url: Memory exhaustion in query parameter parsing in net/url'
+    vulnerabilityID: CVE-2025-61726
+  - fixedVersion: 1.24.12, 1.25.6
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-02-06T18:45:10Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61728
+    publishedDate: "2026-01-28T20:16:09Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: archive/zip: Excessive CPU consumption when building archive index
+      in archive/zip'
+    vulnerabilityID: CVE-2025-61728
+  - fixedVersion: 1.24.11, 1.25.5
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-12-19T18:25:28Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61729
+    publishedDate: "2025-12-02T19:15:51Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'crypto/x509: golang: Denial of Service due to excessive resource consumption
+      via crafted certificate'
+    vulnerabilityID: CVE-2025-61729
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-03-10T18:18:37Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-25679
+    publishedDate: "2026-03-06T22:16:00Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'net/url: Incorrect parsing of IPv6 host literals in net/url'
+    vulnerabilityID: CVE-2026-25679
+  - fixedVersion: 1.17.12, 1.18.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-03-06T18:16:10Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-1705
+    publishedDate: "2022-08-10T20:15:25Z"
+    resource: stdlib
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'golang: net/http: improper sanitization of Transfer-Encoding header'
+    vulnerabilityID: CVE-2022-1705
+  - fixedVersion: 1.17.12, 1.18.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-03-06T20:16:09Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-1962
+    publishedDate: "2022-08-10T20:15:26Z"
+    resource: stdlib
+    score: 5.5
+    severity: MEDIUM
+    target: ""
+    title: 'golang: go/parser: stack exhaustion in all Parse* functions'
+    vulnerabilityID: CVE-2022-1962
+  - fixedVersion: 1.17.10, 1.18.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T06:59:15Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-29526
+    publishedDate: "2022-06-23T17:15:12Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'golang: syscall: faccessat checks wrong group'
+    vulnerabilityID: CVE-2022-29526
+  - fixedVersion: 1.17.12, 1.18.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-03-06T20:16:10Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-32148
+    publishedDate: "2022-08-10T20:15:47Z"
+    resource: stdlib
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'golang: net/http/httputil: NewSingleHostReverseProxy - omit X-Forwarded-For
+      not working'
+    vulnerabilityID: CVE-2022-32148
+  - fixedVersion: 1.18.9, 1.19.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:23:43Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-41717
+    publishedDate: "2022-12-08T20:15:10Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'golang: net/http: excessive memory growth in a Go server accepting HTTP/2
+      requests'
+    vulnerabilityID: CVE-2022-41717
+  - fixedVersion: 1.19.7, 1.20.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:48:04Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-24532
+    publishedDate: "2023-03-08T20:15:09Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'golang: crypto/internal/nistec: specific unreduced P-256 scalars produce
+      incorrect results'
+    vulnerabilityID: CVE-2023-24532
+  - fixedVersion: 1.19.11, 1.20.6
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:56:59Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-29406
+    publishedDate: "2023-07-11T20:15:10Z"
+    resource: stdlib
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'golang: net/http: insufficient sanitization of Host header'
+    vulnerabilityID: CVE-2023-29406
+  - fixedVersion: 1.19.12, 1.20.7, 1.21.0-rc.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T07:57:00Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-29409
+    publishedDate: "2023-08-02T20:15:11Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'golang: crypto/tls: slow verification of certificate chains containing
+      large RSA keys'
+    vulnerabilityID: CVE-2023-29409
+  - fixedVersion: 1.20.8, 1.21.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:15:08Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-39318
+    publishedDate: "2023-09-08T17:15:27Z"
+    resource: stdlib
+    score: 6.1
+    severity: MEDIUM
+    target: ""
+    title: 'golang: html/template: improper handling of HTML-like comments within
+      script contexts'
+    vulnerabilityID: CVE-2023-39318
+  - fixedVersion: 1.20.8, 1.21.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:15:08Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-39319
+    publishedDate: "2023-09-08T17:15:27Z"
+    resource: stdlib
+    score: 6.1
+    severity: MEDIUM
+    target: ""
+    title: 'golang: html/template: improper handling of special tags within script
+      contexts'
+    vulnerabilityID: CVE-2023-39319
+  - fixedVersion: 1.20.12, 1.21.5
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:15:09Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-39326
+    publishedDate: "2023-12-06T17:15:07Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'golang: net/http/internal: Denial of Service (DoS) via Resource Consumption
+      via HTTP requests'
+    vulnerabilityID: CVE-2023-39326
+  - fixedVersion: 1.20.11, 1.21.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:26:41Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-45284
+    publishedDate: "2023-11-09T17:15:08Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: On Windows, The IsLocal function does not correctly detect reserved de
+      ...
+    vulnerabilityID: CVE-2023-45284
+  - fixedVersion: 1.21.8, 1.22.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:26:42Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-45289
+    publishedDate: "2024-03-05T23:15:07Z"
+    resource: stdlib
+    score: 4.3
+    severity: MEDIUM
+    target: ""
+    title: 'golang: net/http/cookiejar: incorrect forwarding of sensitive headers
+      and cookies on HTTP redirect'
+    vulnerabilityID: CVE-2023-45289
+  - fixedVersion: 1.21.8, 1.22.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:26:42Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-45290
+    publishedDate: "2024-03-05T23:15:07Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'golang: net/http: golang: mime/multipart: golang: net/textproto: memory
+      exhaustion in Request.ParseMultipartForm'
+    vulnerabilityID: CVE-2023-45290
+  - fixedVersion: 1.21.8, 1.22.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:59:41Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-24783
+    publishedDate: "2024-03-05T23:15:07Z"
+    resource: stdlib
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'golang: crypto/x509: Verify panics on certificates with an unknown public
+      key algorithm'
+    vulnerabilityID: CVE-2024-24783
+  - fixedVersion: 1.21.8, 1.22.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:59:41Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-24784
+    publishedDate: "2024-03-05T23:15:07Z"
+    resource: stdlib
+    score: 5.4
+    severity: MEDIUM
+    target: ""
+    title: 'golang: net/mail: comments in display names are incorrectly handled'
+    vulnerabilityID: CVE-2024-24784
+  - fixedVersion: 1.21.8, 1.22.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-03-14T02:15:13Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-24785
+    publishedDate: "2024-03-05T23:15:07Z"
+    resource: stdlib
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'golang: html/template: errors returned from MarshalJSON methods may break
+      template escaping'
+    vulnerabilityID: CVE-2024-24785
+  - fixedVersion: 1.21.11, 1.22.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-01-31T15:15:12Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-24789
+    publishedDate: "2024-06-05T16:15:10Z"
+    resource: stdlib
+    score: 5.5
+    severity: MEDIUM
+    target: ""
+    title: 'golang: archive/zip: Incorrect handling of certain ZIP files'
+    vulnerabilityID: CVE-2024-24789
+  - fixedVersion: 1.21.12, 1.22.5
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T08:59:43Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-24791
+    publishedDate: "2024-07-02T22:15:04Z"
+    resource: stdlib
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'net/http: Denial of service due to improper 100-continue handling in net/http'
+    vulnerabilityID: CVE-2024-24791
+  - fixedVersion: 1.22.7, 1.23.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T09:18:12Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-34155
+    publishedDate: "2024-09-06T21:15:11Z"
+    resource: stdlib
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'go/parser: golang: Calling any of the Parse functions containing deeply
+      nested literals can cause a panic/stack exhaustion'
+    vulnerabilityID: CVE-2024-34155
+  - fixedVersion: 1.22.7, 1.23.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2024-11-21T09:18:13Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-34158
+    publishedDate: "2024-09-06T21:15:12Z"
+    resource: stdlib
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'go/build/constraint: golang: Calling Parse on a "// +build" build tag
+      line with deeply nested expressions can cause a panic due to stack exhaustion'
+    vulnerabilityID: CVE-2024-34158
+  - fixedVersion: 1.22.11, 1.23.5, 1.24.0-rc.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-02-21T18:15:17Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-45336
+    publishedDate: "2025-01-28T02:15:28Z"
+    resource: stdlib
+    score: 6.1
+    severity: MEDIUM
+    target: ""
+    title: 'golang: net/http: net/http: sensitive headers incorrectly sent after cross-domain
+      redirect'
+    vulnerabilityID: CVE-2024-45336
+  - fixedVersion: 1.22.11, 1.23.5, 1.24.0-rc.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-02-21T18:15:17Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-45341
+    publishedDate: "2025-01-28T02:15:29Z"
+    resource: stdlib
+    score: 4.2
+    severity: MEDIUM
+    target: ""
+    title: 'golang: crypto/x509: crypto/x509: usage of IPv6 zone IDs can bypass URI
+      name constraints'
+    vulnerabilityID: CVE-2024-45341
+  - fixedVersion: 1.23.10, 1.24.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-08-08T14:53:03Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0913
+    publishedDate: "2025-06-11T18:15:24Z"
+    resource: stdlib
+    score: 5.5
+    severity: MEDIUM
+    target: ""
+    title: Inconsistent handling of O_CREATE|O_EXCL on Unix and Windows in os in syscall
+    vulnerabilityID: CVE-2025-0913
+  - fixedVersion: 1.22.12, 1.23.6, 1.24.0-rc.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-02-21T18:15:32Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-22866
+    publishedDate: "2025-02-06T17:15:21Z"
+    resource: stdlib
+    score: 4
+    severity: MEDIUM
+    target: ""
+    title: 'crypto/internal/nistec: golang: Timing sidechannel for P-256 on ppc64le
+      in crypto/internal/nistec'
+    vulnerabilityID: CVE-2025-22866
+  - fixedVersion: 1.23.8, 1.24.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-04-18T15:15:57Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-22871
+    publishedDate: "2025-04-08T20:15:20Z"
+    resource: stdlib
+    score: 5.4
+    severity: MEDIUM
+    target: ""
+    title: 'net/http: Request smuggling due to acceptance of invalid chunked data
+      in net/http'
+    vulnerabilityID: CVE-2025-22871
+  - fixedVersion: 1.23.9, 1.24.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-02-10T15:16:40Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-22873
+    publishedDate: "2026-02-04T23:15:54Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'os: os: Information disclosure via path traversal using specially crafted
+      filenames'
+    vulnerabilityID: CVE-2025-22873
+  - fixedVersion: 1.23.10, 1.24.4
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-06-12T16:06:20Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-4673
+    publishedDate: "2025-06-11T17:15:42Z"
+    resource: stdlib
+    score: 6.8
+    severity: MEDIUM
+    target: ""
+    title: 'net/http: Sensitive headers not cleared on cross-origin redirect in net/http'
+    vulnerabilityID: CVE-2025-4673
+  - fixedVersion: 1.23.12, 1.24.6
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-01-27T19:56:17Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-47906
+    publishedDate: "2025-09-18T19:15:37Z"
+    resource: stdlib
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'os/exec: Unexpected paths returned from LookPath in os/exec'
+    vulnerabilityID: CVE-2025-47906
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-01-29T13:57:18Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-47912
+    publishedDate: "2025-10-29T23:16:18Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'net/url: Insufficient validation of bracketed IPv6 hostnames in net/url'
+    vulnerabilityID: CVE-2025-47912
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-02-06T20:26:41Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58185
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'encoding/asn1: Parsing DER payload can cause memory exhaustion in encoding/asn1'
+    vulnerabilityID: CVE-2025-58185
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-11-04T22:16:33Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58186
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'golang.org/net/http: Lack of limit when parsing cookies can cause memory
+      exhaustion in net/http'
+    vulnerabilityID: CVE-2025-58186
+  - fixedVersion: 1.24.9, 1.25.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-01-29T16:02:27Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58187
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'crypto/x509: Quadratic complexity when checking name constraints in crypto/x509'
+    vulnerabilityID: CVE-2025-58187
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-01-29T15:55:11Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58188
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'crypto/x509: golang: Panic when validating certificates with DSA public
+      keys in crypto/x509'
+    vulnerabilityID: CVE-2025-58188
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-01-29T15:49:24Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58189
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'crypto/tls: go crypto/tls ALPN negotiation error contains attacker controlled
+      information'
+    vulnerabilityID: CVE-2025-58189
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-01-29T15:49:05Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61723
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 7.5
+    severity: MEDIUM
+    target: ""
+    title: 'encoding/pem: Quadratic complexity when parsing some invalid inputs in
+      encoding/pem'
+    vulnerabilityID: CVE-2025-61723
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-01-29T15:30:53Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61724
+    publishedDate: "2025-10-29T23:16:20Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'net/textproto: Excessive CPU consumption in Reader.ReadResponse in net/textproto'
+    vulnerabilityID: CVE-2025-61724
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-12-09T18:15:56Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61725
+    publishedDate: "2025-10-29T23:16:20Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'net/mail: Excessive CPU consumption in ParseAddress in net/mail'
+    vulnerabilityID: CVE-2025-61725
+  - fixedVersion: 1.24.11, 1.25.5
+    installedVersion: v1.16.15
+    lastModifiedDate: "2025-12-18T20:15:10Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61727
+    publishedDate: "2025-12-03T20:16:25Z"
+    resource: stdlib
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'golang: crypto/x509: excluded subdomain constraint does not restrict wildcard
+      SANs'
+    vulnerabilityID: CVE-2025-61727
+  - fixedVersion: 1.24.12, 1.25.6
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-02-03T20:36:41Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61730
+    publishedDate: "2026-01-28T20:16:09Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: During the TLS 1.3 handshake if multiple messages are sent in records  ...
+    vulnerabilityID: CVE-2025-61730
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-03-16T16:16:13Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-27142
+    publishedDate: "2026-03-06T22:16:01Z"
+    resource: stdlib
+    score: 5.4
+    severity: MEDIUM
+    target: ""
+    title: 'html/template: URLs in meta content attribute actions are not escaped
+      in html/template'
+    vulnerabilityID: CVE-2026-27142
+  - fixedVersion: 1.17.11, 1.18.3
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-03-06T20:16:10Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2022-30629
+    publishedDate: "2022-08-10T20:15:40Z"
+    resource: stdlib
+    score: 3.1
+    severity: LOW
+    target: ""
+    title: 'golang: crypto/tls: session tickets lack random ticket_age_add'
+    vulnerabilityID: CVE-2022-30629
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.16.15
+    lastModifiedDate: "2026-03-09T15:15:57Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.16.15
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-27139
+    publishedDate: "2026-03-06T22:16:01Z"
+    resource: stdlib
+    score: 2.5
+    severity: LOW
+    target: ""
+    title: 'os: FileInfo can escape from a Root in golang os module'
+    vulnerabilityID: CVE-2026-27139

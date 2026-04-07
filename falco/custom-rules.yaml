@@ -1,0 +1,39 @@
+customRules:
+  tuning.yaml: |-
+    - rule: Drop and execute new binary in container
+      override:
+        enabled: replace
+      enabled: false
+
+    - rule: Redirect STDOUT/STDIN to Network Connection in Container
+      override:
+        enabled: replace
+      enabled: false
+
+  custom-rules.yaml: |-
+    - rule: Read Kubernetes Service Account Token
+      desc: Detects reading of service account token from inside a container
+      condition: >
+        open_read and
+        fd.name startswith "/run/secrets/kubernetes.io/serviceaccount" and
+        container and
+        not proc.name in (pause)
+      output: >
+        Service account token read (user=%user.name process=%proc.name
+        pod=%k8s.pod.name ns=%k8s.ns.name file=%fd.name
+        container=%container.name image=%container.image.repository)
+      priority: WARNING
+      tags: [container, T1528, mitre_credential_access]
+
+    - rule: Detect curl or wget inside container
+      desc: Detects use of curl or wget inside a container
+      condition: >
+        spawned_process and
+        container and
+        proc.name in (curl, wget)
+      output: >
+        Network tool execution in container (user=%user.name
+        process=%proc.name pod=%k8s.pod.name ns=%k8s.ns.name
+        command=%proc.cmdline image=%container.image.repository)
+      priority: WARNING
+      tags: [container, T1105, mitre_command_and_control]

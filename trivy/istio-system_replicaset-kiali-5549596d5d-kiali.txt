@@ -1,0 +1,1117 @@
+apiVersion: aquasecurity.github.io/v1alpha1
+kind: VulnerabilityReport
+metadata:
+  annotations:
+    trivy-operator.aquasecurity.github.io/report-ttl: 24h0m0s
+  creationTimestamp: "2026-04-06T14:20:19Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/managed-by: trivy-operator
+    resource-spec-hash: 6d996bcf9f
+    trivy-operator.container.name: kiali
+    trivy-operator.resource.kind: ReplicaSet
+    trivy-operator.resource.name: kiali-5549596d5d
+    trivy-operator.resource.namespace: istio-system
+  name: replicaset-kiali-5549596d5d-kiali
+  namespace: istio-system
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: false
+    controller: true
+    kind: ReplicaSet
+    name: kiali-5549596d5d
+    uid: fcadb812-dfb1-40bb-98d0-65b02bf6a961
+  resourceVersion: "2143676"
+  uid: fda42f40-137f-4a34-903f-e90b2c38d483
+report:
+  artifact:
+    digest: sha256:f0391490a8afb05258ba3e78e0b1d2844fcfd339199bbf33202d29b25610ba97
+    repository: kiali/kiali
+    tag: v2.0
+  os:
+    family: redhat
+    name: "8.9"
+  registry:
+    server: quay.io
+  scanner:
+    name: Trivy
+    vendor: Aqua Security
+    version: 0.69.3
+  summary:
+    criticalCount: 3
+    highCount: 16
+    lowCount: 13
+    mediumCount: 48
+    noneCount: 0
+    unknownCount: 0
+  updateTimestamp: "2026-04-06T14:20:19Z"
+  vulnerabilities:
+  - fixedVersion: 2024.2.69_v8.0.303-80.0.el8_10
+    installedVersion: 2023.2.60_v7.0.306-80.0.el8_8
+    lastModifiedDate: "2025-02-13T13:50:15Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/ca-certificates@2023.2.60_v7.0.306-80.0.el8_8?arch=noarch&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2023-37920
+    publishedDate: "2023-07-25T21:15:10Z"
+    resource: ca-certificates
+    score: 9.1
+    severity: LOW
+    target: ""
+    title: 'python-certifi: Removal of e-Tugra root certificate'
+    vulnerabilityID: CVE-2023-37920
+  - fixedVersion: 2.28-251.el8_10.1
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2026-04-03T16:36:35Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-2961
+    publishedDate: "2024-04-17T18:15:15Z"
+    resource: glibc
+    score: 8.8
+    severity: HIGH
+    target: ""
+    title: 'glibc: Out of bounds write in iconv may lead to remote code execution'
+    vulnerabilityID: CVE-2024-2961
+  - fixedVersion: 2.28-251.el8_10.2
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-06-18T14:56:01Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-33599
+    publishedDate: "2024-05-06T20:15:11Z"
+    resource: glibc
+    score: 7.6
+    severity: HIGH
+    target: ""
+    title: 'glibc: stack-based buffer overflow in netgroup cache'
+    vulnerabilityID: CVE-2024-33599
+  - fixedVersion: 2.28-251.el8_10.2
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-06-18T14:50:25Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-33600
+    publishedDate: "2024-05-06T20:15:11Z"
+    resource: glibc
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: null pointer dereferences after failed netgroup cache insertion'
+    vulnerabilityID: CVE-2024-33600
+  - fixedVersion: 2.28-251.el8_10.16
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2026-02-04T21:15:56Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0395
+    publishedDate: "2025-01-22T13:15:20Z"
+    resource: glibc
+    score: 5.5
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: buffer overflow in the GNU C Library''s assert()'
+    vulnerabilityID: CVE-2025-0395
+  - fixedVersion: 2.28-251.el8_10.22
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-11-03T20:19:11Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-4802
+    publishedDate: "2025-05-16T20:15:22Z"
+    resource: glibc
+    score: 7
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: static setuid binary dlopen may incorrectly search LD_LIBRARY_PATH'
+    vulnerabilityID: CVE-2025-4802
+  - fixedVersion: 2.28-251.el8_10.25
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-11-04T22:16:44Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-8058
+    publishedDate: "2025-07-23T20:15:27Z"
+    resource: glibc
+    score: 4.2
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: Double free in glibc'
+    vulnerabilityID: CVE-2025-8058
+  - fixedVersion: 2.28-251.el8_10.31
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2026-01-23T19:36:50Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-0915
+    publishedDate: "2026-01-15T22:16:12Z"
+    resource: glibc
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: glibc: Information disclosure via zero-valued network query'
+    vulnerabilityID: CVE-2026-0915
+  - fixedVersion: 2.28-251.el8_10.2
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-08-01T01:56:26Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-33601
+    publishedDate: "2024-05-06T20:15:11Z"
+    resource: glibc
+    score: 4
+    severity: LOW
+    target: ""
+    title: 'glibc: netgroup cache may terminate daemon on memory allocation failure'
+    vulnerabilityID: CVE-2024-33601
+  - fixedVersion: 2.28-251.el8_10.2
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-06-18T14:40:48Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-33602
+    publishedDate: "2024-05-06T20:15:11Z"
+    resource: glibc
+    score: 4
+    severity: LOW
+    target: ""
+    title: 'glibc: netgroup cache assumes NSS callback uses in-buffer strings'
+    vulnerabilityID: CVE-2024-33602
+  - fixedVersion: 2.28-251.el8_10.31
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2026-02-05T17:43:18Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15281
+    publishedDate: "2026-01-20T14:16:07Z"
+    resource: glibc
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized
+      memory'
+    vulnerabilityID: CVE-2025-15281
+  - fixedVersion: 2.28-251.el8_10.1
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2026-04-03T16:36:35Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-common@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-2961
+    publishedDate: "2024-04-17T18:15:15Z"
+    resource: glibc-common
+    score: 8.8
+    severity: HIGH
+    target: ""
+    title: 'glibc: Out of bounds write in iconv may lead to remote code execution'
+    vulnerabilityID: CVE-2024-2961
+  - fixedVersion: 2.28-251.el8_10.2
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-06-18T14:56:01Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-common@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-33599
+    publishedDate: "2024-05-06T20:15:11Z"
+    resource: glibc-common
+    score: 7.6
+    severity: HIGH
+    target: ""
+    title: 'glibc: stack-based buffer overflow in netgroup cache'
+    vulnerabilityID: CVE-2024-33599
+  - fixedVersion: 2.28-251.el8_10.2
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-06-18T14:50:25Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-common@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-33600
+    publishedDate: "2024-05-06T20:15:11Z"
+    resource: glibc-common
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: null pointer dereferences after failed netgroup cache insertion'
+    vulnerabilityID: CVE-2024-33600
+  - fixedVersion: 2.28-251.el8_10.16
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2026-02-04T21:15:56Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-common@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0395
+    publishedDate: "2025-01-22T13:15:20Z"
+    resource: glibc-common
+    score: 5.5
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: buffer overflow in the GNU C Library''s assert()'
+    vulnerabilityID: CVE-2025-0395
+  - fixedVersion: 2.28-251.el8_10.22
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-11-03T20:19:11Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-common@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-4802
+    publishedDate: "2025-05-16T20:15:22Z"
+    resource: glibc-common
+    score: 7
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: static setuid binary dlopen may incorrectly search LD_LIBRARY_PATH'
+    vulnerabilityID: CVE-2025-4802
+  - fixedVersion: 2.28-251.el8_10.25
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-11-04T22:16:44Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-common@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-8058
+    publishedDate: "2025-07-23T20:15:27Z"
+    resource: glibc-common
+    score: 4.2
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: Double free in glibc'
+    vulnerabilityID: CVE-2025-8058
+  - fixedVersion: 2.28-251.el8_10.31
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2026-01-23T19:36:50Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-common@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-0915
+    publishedDate: "2026-01-15T22:16:12Z"
+    resource: glibc-common
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: glibc: Information disclosure via zero-valued network query'
+    vulnerabilityID: CVE-2026-0915
+  - fixedVersion: 2.28-251.el8_10.2
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-08-01T01:56:26Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-common@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-33601
+    publishedDate: "2024-05-06T20:15:11Z"
+    resource: glibc-common
+    score: 4
+    severity: LOW
+    target: ""
+    title: 'glibc: netgroup cache may terminate daemon on memory allocation failure'
+    vulnerabilityID: CVE-2024-33601
+  - fixedVersion: 2.28-251.el8_10.2
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-06-18T14:40:48Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-common@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-33602
+    publishedDate: "2024-05-06T20:15:11Z"
+    resource: glibc-common
+    score: 4
+    severity: LOW
+    target: ""
+    title: 'glibc: netgroup cache assumes NSS callback uses in-buffer strings'
+    vulnerabilityID: CVE-2024-33602
+  - fixedVersion: 2.28-251.el8_10.31
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2026-02-05T17:43:18Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-common@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15281
+    publishedDate: "2026-01-20T14:16:07Z"
+    resource: glibc-common
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized
+      memory'
+    vulnerabilityID: CVE-2025-15281
+  - fixedVersion: 2.28-251.el8_10.1
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2026-04-03T16:36:35Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-minimal-langpack@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-2961
+    publishedDate: "2024-04-17T18:15:15Z"
+    resource: glibc-minimal-langpack
+    score: 8.8
+    severity: HIGH
+    target: ""
+    title: 'glibc: Out of bounds write in iconv may lead to remote code execution'
+    vulnerabilityID: CVE-2024-2961
+  - fixedVersion: 2.28-251.el8_10.2
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-06-18T14:56:01Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-minimal-langpack@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-33599
+    publishedDate: "2024-05-06T20:15:11Z"
+    resource: glibc-minimal-langpack
+    score: 7.6
+    severity: HIGH
+    target: ""
+    title: 'glibc: stack-based buffer overflow in netgroup cache'
+    vulnerabilityID: CVE-2024-33599
+  - fixedVersion: 2.28-251.el8_10.2
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-06-18T14:50:25Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-minimal-langpack@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-33600
+    publishedDate: "2024-05-06T20:15:11Z"
+    resource: glibc-minimal-langpack
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: null pointer dereferences after failed netgroup cache insertion'
+    vulnerabilityID: CVE-2024-33600
+  - fixedVersion: 2.28-251.el8_10.16
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2026-02-04T21:15:56Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-minimal-langpack@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0395
+    publishedDate: "2025-01-22T13:15:20Z"
+    resource: glibc-minimal-langpack
+    score: 5.5
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: buffer overflow in the GNU C Library''s assert()'
+    vulnerabilityID: CVE-2025-0395
+  - fixedVersion: 2.28-251.el8_10.22
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-11-03T20:19:11Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-minimal-langpack@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-4802
+    publishedDate: "2025-05-16T20:15:22Z"
+    resource: glibc-minimal-langpack
+    score: 7
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: static setuid binary dlopen may incorrectly search LD_LIBRARY_PATH'
+    vulnerabilityID: CVE-2025-4802
+  - fixedVersion: 2.28-251.el8_10.25
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-11-04T22:16:44Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-minimal-langpack@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-8058
+    publishedDate: "2025-07-23T20:15:27Z"
+    resource: glibc-minimal-langpack
+    score: 4.2
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: Double free in glibc'
+    vulnerabilityID: CVE-2025-8058
+  - fixedVersion: 2.28-251.el8_10.31
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2026-01-23T19:36:50Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-minimal-langpack@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-0915
+    publishedDate: "2026-01-15T22:16:12Z"
+    resource: glibc-minimal-langpack
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: glibc: Information disclosure via zero-valued network query'
+    vulnerabilityID: CVE-2026-0915
+  - fixedVersion: 2.28-251.el8_10.2
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-08-01T01:56:26Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-minimal-langpack@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-33601
+    publishedDate: "2024-05-06T20:15:11Z"
+    resource: glibc-minimal-langpack
+    score: 4
+    severity: LOW
+    target: ""
+    title: 'glibc: netgroup cache may terminate daemon on memory allocation failure'
+    vulnerabilityID: CVE-2024-33601
+  - fixedVersion: 2.28-251.el8_10.2
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2025-06-18T14:40:48Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-minimal-langpack@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-33602
+    publishedDate: "2024-05-06T20:15:11Z"
+    resource: glibc-minimal-langpack
+    score: 4
+    severity: LOW
+    target: ""
+    title: 'glibc: netgroup cache assumes NSS callback uses in-buffer strings'
+    vulnerabilityID: CVE-2024-33602
+  - fixedVersion: 2.28-251.el8_10.31
+    installedVersion: 2.28-236.el8_9.12
+    lastModifiedDate: "2026-02-05T17:43:18Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/glibc-minimal-langpack@2.28-236.el8_9.12?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15281
+    publishedDate: "2026-01-20T14:16:07Z"
+    resource: glibc-minimal-langpack
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized
+      memory'
+    vulnerabilityID: CVE-2025-15281
+  - fixedVersion: 8.5.0-23.el8_10
+    installedVersion: 8.5.0-20.el8
+    lastModifiedDate: "2025-11-07T19:32:52Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/libgcc@8.5.0-20.el8?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2020-11023
+    publishedDate: "2020-04-29T21:15:11Z"
+    resource: libgcc
+    score: 6.1
+    severity: MEDIUM
+    target: ""
+    title: 'jquery: Untrusted code execution via <option> tag in HTML passed to DOM
+      manipulation methods'
+    vulnerabilityID: CVE-2020-11023
+  - fixedVersion: 4.13-5.el8_10
+    installedVersion: 4.13-4.el8_7
+    lastModifiedDate: "2026-03-24T23:17:06Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/libtasn1@4.13-4.el8_7?arch=x86_64&distro=redhat-8.9
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-12133
+    publishedDate: "2025-02-10T16:15:37Z"
+    resource: libtasn1
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'libtasn1: Inefficient DER Decoding in libtasn1 Leading to Potential Remote
+      DoS'
+    vulnerabilityID: CVE-2024-12133
+  - fixedVersion: 1:1.1.1k-15.el8_6
+    installedVersion: 1:1.1.1k-12.el8_9
+    lastModifiedDate: "2026-02-02T18:35:02Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/openssl@1.1.1k-12.el8_9?arch=x86_64&distro=redhat-8.9&epoch=1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69419
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: openssl
+    score: 7.4
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Arbitrary code execution due to out-of-bounds write
+      in PKCS#12 processing'
+    vulnerabilityID: CVE-2025-69419
+  - fixedVersion: 1:1.1.1k-14.el8_10
+    installedVersion: 1:1.1.1k-12.el8_9
+    lastModifiedDate: "2025-11-04T22:16:45Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/openssl@1.1.1k-12.el8_9?arch=x86_64&distro=redhat-8.9&epoch=1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9230
+    publishedDate: "2025-09-30T14:15:41Z"
+    resource: openssl
+    score: 5.6
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Out-of-bounds read & write in RFC 3211 KEK Unwrap'
+    vulnerabilityID: CVE-2025-9230
+  - fixedVersion: 1:1.1.1k-14.el8_6
+    installedVersion: 1:1.1.1k-12.el8_9
+    lastModifiedDate: "2025-11-03T23:17:30Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/openssl@1.1.1k-12.el8_9?arch=x86_64&distro=redhat-8.9&epoch=1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-5535
+    publishedDate: "2024-06-27T11:15:24Z"
+    resource: openssl
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'openssl: SSL_select_next_proto buffer overread'
+    vulnerabilityID: CVE-2024-5535
+  - fixedVersion: 1:1.1.1k-15.el8_6
+    installedVersion: 1:1.1.1k-12.el8_9
+    lastModifiedDate: "2026-02-02T18:35:02Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/openssl-libs@1.1.1k-12.el8_9?arch=x86_64&distro=redhat-8.9&epoch=1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69419
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: openssl-libs
+    score: 7.4
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Arbitrary code execution due to out-of-bounds write
+      in PKCS#12 processing'
+    vulnerabilityID: CVE-2025-69419
+  - fixedVersion: 1:1.1.1k-14.el8_10
+    installedVersion: 1:1.1.1k-12.el8_9
+    lastModifiedDate: "2025-11-04T22:16:45Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/openssl-libs@1.1.1k-12.el8_9?arch=x86_64&distro=redhat-8.9&epoch=1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9230
+    publishedDate: "2025-09-30T14:15:41Z"
+    resource: openssl-libs
+    score: 5.6
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Out-of-bounds read & write in RFC 3211 KEK Unwrap'
+    vulnerabilityID: CVE-2025-9230
+  - fixedVersion: 1:1.1.1k-14.el8_6
+    installedVersion: 1:1.1.1k-12.el8_9
+    lastModifiedDate: "2025-11-03T23:17:30Z"
+    links: []
+    packagePURL: pkg:rpm/redhat/openssl-libs@1.1.1k-12.el8_9?arch=x86_64&distro=redhat-8.9&epoch=1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-5535
+    publishedDate: "2024-06-27T11:15:24Z"
+    resource: openssl-libs
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'openssl: SSL_select_next_proto buffer overread'
+    vulnerabilityID: CVE-2024-5535
+  - fixedVersion: 3.0.4
+    installedVersion: v2.6.3+incompatible
+    lastModifiedDate: "2025-02-24T23:15:11Z"
+    links: []
+    packagePURL: pkg:golang/github.com/go-jose/go-jose@v2.6.3%2Bincompatible
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-27144
+    publishedDate: "2025-02-24T23:15:11Z"
+    resource: github.com/go-jose/go-jose
+    score: 7.5
+    severity: MEDIUM
+    target: ""
+    title: 'go-jose: Go JOSE''s Parsing Vulnerable to Denial of Service'
+    vulnerabilityID: CVE-2025-27144
+  - fixedVersion: 1.40.0
+    installedVersion: v1.22.0
+    lastModifiedDate: "2026-02-27T20:32:10Z"
+    links: []
+    packagePURL: pkg:golang/go.opentelemetry.io/otel/sdk@v1.22.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-24051
+    publishedDate: "2026-02-02T23:16:07Z"
+    resource: go.opentelemetry.io/otel/sdk
+    score: 7
+    severity: HIGH
+    target: ""
+    title: OpenTelemetry Go SDK Vulnerable to Arbitrary Code Execution via PATH Hijacking
+    vulnerabilityID: CVE-2026-24051
+  - fixedVersion: 0.31.0
+    installedVersion: v0.26.0
+    lastModifiedDate: "2025-02-18T21:15:22Z"
+    links: []
+    packagePURL: pkg:golang/golang.org/x/crypto@v0.26.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-45337
+    publishedDate: "2024-12-12T02:02:07Z"
+    resource: golang.org/x/crypto
+    score: 8.2
+    severity: CRITICAL
+    target: ""
+    title: 'golang.org/x/crypto/ssh: Misuse of ServerConfig.PublicKeyCallback may
+      cause authorization bypass in golang.org/x/crypto'
+    vulnerabilityID: CVE-2024-45337
+  - fixedVersion: 0.35.0
+    installedVersion: v0.26.0
+    lastModifiedDate: "2025-05-01T19:28:20Z"
+    links: []
+    packagePURL: pkg:golang/golang.org/x/crypto@v0.26.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-22869
+    publishedDate: "2025-02-26T08:14:24Z"
+    resource: golang.org/x/crypto
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang.org/x/crypto/ssh: Denial of Service in the Key Exchange of golang.org/x/crypto/ssh'
+    vulnerabilityID: CVE-2025-22869
+  - fixedVersion: 0.45.0
+    installedVersion: v0.26.0
+    lastModifiedDate: "2025-12-11T19:36:41Z"
+    links: []
+    packagePURL: pkg:golang/golang.org/x/crypto@v0.26.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-47914
+    publishedDate: "2025-11-19T21:15:50Z"
+    resource: golang.org/x/crypto
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'golang.org/x/crypto/ssh/agent: SSH Agent servers: Denial of Service due
+      to malformed messages'
+    vulnerabilityID: CVE-2025-47914
+  - fixedVersion: 0.45.0
+    installedVersion: v0.26.0
+    lastModifiedDate: "2025-12-11T19:29:24Z"
+    links: []
+    packagePURL: pkg:golang/golang.org/x/crypto@v0.26.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58181
+    publishedDate: "2025-11-19T21:15:50Z"
+    resource: golang.org/x/crypto
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'golang.org/x/crypto/ssh: golang.org/x/crypto/ssh: Denial of Service via
+      unbounded memory consumption in GSSAPI authentication'
+    vulnerabilityID: CVE-2025-58181
+  - fixedVersion: 0.36.0
+    installedVersion: v0.28.0
+    lastModifiedDate: "2025-05-09T20:15:38Z"
+    links: []
+    packagePURL: pkg:golang/golang.org/x/net@v0.28.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-22870
+    publishedDate: "2025-03-12T19:15:38Z"
+    resource: golang.org/x/net
+    score: 4.4
+    severity: MEDIUM
+    target: ""
+    title: 'golang.org/x/net/proxy: golang.org/x/net/http/httpproxy: HTTP Proxy bypass
+      using IPv6 Zone IDs in golang.org/x/net'
+    vulnerabilityID: CVE-2025-22870
+  - fixedVersion: 0.38.0
+    installedVersion: v0.28.0
+    lastModifiedDate: "2025-05-16T23:15:19Z"
+    links: []
+    packagePURL: pkg:golang/golang.org/x/net@v0.28.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-22872
+    publishedDate: "2025-04-16T18:16:04Z"
+    resource: golang.org/x/net
+    severity: MEDIUM
+    target: ""
+    title: 'golang.org/x/net/html: Incorrect Neutralization of Input During Web Page
+      Generation in x/net in golang.org/x/net'
+    vulnerabilityID: CVE-2025-22872
+  - fixedVersion: 0.27.0
+    installedVersion: v0.21.0
+    lastModifiedDate: "2025-05-01T19:27:10Z"
+    links: []
+    packagePURL: pkg:golang/golang.org/x/oauth2@v0.21.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-22868
+    publishedDate: "2025-02-26T08:14:24Z"
+    resource: golang.org/x/oauth2
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang.org/x/oauth2/jws: Unexpected memory consumption during token parsing
+      in golang.org/x/oauth2/jws'
+    vulnerabilityID: CVE-2025-22868
+  - fixedVersion: 1.79.3
+    installedVersion: v1.66.2
+    lastModifiedDate: "2026-03-23T14:32:02Z"
+    links: []
+    packagePURL: pkg:golang/google.golang.org/grpc@v1.66.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-33186
+    publishedDate: "2026-03-20T23:16:45Z"
+    resource: google.golang.org/grpc
+    score: 9.1
+    severity: CRITICAL
+    target: ""
+    title: 'google.golang.org/grpc/grpc-go: google.golang.org/grpc/authz: gRPC-Go:
+      Authorization bypass due to improper HTTP/2 path validation'
+    vulnerabilityID: CVE-2026-33186
+  - fixedVersion: 1.24.13, 1.25.7, 1.26.0-rc.3
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-02-20T17:25:50Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-68121
+    publishedDate: "2026-02-05T18:16:10Z"
+    resource: stdlib
+    score: 7.4
+    severity: CRITICAL
+    target: ""
+    title: 'crypto/tls: Unexpected session resumption in crypto/tls'
+    vulnerabilityID: CVE-2025-68121
+  - fixedVersion: 1.22.7, 1.23.1
+    installedVersion: v1.22.5
+    lastModifiedDate: "2024-11-21T09:18:12Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-34156
+    publishedDate: "2024-09-06T21:15:12Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'encoding/gob: golang: Calling Decoder.Decode on a message which contains
+      deeply nested structures can cause a panic due to stack exhaustion'
+    vulnerabilityID: CVE-2024-34156
+  - fixedVersion: 1.23.12, 1.24.6
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-01-29T19:11:50Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-47907
+    publishedDate: "2025-08-07T16:15:30Z"
+    resource: stdlib
+    score: 7
+    severity: HIGH
+    target: ""
+    title: 'database/sql: Postgres Scan Race Condition'
+    vulnerabilityID: CVE-2025-47907
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.22.5
+    lastModifiedDate: "2025-11-04T22:16:33Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58183
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: archive/tar: Unbounded allocation when parsing GNU sparse map'
+    vulnerabilityID: CVE-2025-58183
+  - fixedVersion: 1.24.12, 1.25.6
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-02-06T18:47:34Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61726
+    publishedDate: "2026-01-28T20:16:09Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: net/url: Memory exhaustion in query parameter parsing in net/url'
+    vulnerabilityID: CVE-2025-61726
+  - fixedVersion: 1.24.12, 1.25.6
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-02-06T18:45:10Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61728
+    publishedDate: "2026-01-28T20:16:09Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'golang: archive/zip: Excessive CPU consumption when building archive index
+      in archive/zip'
+    vulnerabilityID: CVE-2025-61728
+  - fixedVersion: 1.24.11, 1.25.5
+    installedVersion: v1.22.5
+    lastModifiedDate: "2025-12-19T18:25:28Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61729
+    publishedDate: "2025-12-02T19:15:51Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'crypto/x509: golang: Denial of Service due to excessive resource consumption
+      via crafted certificate'
+    vulnerabilityID: CVE-2025-61729
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-03-10T18:18:37Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-25679
+    publishedDate: "2026-03-06T22:16:00Z"
+    resource: stdlib
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'net/url: Incorrect parsing of IPv6 host literals in net/url'
+    vulnerabilityID: CVE-2026-25679
+  - fixedVersion: 1.22.7, 1.23.1
+    installedVersion: v1.22.5
+    lastModifiedDate: "2024-11-21T09:18:12Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-34155
+    publishedDate: "2024-09-06T21:15:11Z"
+    resource: stdlib
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'go/parser: golang: Calling any of the Parse functions containing deeply
+      nested literals can cause a panic/stack exhaustion'
+    vulnerabilityID: CVE-2024-34155
+  - fixedVersion: 1.22.7, 1.23.1
+    installedVersion: v1.22.5
+    lastModifiedDate: "2024-11-21T09:18:13Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-34158
+    publishedDate: "2024-09-06T21:15:12Z"
+    resource: stdlib
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'go/build/constraint: golang: Calling Parse on a "// +build" build tag
+      line with deeply nested expressions can cause a panic due to stack exhaustion'
+    vulnerabilityID: CVE-2024-34158
+  - fixedVersion: 1.22.11, 1.23.5, 1.24.0-rc.2
+    installedVersion: v1.22.5
+    lastModifiedDate: "2025-02-21T18:15:17Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-45336
+    publishedDate: "2025-01-28T02:15:28Z"
+    resource: stdlib
+    score: 6.1
+    severity: MEDIUM
+    target: ""
+    title: 'golang: net/http: net/http: sensitive headers incorrectly sent after cross-domain
+      redirect'
+    vulnerabilityID: CVE-2024-45336
+  - fixedVersion: 1.22.11, 1.23.5, 1.24.0-rc.2
+    installedVersion: v1.22.5
+    lastModifiedDate: "2025-02-21T18:15:17Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-45341
+    publishedDate: "2025-01-28T02:15:29Z"
+    resource: stdlib
+    score: 4.2
+    severity: MEDIUM
+    target: ""
+    title: 'golang: crypto/x509: crypto/x509: usage of IPv6 zone IDs can bypass URI
+      name constraints'
+    vulnerabilityID: CVE-2024-45341
+  - fixedVersion: 1.23.10, 1.24.4
+    installedVersion: v1.22.5
+    lastModifiedDate: "2025-08-08T14:53:03Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0913
+    publishedDate: "2025-06-11T18:15:24Z"
+    resource: stdlib
+    score: 5.5
+    severity: MEDIUM
+    target: ""
+    title: Inconsistent handling of O_CREATE|O_EXCL on Unix and Windows in os in syscall
+    vulnerabilityID: CVE-2025-0913
+  - fixedVersion: 1.22.12, 1.23.6, 1.24.0-rc.3
+    installedVersion: v1.22.5
+    lastModifiedDate: "2025-02-21T18:15:32Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-22866
+    publishedDate: "2025-02-06T17:15:21Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'crypto/internal/nistec: golang: Timing sidechannel for P-256 on ppc64le
+      in crypto/internal/nistec'
+    vulnerabilityID: CVE-2025-22866
+  - fixedVersion: 1.23.8, 1.24.2
+    installedVersion: v1.22.5
+    lastModifiedDate: "2025-04-18T15:15:57Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-22871
+    publishedDate: "2025-04-08T20:15:20Z"
+    resource: stdlib
+    score: 9.1
+    severity: MEDIUM
+    target: ""
+    title: 'net/http: Request smuggling due to acceptance of invalid chunked data
+      in net/http'
+    vulnerabilityID: CVE-2025-22871
+  - fixedVersion: 1.23.9, 1.24.3
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-02-10T15:16:40Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-22873
+    publishedDate: "2026-02-04T23:15:54Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'os: os: Information disclosure via path traversal using specially crafted
+      filenames'
+    vulnerabilityID: CVE-2025-22873
+  - fixedVersion: 1.23.10, 1.24.4
+    installedVersion: v1.22.5
+    lastModifiedDate: "2025-06-12T16:06:20Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-4673
+    publishedDate: "2025-06-11T17:15:42Z"
+    resource: stdlib
+    score: 6.8
+    severity: MEDIUM
+    target: ""
+    title: 'net/http: Sensitive headers not cleared on cross-origin redirect in net/http'
+    vulnerabilityID: CVE-2025-4673
+  - fixedVersion: 1.23.12, 1.24.6
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-01-27T19:56:17Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-47906
+    publishedDate: "2025-09-18T19:15:37Z"
+    resource: stdlib
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'os/exec: Unexpected paths returned from LookPath in os/exec'
+    vulnerabilityID: CVE-2025-47906
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-01-29T13:57:18Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-47912
+    publishedDate: "2025-10-29T23:16:18Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'net/url: Insufficient validation of bracketed IPv6 hostnames in net/url'
+    vulnerabilityID: CVE-2025-47912
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-02-06T20:26:41Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58185
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'encoding/asn1: Parsing DER payload can cause memory exhaustion in encoding/asn1'
+    vulnerabilityID: CVE-2025-58185
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.22.5
+    lastModifiedDate: "2025-11-04T22:16:33Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58186
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'golang.org/net/http: Lack of limit when parsing cookies can cause memory
+      exhaustion in net/http'
+    vulnerabilityID: CVE-2025-58186
+  - fixedVersion: 1.24.9, 1.25.3
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-01-29T16:02:27Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58187
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'crypto/x509: Quadratic complexity when checking name constraints in crypto/x509'
+    vulnerabilityID: CVE-2025-58187
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-01-29T15:55:11Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58188
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'crypto/x509: golang: Panic when validating certificates with DSA public
+      keys in crypto/x509'
+    vulnerabilityID: CVE-2025-58188
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-01-29T15:49:24Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-58189
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'crypto/tls: go crypto/tls ALPN negotiation error contains attacker controlled
+      information'
+    vulnerabilityID: CVE-2025-58189
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-01-29T15:49:05Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61723
+    publishedDate: "2025-10-29T23:16:19Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'encoding/pem: Quadratic complexity when parsing some invalid inputs in
+      encoding/pem'
+    vulnerabilityID: CVE-2025-61723
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-01-29T15:30:53Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61724
+    publishedDate: "2025-10-29T23:16:20Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'net/textproto: Excessive CPU consumption in Reader.ReadResponse in net/textproto'
+    vulnerabilityID: CVE-2025-61724
+  - fixedVersion: 1.24.8, 1.25.2
+    installedVersion: v1.22.5
+    lastModifiedDate: "2025-12-09T18:15:56Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61725
+    publishedDate: "2025-10-29T23:16:20Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'net/mail: Excessive CPU consumption in ParseAddress in net/mail'
+    vulnerabilityID: CVE-2025-61725
+  - fixedVersion: 1.24.11, 1.25.5
+    installedVersion: v1.22.5
+    lastModifiedDate: "2025-12-18T20:15:10Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61727
+    publishedDate: "2025-12-03T20:16:25Z"
+    resource: stdlib
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'golang: crypto/x509: excluded subdomain constraint does not restrict wildcard
+      SANs'
+    vulnerabilityID: CVE-2025-61727
+  - fixedVersion: 1.24.12, 1.25.6
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-02-03T20:36:41Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-61730
+    publishedDate: "2026-01-28T20:16:09Z"
+    resource: stdlib
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: During the TLS 1.3 handshake if multiple messages are sent in records  ...
+    vulnerabilityID: CVE-2025-61730
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-03-16T16:16:13Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-27142
+    publishedDate: "2026-03-06T22:16:01Z"
+    resource: stdlib
+    score: 5.4
+    severity: MEDIUM
+    target: ""
+    title: 'html/template: URLs in meta content attribute actions are not escaped
+      in html/template'
+    vulnerabilityID: CVE-2026-27142
+  - fixedVersion: 1.25.8, 1.26.1
+    installedVersion: v1.22.5
+    lastModifiedDate: "2026-03-09T15:15:57Z"
+    links: []
+    packagePURL: pkg:golang/stdlib@v1.22.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-27139
+    publishedDate: "2026-03-06T22:16:01Z"
+    resource: stdlib
+    score: 2.5
+    severity: LOW
+    target: ""
+    title: 'os: FileInfo can escape from a Root in golang os module'
+    vulnerabilityID: CVE-2026-27139

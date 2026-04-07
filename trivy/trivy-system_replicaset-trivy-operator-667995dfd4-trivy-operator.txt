@@ -1,0 +1,158 @@
+apiVersion: aquasecurity.github.io/v1alpha1
+kind: VulnerabilityReport
+metadata:
+  annotations:
+    trivy-operator.aquasecurity.github.io/report-ttl: 24h0m0s
+  creationTimestamp: "2026-04-06T14:20:04Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/managed-by: trivy-operator
+    resource-spec-hash: 55d79c8b85
+    trivy-operator.container.name: trivy-operator
+    trivy-operator.resource.kind: ReplicaSet
+    trivy-operator.resource.name: trivy-operator-667995dfd4
+    trivy-operator.resource.namespace: trivy-system
+  name: replicaset-trivy-operator-667995dfd4-trivy-operator
+  namespace: trivy-system
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: false
+    controller: true
+    kind: ReplicaSet
+    name: trivy-operator-667995dfd4
+    uid: bac765d1-5f00-4194-a21e-259f9abfeed2
+  resourceVersion: "2143574"
+  uid: 71b9e795-532a-478b-9214-0bbfb4f55d6f
+report:
+  artifact:
+    digest: sha256:448484ece65e26f1c7237c8d20dab997f5a8319968286a09e188140b863cf1f9
+    repository: aquasec/trivy-operator
+    tag: 0.30.1
+  os:
+    family: alpine
+    name: 3.23.3
+  registry:
+    server: mirror.gcr.io
+  scanner:
+    name: Trivy
+    vendor: Aqua Security
+    version: 0.69.3
+  summary:
+    criticalCount: 1
+    highCount: 4
+    lowCount: 1
+    mediumCount: 2
+    noneCount: 0
+    unknownCount: 0
+  updateTimestamp: "2026-04-06T14:20:04Z"
+  vulnerabilities:
+  - fixedVersion: 29.3.1
+    installedVersion: v28.5.2+incompatible
+    lastModifiedDate: "2026-04-03T16:51:28Z"
+    links: []
+    packagePURL: pkg:golang/github.com/docker/docker@v28.5.2%2Bincompatible
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-34040
+    publishedDate: "2026-03-31T03:15:57Z"
+    resource: github.com/docker/docker
+    score: 8.8
+    severity: HIGH
+    target: ""
+    title: Moby is an open source container framework. Prior to version 29.3.1, a
+      ...
+    vulnerabilityID: CVE-2026-34040
+  - fixedVersion: 29.3.1
+    installedVersion: v28.5.2+incompatible
+    lastModifiedDate: "2026-04-03T17:23:21Z"
+    links: []
+    packagePURL: pkg:golang/github.com/docker/docker@v28.5.2%2Bincompatible
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-33997
+    publishedDate: "2026-03-31T03:15:57Z"
+    resource: github.com/docker/docker
+    score: 8.4
+    severity: MEDIUM
+    target: ""
+    title: 'moby: docker: github.com/moby/moby: Moby: Privilege validation bypass
+      during plugin installation'
+    vulnerabilityID: CVE-2026-33997
+  - fixedVersion: 5.17.1
+    installedVersion: v5.16.5
+    lastModifiedDate: "2026-04-02T16:49:16Z"
+    links: []
+    packagePURL: pkg:golang/github.com/go-git/go-git/v5@v5.16.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-34165
+    publishedDate: "2026-03-31T15:16:17Z"
+    resource: github.com/go-git/go-git/v5
+    score: 5
+    severity: MEDIUM
+    target: ""
+    title: 'github.com/go-git/go-git/v5: go-git: Denial of Service via crafted .idx
+      file'
+    vulnerabilityID: CVE-2026-34165
+  - fixedVersion: 5.17.1
+    installedVersion: v5.16.5
+    lastModifiedDate: "2026-04-02T16:49:29Z"
+    links: []
+    packagePURL: pkg:golang/github.com/go-git/go-git/v5@v5.16.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-33762
+    publishedDate: "2026-03-31T15:16:15Z"
+    resource: github.com/go-git/go-git/v5
+    score: 2.8
+    severity: LOW
+    target: ""
+    title: 'github.com/go-git/go-git/v5: go-git: Denial of Service via crafted Git
+      index file'
+    vulnerabilityID: CVE-2026-33762
+  - fixedVersion: 4.1.4
+    installedVersion: v4.1.3
+    lastModifiedDate: ""
+    links: []
+    packagePURL: pkg:golang/github.com/go-jose/go-jose/v4@v4.1.3
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-34986
+    publishedDate: ""
+    resource: github.com/go-jose/go-jose/v4
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: Go JOSE Panics in JWE decryption
+    vulnerabilityID: CVE-2026-34986
+  - fixedVersion: 0.28.1
+    installedVersion: v0.26.2
+    lastModifiedDate: "2026-04-01T14:34:48Z"
+    links: []
+    packagePURL: pkg:golang/github.com/moby/buildkit@v0.26.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-33747
+    publishedDate: "2026-03-27T01:16:21Z"
+    resource: github.com/moby/buildkit
+    score: 8.2
+    severity: HIGH
+    target: ""
+    title: 'BuildKit: github.com/moby/buildkit: BuildKit: Arbitrary file write and
+      code execution via untrusted frontend'
+    vulnerabilityID: CVE-2026-33747
+  - fixedVersion: 0.28.1
+    installedVersion: v0.26.2
+    lastModifiedDate: "2026-03-30T13:26:29Z"
+    links: []
+    packagePURL: pkg:golang/github.com/moby/buildkit@v0.26.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-33748
+    publishedDate: "2026-03-27T15:16:57Z"
+    resource: github.com/moby/buildkit
+    severity: HIGH
+    target: ""
+    title: 'github.com/moby/buildkit: BuildKit: Unauthorized file access via Git URL
+      fragment subdir components'
+    vulnerabilityID: CVE-2026-33748
+  - fixedVersion: 1.79.3
+    installedVersion: v1.78.0
+    lastModifiedDate: "2026-03-23T14:32:02Z"
+    links: []
+    packagePURL: pkg:golang/google.golang.org/grpc@v1.78.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-33186
+    publishedDate: "2026-03-20T23:16:45Z"
+    resource: google.golang.org/grpc
+    score: 8.1
+    severity: CRITICAL
+    target: ""
+    title: 'google.golang.org/grpc/grpc-go: google.golang.org/grpc/authz: gRPC-Go:
+      Authorization bypass due to improper HTTP/2 path validation'
+    vulnerabilityID: CVE-2026-33186

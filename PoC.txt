@@ -1,0 +1,278 @@
+================================================================
+  THESIS PoC — INSTALLATION STEPS
+  Title: K8s/Container Security Monitoring with Open Source Tools
+  Stack: Minikube → kube-goat → Trivy → Kyverno → Falco →
+         Falcosidekick → Prometheus → Grafana → Istio → Kiali
+================================================================
+
+
+----------------------------------------------------------------
+LAYER 0 — Minikube (Local Kubernetes Environment)
+----------------------------------------------------------------
+
+# Install minikube
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+# Install kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# Install Helm
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+# Start cluster with enough resources
+minikube start --driver=docker --cpus=4 --memory=8192 --disk-size=30g
+
+# Enable required addons
+minikube addons enable metrics-server
+minikube addons enable ingress
+
+# Verify
+kubectl get nodes
+kubectl get pods -A
+
+
+----------------------------------------------------------------
+LAYER 0.1 — kube-goat (Vulnerable Target Application)
+----------------------------------------------------------------
+
+# Clone the repo
+git clone https://github.com/ksoclabs/kube-goat.git
+cd kube-goat
+chmod +x setup-kubernetes-goat.sh
+bash setup-kubernetes-goat.sh
+
+#Ensure the pods are running before running the access script
+kubectl get pods
+
+#Access Kubernetes Goat by exposing the resources to the local system (port-forward) by the following command:
+bash access-kubernetes-goat.sh
+
+# Confirm vulnerable workloads are up
+kubectl get pods -n big-monolith
+
+
+----------------------------------------------------------------
+LAYER 1 — Trivy Operator (Pre-runtime Image Scanning)
+----------------------------------------------------------------
+
+# Add Aqua Security Helm repo
+helm repo add aquasecurity https://aquasecurity.github.io/helm-charts/
+helm repo update
+
+# Install Trivy Operator
+helm install trivy-operator aquasecurity/trivy-operator \
+  --namespace trivy-system \
+  --create-namespace \
+  --set="trivy.ignoreUnfixed=true"
+
+# Verify operator is running
+kubectl get pods -n trivy-system
+
+# Wait for vulnerability reports to be generated (takes a few minutes)
+kubectl get vulnerabilityreports -A
+
+# Inspect a specific report
+kubectl describe vulnerabilityreport -n big-monolith <report-name>
+
+# Extract reports in txt
+kubectl get vulnerabilityreports -A --no-headers | while read namespace name rest; do
+  kubectl get vulnerabilityreport -n $namespace $name -o yaml > thesis-poc/trivy/${namespace}_${name}.txt
+done
+
+# Upgrade if needed
+helm upgrade trivy-operator aquasecurity/trivy-operator \
+  --namespace trivy-system \
+  --reuse-values
+
+
+----------------------------------------------------------------
+LAYER 2 — Kyverno (Admission Controller / Policy Enforcement)
+----------------------------------------------------------------
+
+# Add Kyverno Helm repo
+helm repo add kyverno https://kyverno.github.io/kyverno/
+helm repo update
+
+# Install Kyverno
+helm install kyverno kyverno/kyverno \
+  --namespace kyverno \
+  --create-namespace
+
+# Install default Kyverno policies (optional but recommended)
+helm install kyverno-policies kyverno/kyverno-policies \
+  --namespace kyverno
+
+# Verify
+kubectl get pods -n kyverno
+kubectl get clusterpolicy -A
+
+# Test policy enforcement
+kubectl get events -n kyverno
+
+
+----------------------------------------------------------------
+LAYER 3 — Falco + Falcosidekick (Runtime Threat Detection)
+----------------------------------------------------------------
+
+# Add Falco Helm repo
+helm repo add falcosecurity https://falcosecurity.github.io/charts
+helm repo update
+
+# Install Falco with Falcosidekick and falco-exporter enabled
+helm install falco falcosecurity/falco \
+  --namespace falco \
+  --create-namespace \
+  --set falcosidekick.enabled=true \
+  --set falcosidekick.webui.enabled=true \
+  --set falco-exporter.enabled=true \
+  --set driver.kind=ebpf
+
+# Verify
+kubectl get pods -n falco
+
+# Access Falcosidekick Web UI
+kubectl port-forward svc/falco-falcosidekick-ui -n falco 2802:2802
+# → http://localhost:2802
+
+# View Falco logs live
+kubectl logs -n falco -l app.kubernetes.io/name=falco -f
+
+# Test Falco detection (trigger a known rule)
+kubectl exec -n big-monolith \
+  $(kubectl get pod -n big-monolith -o jsonpath='{.items[0].metadata.name}') \
+  -- cat /etc/shadow
+
+
+----------------------------------------------------------------
+LAYER 4 — Prometheus + Grafana +LOKI(Metrics & Visualization)
+----------------------------------------------------------------
+
+# Add Prometheus community Helm repo
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+# Install kube-prometheus-stack (includes Prometheus + Grafana + AlertManager)
+helm install prometheus prometheus-community/kube-prometheus-stack \
+  --namespace monitoring \
+  --create-namespace \
+  --set grafana.enabled=true \
+  --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues=false
+
+# Verify
+kubectl get pods -n monitoring
+
+# Access Prometheus UI
+kubectl port-forward svc/prometheus-kube-prometheus-prometheus -n monitoring 9090:9090
+# → http://localhost:9090
+
+# Access Grafana UI
+kubectl port-forward svc/prometheus-grafana -n monitoring 3000:80
+# → http://localhost:3000
+# Default credentials: admin / admin
+
+# Import Falco Dashboard in Grafana
+# Grafana UI → Dashboards → Import → Dashboard ID: 11914
+
+# Useful Prometheus queries for Falco metrics:
+#   falco_events_total
+#   falco_events_total{priority="WARNING"}
+#   rate(falco_events_total[5m])
+
+#LOKI
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+
+helm install loki grafana/loki-stack \
+  --namespace monitoring \
+  --set grafana.enabled=false \
+  --set prometheus.enabled=false
+
+# Upgrade loki image to latest
+helm upgrade loki grafana/loki-stack \
+  --namespace monitoring \
+  --reuse-values \
+  --set loki.image.tag=latest
+
+# Verify
+kubectl get pods -n monitoring | grep loki
+
+
+----------------------------------------------------------------
+LAYER 5 — Istio + Kiali (Service Mesh & Traffic Visualization)
+----------------------------------------------------------------
+
+# Download istioctl
+curl -L https://istio.io/downloadIstio | sh -
+cd istio-*/
+export PATH=$PWD/bin:$PATH
+
+# Install Istio (demo profile for thesis/lab use)
+istioctl install --set profile=demo -y
+
+# Enable automatic sidecar injection for the target namespace
+kubectl label namespace big-monolith istio-injection=enabled
+
+# Restart pods so sidecars get injected
+kubectl rollout restart deployment -n big-monolith
+
+# Verify sidecars are running (should show 2/2 READY)
+kubectl get pods -n big-monolith
+
+# Install Kiali + supporting addons
+kubectl apply -f samples/addons/kiali.yaml
+kubectl apply -f samples/addons/prometheus.yaml
+kubectl apply -f samples/addons/jaeger.yaml
+
+# Verify Istio system pods
+kubectl get pods -n istio-system
+
+# Access Kiali dashboard
+istioctl dashboard kiali
+# → http://localhost:20001/kiali
+
+# Generate traffic to see in Kiali
+kubectl exec -n big-monolith \
+  $(kubectl get pod -n big-monolith -o jsonpath='{.items[0].metadata.name}') \
+  -- curl -s http://health-check-service.health-check/
+
+
+----------------------------------------------------------------
+QUICK STATUS CHECK — Full Stack
+----------------------------------------------------------------
+
+# One-liner to see all security/monitoring pods
+kubectl get pods -A | grep -E "falco|trivy|kyverno|monitoring|istio|loki"
+
+# Per-namespace summary
+for ns in falco trivy-system kyverno monitoring istio-system; do
+  echo "=== $ns ==="
+  kubectl get pods -n $ns --no-headers | awk '{print $1, $3}'
+done
+
+# Helm releases summary
+helm list -A
+
+
+----------------------------------------------------------------
+VERSION TABLE (fill in after running: helm list -A)
+----------------------------------------------------------------
+
+Tool              | Namespace    | Helm Chart                  | App Version
+------------------|-------------|----------------------------|-------------
+Falco             | falco        | falco-8.0.1                 | 0.43.0
+Kyverno           | kyverno      | kyverno-3.7.1               | v1.17.1
+Loki Stack        | monitoring   | loki-stack-2.10.3           | v2.9.3
+Prometheus Stack  | monitoring   | kube-prometheus-stack-82.12.0 | v0.89.0
+Trivy Operator    | trivy-system | trivy-operator-0.32.1       | 0.30.1
+Istio             | istio-system | demo profile                | (istioctl version)
+Kiali             | istio-system | addon                       | (kubectl get)
+kube-goat         | default      | manual (git)                | latest
+Minikube          | -            | -                           | (minikube version)
+kubectl           | -            | -                           | (kubectl version)
+ 
+
+================================================================
+END OF INSTALLATION STEPS
+================================================================

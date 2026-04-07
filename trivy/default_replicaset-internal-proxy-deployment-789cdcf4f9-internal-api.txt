@@ -1,0 +1,1238 @@
+apiVersion: aquasecurity.github.io/v1alpha1
+kind: VulnerabilityReport
+metadata:
+  annotations:
+    trivy-operator.aquasecurity.github.io/report-ttl: 24h0m0s
+  creationTimestamp: "2026-04-06T14:20:54Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/managed-by: trivy-operator
+    resource-spec-hash: 6c945c8787
+    trivy-operator.container.name: internal-api
+    trivy-operator.resource.kind: ReplicaSet
+    trivy-operator.resource.name: internal-proxy-deployment-789cdcf4f9
+    trivy-operator.resource.namespace: default
+  name: replicaset-internal-proxy-deployment-789cdcf4f9-internal-api
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: false
+    controller: true
+    kind: ReplicaSet
+    name: internal-proxy-deployment-789cdcf4f9
+    uid: 3680b289-9c44-4d3e-9a7e-0a05e9e36376
+  resourceVersion: "2143871"
+  uid: 8a07df9e-76d2-4732-8377-d0f51a891426
+report:
+  artifact:
+    digest: sha256:afcafd47327363070f788b3cc755e98ce5f556e3fea2cb16f8ae18a35b6f4d53
+    repository: madhuakula/k8s-goat-internal-api
+    tag: latest
+  os:
+    eosl: true
+    family: alpine
+    name: 3.20.2
+  registry:
+    server: index.docker.io
+  scanner:
+    name: Trivy
+    vendor: Aqua Security
+    version: 0.69.3
+  summary:
+    criticalCount: 2
+    highCount: 26
+    lowCount: 16
+    mediumCount: 45
+    noneCount: 0
+    unknownCount: 0
+  updateTimestamp: "2026-04-06T14:20:54Z"
+  vulnerabilities:
+  - fixedVersion: 1.36.1-r31
+    installedVersion: 1.36.1-r29
+    lastModifiedDate: "2025-04-29T13:52:47Z"
+    links: []
+    packagePURL: pkg:apk/alpine/busybox@1.36.1-r29?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-58251
+    publishedDate: "2025-04-23T18:16:03Z"
+    resource: busybox
+    severity: MEDIUM
+    target: ""
+    title: In netstat in BusyBox through 1.37.0, local users can launch of networ
+      ...
+    vulnerabilityID: CVE-2024-58251
+  - fixedVersion: 1.36.1-r31
+    installedVersion: 1.36.1-r29
+    lastModifiedDate: "2025-09-24T14:38:22Z"
+    links: []
+    packagePURL: pkg:apk/alpine/busybox@1.36.1-r29?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-46394
+    publishedDate: "2025-04-23T16:15:48Z"
+    resource: busybox
+    score: 3.3
+    severity: LOW
+    target: ""
+    title: In tar in BusyBox through 1.37.0, a TAR archive can have filenames hid
+      ...
+    vulnerabilityID: CVE-2025-46394
+  - fixedVersion: 1.36.1-r31
+    installedVersion: 1.36.1-r29
+    lastModifiedDate: "2025-04-29T13:52:47Z"
+    links: []
+    packagePURL: pkg:apk/alpine/busybox-binsh@1.36.1-r29?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-58251
+    publishedDate: "2025-04-23T18:16:03Z"
+    resource: busybox-binsh
+    severity: MEDIUM
+    target: ""
+    title: In netstat in BusyBox through 1.37.0, local users can launch of networ
+      ...
+    vulnerabilityID: CVE-2024-58251
+  - fixedVersion: 1.36.1-r31
+    installedVersion: 1.36.1-r29
+    lastModifiedDate: "2025-09-24T14:38:22Z"
+    links: []
+    packagePURL: pkg:apk/alpine/busybox-binsh@1.36.1-r29?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-46394
+    publishedDate: "2025-04-23T16:15:48Z"
+    resource: busybox-binsh
+    score: 3.3
+    severity: LOW
+    target: ""
+    title: In tar in BusyBox through 1.37.0, a TAR archive can have filenames hid
+      ...
+    vulnerabilityID: CVE-2025-46394
+  - fixedVersion: 8.11.1-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-11-03T21:16:04Z"
+    links: []
+    packagePURL: pkg:apk/alpine/curl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-11053
+    publishedDate: "2024-12-11T08:15:05Z"
+    resource: curl
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'curl: curl netrc password leak'
+    vulnerabilityID: CVE-2024-11053
+  - fixedVersion: 8.10.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-07-30T19:42:16Z"
+    links: []
+    packagePURL: pkg:apk/alpine/curl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-8096
+    publishedDate: "2024-09-11T10:15:02Z"
+    resource: curl
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'curl: OCSP stapling bypass with GnuTLS'
+    vulnerabilityID: CVE-2024-8096
+  - fixedVersion: 8.11.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-11-03T21:18:48Z"
+    links: []
+    packagePURL: pkg:apk/alpine/curl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-9681
+    publishedDate: "2024-11-06T08:15:03Z"
+    resource: curl
+    score: 3.9
+    severity: MEDIUM
+    target: ""
+    title: 'curl: HSTS subdomain overwrites parent cache entry'
+    vulnerabilityID: CVE-2024-9681
+  - fixedVersion: 8.12.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2026-03-17T18:16:14Z"
+    links: []
+    packagePURL: pkg:apk/alpine/curl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0665
+    publishedDate: "2025-02-05T10:15:22Z"
+    resource: curl
+    score: 4
+    severity: MEDIUM
+    target: ""
+    title: 'libcurl: Double Close of Eventfd in libcurl'
+    vulnerabilityID: CVE-2025-0665
+  - fixedVersion: 8.12.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-06-27T19:24:08Z"
+    links: []
+    packagePURL: pkg:apk/alpine/curl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0725
+    publishedDate: "2025-02-05T10:15:22Z"
+    resource: curl
+    score: 4
+    severity: MEDIUM
+    target: ""
+    title: 'libcurl: Buffer Overflow in libcurl via zlib Integer Overflow'
+    vulnerabilityID: CVE-2025-0725
+  - fixedVersion: 8.14.1-r2
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2026-01-20T14:55:47Z"
+    links: []
+    packagePURL: pkg:apk/alpine/curl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-10148
+    publishedDate: "2025-09-12T06:15:40Z"
+    resource: curl
+    score: 4.8
+    severity: MEDIUM
+    target: ""
+    title: 'curl: predictable WebSocket mask'
+    vulnerabilityID: CVE-2025-10148
+  - fixedVersion: 8.14.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-06-26T15:08:21Z"
+    links: []
+    packagePURL: pkg:apk/alpine/curl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-4947
+    publishedDate: "2025-05-28T07:15:24Z"
+    resource: curl
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'libcurl: curl: QUIC certificate check skip with wolfSSL'
+    vulnerabilityID: CVE-2025-4947
+  - fixedVersion: 8.14.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-07-30T19:41:37Z"
+    links: []
+    packagePURL: pkg:apk/alpine/curl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-5025
+    publishedDate: "2025-05-28T07:15:24Z"
+    resource: curl
+    score: 4.8
+    severity: MEDIUM
+    target: ""
+    title: 'curl: libcurl: QUIC Certificate Pinning Bypass'
+    vulnerabilityID: CVE-2025-5025
+  - fixedVersion: 8.14.1-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-07-30T19:41:33Z"
+    links: []
+    packagePURL: pkg:apk/alpine/curl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-5399
+    publishedDate: "2025-06-07T08:15:20Z"
+    resource: curl
+    score: 4.3
+    severity: MEDIUM
+    target: ""
+    title: 'curl: libcurl: WebSocket endless loop'
+    vulnerabilityID: CVE-2025-5399
+  - fixedVersion: 8.14.1-r2
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2026-01-20T14:58:01Z"
+    links: []
+    packagePURL: pkg:apk/alpine/curl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9086
+    publishedDate: "2025-09-12T06:15:44Z"
+    resource: curl
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'curl: libcurl: Curl out of bounds read for cookie path'
+    vulnerabilityID: CVE-2025-9086
+  - fixedVersion: 8.12.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-07-30T19:41:45Z"
+    links: []
+    packagePURL: pkg:apk/alpine/curl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0167
+    publishedDate: "2025-02-05T10:15:22Z"
+    resource: curl
+    severity: LOW
+    target: ""
+    title: When asked to use a `.netrc` file for credentials **and** to follow HT
+      ...
+    vulnerabilityID: CVE-2025-0167
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-03-19T19:16:19Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15467
+    publishedDate: "2026-01-27T16:16:14Z"
+    resource: libcrypto3
+    score: 9.8
+    severity: CRITICAL
+    target: ""
+    title: 'openssl: OpenSSL: Remote code execution or Denial of Service via oversized
+      Initialization Vector in CMS parsing'
+    vulnerabilityID: CVE-2025-15467
+  - fixedVersion: 3.3.3-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-02-18T14:15:27Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-12797
+    publishedDate: "2025-02-11T16:15:38Z"
+    resource: libcrypto3
+    score: 7.4
+    severity: HIGH
+    target: ""
+    title: 'openssl: RFC7250 handshakes with unauthenticated servers don''t abort
+      as expected'
+    vulnerabilityID: CVE-2024-12797
+  - fixedVersion: 3.3.2-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-06-03T10:51:54Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-6119
+    publishedDate: "2024-09-03T16:15:07Z"
+    resource: libcrypto3
+    score: 5.9
+    severity: HIGH
+    target: ""
+    title: 'openssl: Possible denial of service in X.509 name checks'
+    vulnerabilityID: CVE-2024-6119
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:35:02Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69419
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: libcrypto3
+    score: 7.4
+    severity: HIGH
+    target: ""
+    title: 'openssl: OpenSSL: Arbitrary code execution due to out-of-bounds write
+      in PKCS#12 processing'
+    vulnerabilityID: CVE-2025-69419
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-28T04:16:17Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69421
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: libcrypto3
+    score: 6.5
+    severity: HIGH
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via malformed PKCS#12 file processing'
+    vulnerabilityID: CVE-2025-69421
+  - fixedVersion: 3.3.2-r2
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-11-03T20:16:08Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-13176
+    publishedDate: "2025-01-20T14:15:26Z"
+    resource: libcrypto3
+    score: 4.7
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Timing side-channel in ECDSA signature computation'
+    vulnerabilityID: CVE-2024-13176
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:38:00Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15468
+    publishedDate: "2026-01-27T16:16:14Z"
+    resource: libcrypto3
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via NULL pointer dereference in QUIC
+      protocol handling'
+    vulnerabilityID: CVE-2025-15468
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:37:19Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-66199
+    publishedDate: "2026-01-27T16:16:15Z"
+    resource: libcrypto3
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service due to excessive memory allocation
+      in TLS 1.3 certificate compression'
+    vulnerabilityID: CVE-2025-66199
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:36:57Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-68160
+    publishedDate: "2026-01-27T16:16:15Z"
+    resource: libcrypto3
+    score: 4.7
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service due to out-of-bounds write in BIO
+      filter'
+    vulnerabilityID: CVE-2025-68160
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:36:03Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69418
+    publishedDate: "2026-01-27T16:16:33Z"
+    resource: libcrypto3
+    score: 4
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Information disclosure and data tampering via specific
+      low-level OCB encryption/decryption calls'
+    vulnerabilityID: CVE-2025-69418
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:33:30Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69420
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: libcrypto3
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via malformed TimeStamp Response'
+    vulnerabilityID: CVE-2025-69420
+  - fixedVersion: 3.3.5-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-11-04T22:16:45Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9230
+    publishedDate: "2025-09-30T14:15:41Z"
+    resource: libcrypto3
+    score: 5.6
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Out-of-bounds read & write in RFC 3211 KEK Unwrap'
+    vulnerabilityID: CVE-2025-9230
+  - fixedVersion: 3.3.5-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-11-04T22:16:45Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9231
+    publishedDate: "2025-09-30T14:15:41Z"
+    resource: libcrypto3
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Timing side-channel in SM2 algorithm on 64 bit ARM'
+    vulnerabilityID: CVE-2025-9231
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:41:14Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-22795
+    publishedDate: "2026-01-27T16:16:35Z"
+    resource: libcrypto3
+    score: 5.5
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service due to type confusion in PKCS#12 file
+      processing'
+    vulnerabilityID: CVE-2026-22795
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:40:27Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-22796
+    publishedDate: "2026-01-27T16:16:35Z"
+    resource: libcrypto3
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via type confusion in PKCS#7 signature
+      verification'
+    vulnerabilityID: CVE-2026-22796
+  - fixedVersion: 3.3.2-r1
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-11-03T23:17:33Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-9143
+    publishedDate: "2024-10-16T17:15:18Z"
+    resource: libcrypto3
+    score: 3.7
+    severity: LOW
+    target: ""
+    title: 'openssl: Low-level invalid GF(2^m) parameters lead to OOB memory access'
+    vulnerabilityID: CVE-2024-9143
+  - fixedVersion: 3.3.5-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-11-04T22:16:45Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcrypto3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9232
+    publishedDate: "2025-09-30T14:15:41Z"
+    resource: libcrypto3
+    score: 3.1
+    severity: LOW
+    target: ""
+    title: 'openssl: Out-of-bounds read in HTTP client no_proxy handling'
+    vulnerabilityID: CVE-2025-9232
+  - fixedVersion: 8.11.1-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-11-03T21:16:04Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcurl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-11053
+    publishedDate: "2024-12-11T08:15:05Z"
+    resource: libcurl
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'curl: curl netrc password leak'
+    vulnerabilityID: CVE-2024-11053
+  - fixedVersion: 8.10.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-07-30T19:42:16Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcurl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-8096
+    publishedDate: "2024-09-11T10:15:02Z"
+    resource: libcurl
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'curl: OCSP stapling bypass with GnuTLS'
+    vulnerabilityID: CVE-2024-8096
+  - fixedVersion: 8.11.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-11-03T21:18:48Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcurl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-9681
+    publishedDate: "2024-11-06T08:15:03Z"
+    resource: libcurl
+    score: 3.9
+    severity: MEDIUM
+    target: ""
+    title: 'curl: HSTS subdomain overwrites parent cache entry'
+    vulnerabilityID: CVE-2024-9681
+  - fixedVersion: 8.12.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2026-03-17T18:16:14Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcurl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0665
+    publishedDate: "2025-02-05T10:15:22Z"
+    resource: libcurl
+    score: 4
+    severity: MEDIUM
+    target: ""
+    title: 'libcurl: Double Close of Eventfd in libcurl'
+    vulnerabilityID: CVE-2025-0665
+  - fixedVersion: 8.12.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-06-27T19:24:08Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcurl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0725
+    publishedDate: "2025-02-05T10:15:22Z"
+    resource: libcurl
+    score: 4
+    severity: MEDIUM
+    target: ""
+    title: 'libcurl: Buffer Overflow in libcurl via zlib Integer Overflow'
+    vulnerabilityID: CVE-2025-0725
+  - fixedVersion: 8.14.1-r2
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2026-01-20T14:55:47Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcurl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-10148
+    publishedDate: "2025-09-12T06:15:40Z"
+    resource: libcurl
+    score: 4.8
+    severity: MEDIUM
+    target: ""
+    title: 'curl: predictable WebSocket mask'
+    vulnerabilityID: CVE-2025-10148
+  - fixedVersion: 8.14.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-06-26T15:08:21Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcurl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-4947
+    publishedDate: "2025-05-28T07:15:24Z"
+    resource: libcurl
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'libcurl: curl: QUIC certificate check skip with wolfSSL'
+    vulnerabilityID: CVE-2025-4947
+  - fixedVersion: 8.14.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-07-30T19:41:37Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcurl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-5025
+    publishedDate: "2025-05-28T07:15:24Z"
+    resource: libcurl
+    score: 4.8
+    severity: MEDIUM
+    target: ""
+    title: 'curl: libcurl: QUIC Certificate Pinning Bypass'
+    vulnerabilityID: CVE-2025-5025
+  - fixedVersion: 8.14.1-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-07-30T19:41:33Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcurl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-5399
+    publishedDate: "2025-06-07T08:15:20Z"
+    resource: libcurl
+    score: 4.3
+    severity: MEDIUM
+    target: ""
+    title: 'curl: libcurl: WebSocket endless loop'
+    vulnerabilityID: CVE-2025-5399
+  - fixedVersion: 8.14.1-r2
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2026-01-20T14:58:01Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcurl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9086
+    publishedDate: "2025-09-12T06:15:44Z"
+    resource: libcurl
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'curl: libcurl: Curl out of bounds read for cookie path'
+    vulnerabilityID: CVE-2025-9086
+  - fixedVersion: 8.12.0-r0
+    installedVersion: 8.9.1-r1
+    lastModifiedDate: "2025-07-30T19:41:45Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libcurl@8.9.1-r1?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0167
+    publishedDate: "2025-02-05T10:15:22Z"
+    resource: libcurl
+    severity: LOW
+    target: ""
+    title: When asked to use a `.netrc` file for credentials **and** to follow HT
+      ...
+    vulnerabilityID: CVE-2025-0167
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-03-19T19:16:19Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15467
+    publishedDate: "2026-01-27T16:16:14Z"
+    resource: libssl3
+    score: 9.8
+    severity: CRITICAL
+    target: ""
+    title: 'openssl: OpenSSL: Remote code execution or Denial of Service via oversized
+      Initialization Vector in CMS parsing'
+    vulnerabilityID: CVE-2025-15467
+  - fixedVersion: 3.3.3-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-02-18T14:15:27Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-12797
+    publishedDate: "2025-02-11T16:15:38Z"
+    resource: libssl3
+    score: 7.4
+    severity: HIGH
+    target: ""
+    title: 'openssl: RFC7250 handshakes with unauthenticated servers don''t abort
+      as expected'
+    vulnerabilityID: CVE-2024-12797
+  - fixedVersion: 3.3.2-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-06-03T10:51:54Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-6119
+    publishedDate: "2024-09-03T16:15:07Z"
+    resource: libssl3
+    score: 5.9
+    severity: HIGH
+    target: ""
+    title: 'openssl: Possible denial of service in X.509 name checks'
+    vulnerabilityID: CVE-2024-6119
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:35:02Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69419
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: libssl3
+    score: 7.4
+    severity: HIGH
+    target: ""
+    title: 'openssl: OpenSSL: Arbitrary code execution due to out-of-bounds write
+      in PKCS#12 processing'
+    vulnerabilityID: CVE-2025-69419
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-28T04:16:17Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69421
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: libssl3
+    score: 6.5
+    severity: HIGH
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via malformed PKCS#12 file processing'
+    vulnerabilityID: CVE-2025-69421
+  - fixedVersion: 3.3.2-r2
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-11-03T20:16:08Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-13176
+    publishedDate: "2025-01-20T14:15:26Z"
+    resource: libssl3
+    score: 4.7
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Timing side-channel in ECDSA signature computation'
+    vulnerabilityID: CVE-2024-13176
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:38:00Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15468
+    publishedDate: "2026-01-27T16:16:14Z"
+    resource: libssl3
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via NULL pointer dereference in QUIC
+      protocol handling'
+    vulnerabilityID: CVE-2025-15468
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:37:19Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-66199
+    publishedDate: "2026-01-27T16:16:15Z"
+    resource: libssl3
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service due to excessive memory allocation
+      in TLS 1.3 certificate compression'
+    vulnerabilityID: CVE-2025-66199
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:36:57Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-68160
+    publishedDate: "2026-01-27T16:16:15Z"
+    resource: libssl3
+    score: 4.7
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service due to out-of-bounds write in BIO
+      filter'
+    vulnerabilityID: CVE-2025-68160
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:36:03Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69418
+    publishedDate: "2026-01-27T16:16:33Z"
+    resource: libssl3
+    score: 4
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Information disclosure and data tampering via specific
+      low-level OCB encryption/decryption calls'
+    vulnerabilityID: CVE-2025-69418
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:33:30Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69420
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: libssl3
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via malformed TimeStamp Response'
+    vulnerabilityID: CVE-2025-69420
+  - fixedVersion: 3.3.5-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-11-04T22:16:45Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9230
+    publishedDate: "2025-09-30T14:15:41Z"
+    resource: libssl3
+    score: 5.6
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Out-of-bounds read & write in RFC 3211 KEK Unwrap'
+    vulnerabilityID: CVE-2025-9230
+  - fixedVersion: 3.3.5-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-11-04T22:16:45Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9231
+    publishedDate: "2025-09-30T14:15:41Z"
+    resource: libssl3
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Timing side-channel in SM2 algorithm on 64 bit ARM'
+    vulnerabilityID: CVE-2025-9231
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:41:14Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-22795
+    publishedDate: "2026-01-27T16:16:35Z"
+    resource: libssl3
+    score: 5.5
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service due to type confusion in PKCS#12 file
+      processing'
+    vulnerabilityID: CVE-2026-22795
+  - fixedVersion: 3.3.6-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2026-02-02T18:40:27Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-22796
+    publishedDate: "2026-01-27T16:16:35Z"
+    resource: libssl3
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via type confusion in PKCS#7 signature
+      verification'
+    vulnerabilityID: CVE-2026-22796
+  - fixedVersion: 3.3.2-r1
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-11-03T23:17:33Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-9143
+    publishedDate: "2024-10-16T17:15:18Z"
+    resource: libssl3
+    score: 3.7
+    severity: LOW
+    target: ""
+    title: 'openssl: Low-level invalid GF(2^m) parameters lead to OOB memory access'
+    vulnerabilityID: CVE-2024-9143
+  - fixedVersion: 3.3.5-r0
+    installedVersion: 3.3.1-r3
+    lastModifiedDate: "2025-11-04T22:16:45Z"
+    links: []
+    packagePURL: pkg:apk/alpine/libssl3@3.3.1-r3?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9232
+    publishedDate: "2025-09-30T14:15:41Z"
+    resource: libssl3
+    score: 3.1
+    severity: LOW
+    target: ""
+    title: 'openssl: Out-of-bounds read in HTTP client no_proxy handling'
+    vulnerabilityID: CVE-2025-9232
+  - fixedVersion: 1.2.5-r1
+    installedVersion: 1.2.5-r0
+    lastModifiedDate: "2025-12-10T20:03:59Z"
+    links: []
+    packagePURL: pkg:apk/alpine/musl@1.2.5-r0?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-26519
+    publishedDate: "2025-02-14T04:15:09Z"
+    resource: musl
+    score: 7
+    severity: HIGH
+    target: ""
+    title: musl libc 0.9.13 through 1.2.5 before 1.2.6 has an out-of-bounds write
+      ...
+    vulnerabilityID: CVE-2025-26519
+  - fixedVersion: 1.2.5-r1
+    installedVersion: 1.2.5-r0
+    lastModifiedDate: "2025-12-10T20:03:59Z"
+    links: []
+    packagePURL: pkg:apk/alpine/musl-utils@1.2.5-r0?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-26519
+    publishedDate: "2025-02-14T04:15:09Z"
+    resource: musl-utils
+    score: 7
+    severity: HIGH
+    target: ""
+    title: musl libc 0.9.13 through 1.2.5 before 1.2.6 has an out-of-bounds write
+      ...
+    vulnerabilityID: CVE-2025-26519
+  - fixedVersion: 1.36.1-r31
+    installedVersion: 1.36.1-r29
+    lastModifiedDate: "2025-04-29T13:52:47Z"
+    links: []
+    packagePURL: pkg:apk/alpine/ssl_client@1.36.1-r29?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-58251
+    publishedDate: "2025-04-23T18:16:03Z"
+    resource: ssl_client
+    severity: MEDIUM
+    target: ""
+    title: In netstat in BusyBox through 1.37.0, local users can launch of networ
+      ...
+    vulnerabilityID: CVE-2024-58251
+  - fixedVersion: 1.36.1-r31
+    installedVersion: 1.36.1-r29
+    lastModifiedDate: "2025-09-24T14:38:22Z"
+    links: []
+    packagePURL: pkg:apk/alpine/ssl_client@1.36.1-r29?arch=x86_64&distro=3.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-46394
+    publishedDate: "2025-04-23T16:15:48Z"
+    resource: ssl_client
+    score: 3.3
+    severity: LOW
+    target: ""
+    title: In tar in BusyBox through 1.37.0, a TAR archive can have filenames hid
+      ...
+    vulnerabilityID: CVE-2025-46394
+  - fixedVersion: 1.20.3
+    installedVersion: 1.20.1
+    lastModifiedDate: "2024-09-20T16:26:44Z"
+    links: []
+    packagePURL: pkg:npm/body-parser@1.20.1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-45590
+    publishedDate: "2024-09-10T16:15:21Z"
+    resource: body-parser
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'body-parser: Denial of Service Vulnerability in body-parser'
+    vulnerabilityID: CVE-2024-45590
+  - fixedVersion: 1.20.3
+    installedVersion: 1.20.2
+    lastModifiedDate: "2024-09-20T16:26:44Z"
+    links: []
+    packagePURL: pkg:npm/body-parser@1.20.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-45590
+    publishedDate: "2024-09-10T16:15:21Z"
+    resource: body-parser
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'body-parser: Denial of Service Vulnerability in body-parser'
+    vulnerabilityID: CVE-2024-45590
+  - fixedVersion: 5.0.5, 3.0.2, 2.0.3, 1.1.13
+    installedVersion: 2.0.1
+    lastModifiedDate: "2026-03-30T13:26:29Z"
+    links: []
+    packagePURL: pkg:npm/brace-expansion@2.0.1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-33750
+    publishedDate: "2026-03-27T15:16:57Z"
+    resource: brace-expansion
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'brace-expansion: brace-expansion: Denial of Service via zero step value
+      in brace pattern'
+    vulnerabilityID: CVE-2026-33750
+  - fixedVersion: 2.0.2, 1.1.12, 3.0.1, 4.0.1
+    installedVersion: 2.0.1
+    lastModifiedDate: "2025-06-12T16:06:47Z"
+    links: []
+    packagePURL: pkg:npm/brace-expansion@2.0.1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-5889
+    publishedDate: "2025-06-09T19:15:25Z"
+    resource: brace-expansion
+    score: 3.1
+    severity: LOW
+    target: ""
+    title: 'brace-expansion: juliangruber brace-expansion index.js expand redos'
+    vulnerabilityID: CVE-2025-5889
+  - fixedVersion: 0.7.0
+    installedVersion: 0.6.0
+    lastModifiedDate: "2024-10-07T17:48:28Z"
+    links: []
+    packagePURL: pkg:npm/cookie@0.6.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-47764
+    publishedDate: "2024-10-04T20:15:07Z"
+    resource: cookie
+    score: 3.7
+    severity: LOW
+    target: ""
+    title: 'cookie: cookie accepts cookie name, path, and domain with out of bounds
+      characters'
+    vulnerabilityID: CVE-2024-47764
+  - fixedVersion: 7.0.5, 6.0.6
+    installedVersion: 7.0.3
+    lastModifiedDate: "2025-05-20T15:16:03Z"
+    links: []
+    packagePURL: pkg:npm/cross-spawn@7.0.3
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-21538
+    publishedDate: "2024-11-08T05:15:06Z"
+    resource: cross-spawn
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'cross-spawn: regular expression denial of service'
+    vulnerabilityID: CVE-2024-21538
+  - fixedVersion: 8.0.3, 5.2.2, 4.0.4, 3.5.1
+    installedVersion: 5.2.0
+    lastModifiedDate: "2026-03-04T15:23:41Z"
+    links: []
+    packagePURL: pkg:npm/diff@5.2.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-24001
+    publishedDate: "2026-01-22T03:15:47Z"
+    resource: diff
+    score: 7.5
+    severity: LOW
+    target: ""
+    title: 'jsdiff: denial of service vulnerability in parsePatch and applyPatch'
+    vulnerabilityID: CVE-2026-24001
+  - fixedVersion: 4.20.0, 5.0.0
+    installedVersion: 4.19.2
+    lastModifiedDate: "2024-09-20T16:07:47Z"
+    links: []
+    packagePURL: pkg:npm/express@4.19.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-43796
+    publishedDate: "2024-09-10T15:15:17Z"
+    resource: express
+    score: 5
+    severity: LOW
+    target: ""
+    title: 'express: Improper Input Handling in Express Redirects'
+    vulnerabilityID: CVE-2024-43796
+  - fixedVersion: 11.1.0, 10.5.0
+    installedVersion: 10.4.2
+    lastModifiedDate: "2025-12-02T19:34:43Z"
+    links: []
+    packagePURL: pkg:npm/glob@10.4.2
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-64756
+    publishedDate: "2025-11-17T18:15:58Z"
+    resource: glob
+    score: 7.5
+    severity: HIGH
+    target: ""
+    title: 'glob: glob: Command Injection Vulnerability via Malicious Filenames'
+    vulnerabilityID: CVE-2025-64756
+  - fixedVersion: 10.2.1, 9.0.6, 8.0.5, 7.4.7, 6.2.1, 5.1.7, 4.2.4, 3.1.3
+    installedVersion: 9.0.5
+    lastModifiedDate: "2026-03-06T21:32:10Z"
+    links: []
+    packagePURL: pkg:npm/minimatch@9.0.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-26996
+    publishedDate: "2026-02-20T03:16:01Z"
+    resource: minimatch
+    score: 6.5
+    severity: HIGH
+    target: ""
+    title: 'minimatch: minimatch: Denial of Service via specially crafted glob patterns'
+    vulnerabilityID: CVE-2026-26996
+  - fixedVersion: 10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, 3.1.3
+    installedVersion: 9.0.5
+    lastModifiedDate: "2026-02-27T17:21:22Z"
+    links: []
+    packagePURL: pkg:npm/minimatch@9.0.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-27903
+    publishedDate: "2026-02-26T02:16:21Z"
+    resource: minimatch
+    score: 5.9
+    severity: HIGH
+    target: ""
+    title: 'minimatch: minimatch: Denial of Service due to unbounded recursive backtracking
+      via crafted glob patterns'
+    vulnerabilityID: CVE-2026-27903
+  - fixedVersion: 10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, 3.1.4
+    installedVersion: 9.0.5
+    lastModifiedDate: "2026-02-27T17:16:23Z"
+    links: []
+    packagePURL: pkg:npm/minimatch@9.0.5
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-27904
+    publishedDate: "2026-02-26T02:16:21Z"
+    resource: minimatch
+    score: 6.5
+    severity: HIGH
+    target: ""
+    title: 'minimatch: Minimatch: Denial of Service via catastrophic backtracking
+      in glob expressions'
+    vulnerabilityID: CVE-2026-27904
+  - fixedVersion: 1.9.0, 0.1.10, 8.0.0, 3.3.0, 6.3.0
+    installedVersion: 0.1.7
+    lastModifiedDate: "2025-01-24T20:15:32Z"
+    links: []
+    packagePURL: pkg:npm/path-to-regexp@0.1.7
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-45296
+    publishedDate: "2024-09-09T19:15:13Z"
+    resource: path-to-regexp
+    score: 5.3
+    severity: HIGH
+    target: ""
+    title: 'path-to-regexp: Backtracking regular expressions cause ReDoS'
+    vulnerabilityID: CVE-2024-45296
+  - fixedVersion: 0.1.12
+    installedVersion: 0.1.7
+    lastModifiedDate: "2025-01-24T20:15:33Z"
+    links: []
+    packagePURL: pkg:npm/path-to-regexp@0.1.7
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-52798
+    publishedDate: "2024-12-05T23:15:06Z"
+    resource: path-to-regexp
+    score: 5.3
+    severity: HIGH
+    target: ""
+    title: 'path-to-regexp: path-to-regexp Unpatched `path-to-regexp` ReDoS in 0.1.x'
+    vulnerabilityID: CVE-2024-52798
+  - fixedVersion: 0.1.13
+    installedVersion: 0.1.7
+    lastModifiedDate: "2026-03-30T13:26:50Z"
+    links: []
+    packagePURL: pkg:npm/path-to-regexp@0.1.7
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-4867
+    publishedDate: "2026-03-26T17:16:42Z"
+    resource: path-to-regexp
+    score: 5.3
+    severity: HIGH
+    target: ""
+    title: 'path-to-regexp: path-to-regexp: Denial of Service via catastrophic backtracking
+      from malformed URL parameters'
+    vulnerabilityID: CVE-2026-4867
+  - fixedVersion: 6.14.1
+    installedVersion: 6.11.0
+    lastModifiedDate: "2026-02-26T19:57:11Z"
+    links: []
+    packagePURL: pkg:npm/qs@6.11.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15284
+    publishedDate: "2025-12-29T23:15:42Z"
+    resource: qs
+    score: 7.5
+    severity: MEDIUM
+    target: ""
+    title: 'qs: qs: Denial of Service via improper input validation in array parsing'
+    vulnerabilityID: CVE-2025-15284
+  - fixedVersion: 6.14.2
+    installedVersion: 6.11.0
+    lastModifiedDate: "2026-02-24T20:13:51Z"
+    links: []
+    packagePURL: pkg:npm/qs@6.11.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-2391
+    publishedDate: "2026-02-12T05:17:11Z"
+    resource: qs
+    score: 5.3
+    severity: LOW
+    target: ""
+    title: 'qs: qs''s arrayLimit bypass in comma parsing allows denial of service'
+    vulnerabilityID: CVE-2026-2391
+  - fixedVersion: 0.19.0
+    installedVersion: 0.18.0
+    lastModifiedDate: "2025-11-03T20:16:29Z"
+    links: []
+    packagePURL: pkg:npm/send@0.18.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-43799
+    publishedDate: "2024-09-10T15:15:17Z"
+    resource: send
+    score: 5
+    severity: LOW
+    target: ""
+    title: 'send: Code Execution Vulnerability in Send Library'
+    vulnerabilityID: CVE-2024-43799
+  - fixedVersion: 1.16.0, 2.1.0
+    installedVersion: 1.15.0
+    lastModifiedDate: "2024-09-20T17:36:30Z"
+    links: []
+    packagePURL: pkg:npm/serve-static@1.15.0
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-43800
+    publishedDate: "2024-09-10T15:15:17Z"
+    resource: serve-static
+    score: 5
+    severity: LOW
+    target: ""
+    title: 'serve-static: Improper Sanitization in serve-static'
+    vulnerabilityID: CVE-2024-43800
+  - fixedVersion: 7.5.3
+    installedVersion: 6.2.1
+    lastModifiedDate: "2026-02-18T16:20:07Z"
+    links: []
+    packagePURL: pkg:npm/tar@6.2.1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-23745
+    publishedDate: "2026-01-16T22:16:26Z"
+    resource: tar
+    score: 6.1
+    severity: HIGH
+    target: ""
+    title: 'node-tar: tar: node-tar: Arbitrary file overwrite and symlink poisoning
+      via unsanitized linkpaths in archives'
+    vulnerabilityID: CVE-2026-23745
+  - fixedVersion: 7.5.4
+    installedVersion: 6.2.1
+    lastModifiedDate: "2026-02-18T15:50:29Z"
+    links: []
+    packagePURL: pkg:npm/tar@6.2.1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-23950
+    publishedDate: "2026-01-20T01:15:57Z"
+    resource: tar
+    score: 8.8
+    severity: HIGH
+    target: ""
+    title: 'node-tar: tar: node-tar: Arbitrary file overwrite via Unicode path collision
+      race condition'
+    vulnerabilityID: CVE-2026-23950
+  - fixedVersion: 7.5.7
+    installedVersion: 6.2.1
+    lastModifiedDate: "2026-02-02T14:30:10Z"
+    links: []
+    packagePURL: pkg:npm/tar@6.2.1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-24842
+    publishedDate: "2026-01-28T01:16:14Z"
+    resource: tar
+    score: 8.2
+    severity: HIGH
+    target: ""
+    title: 'node-tar: tar: node-tar: Arbitrary file creation via path traversal bypass
+      in hardlink security check'
+    vulnerabilityID: CVE-2026-24842
+  - fixedVersion: 7.5.8
+    installedVersion: 6.2.1
+    lastModifiedDate: "2026-02-20T19:24:16Z"
+    links: []
+    packagePURL: pkg:npm/tar@6.2.1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-26960
+    publishedDate: "2026-02-20T02:16:53Z"
+    resource: tar
+    score: 7.1
+    severity: HIGH
+    target: ""
+    title: 'tar: node-tar: node-tar: Arbitrary file read/write via malicious archive
+      hardlink creation'
+    vulnerabilityID: CVE-2026-26960
+  - fixedVersion: 7.5.10
+    installedVersion: 6.2.1
+    lastModifiedDate: "2026-03-11T21:50:01Z"
+    links: []
+    packagePURL: pkg:npm/tar@6.2.1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-29786
+    publishedDate: "2026-03-07T16:15:55Z"
+    resource: tar
+    score: 8.6
+    severity: HIGH
+    target: ""
+    title: 'node-tar: hardlink path traversal via drive-relative linkpath'
+    vulnerabilityID: CVE-2026-29786
+  - fixedVersion: 7.5.11
+    installedVersion: 6.2.1
+    lastModifiedDate: "2026-03-18T18:13:34Z"
+    links: []
+    packagePURL: pkg:npm/tar@6.2.1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-31802
+    publishedDate: "2026-03-10T07:44:58Z"
+    resource: tar
+    score: 6.2
+    severity: HIGH
+    target: ""
+    title: 'tar: tar: File overwrite via drive-relative symlink traversal'
+    vulnerabilityID: CVE-2026-31802
