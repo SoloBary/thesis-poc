@@ -1,6 +1,6 @@
 # Kubernetes & Container Security Monitoring with Open Source Tools
 
-> **Master's Thesis — Proof of Concept**  
+> **Bachelor's Thesis — Proof of Concept**  
 > A layered, production-grade security monitoring stack built on Kubernetes, using [kube-goat](https://github.com/madhuakula/kubernetes-goat) as the intentionally vulnerable attack target. Every layer catches what the previous one misses.
 
 ---
@@ -602,7 +602,7 @@ thesis-poc/
 │   └── screenshots/
 ├── trivy/
 │   └── screenshots/                  # VulnerabilityReport findings
-├── PoC.txt                           # Original installation reference
+├── PoC.txt                           # Installation reference
 └── README.md
 ```
 
@@ -635,7 +635,7 @@ PERMISSIVE mode allows both plaintext and encrypted traffic and is used for grad
 | Technique | ID | Detection | Layer |
 |---|---|---|---|
 | Supply Chain Compromise — vulnerable base images | T1195 | Trivy | Pre-runtime |
-| Valid Accounts — service account token abuse | T1078 | Kyverno + Falco | Admission + Runtime |
+| Valid Accounts — service account token exposure | T1078 | Kyverno | Admission |
 | Credential Access — credentials from files | T1555 | Falco | Runtime |
 | Execution — command and scripting interpreter | T1059 | Falco | Runtime |
 | Defense Evasion — reflective code loading (/dev/shm) | T1620 | Falco | Runtime |
@@ -678,9 +678,8 @@ The persistence mechanism used by CanisterWorm — dropping a binary to `/dev/sh
 The incident illustrates a property of the layered architecture in this stack: the attack would have been caught at multiple layers simultaneously.
 
 - **Trivy Operator** would flag the compromised `trivy` image as containing malicious code before deployment
-- **Kyverno** would block deployment if the image digest did not match a known-good baseline
 - **Falco** would catch the `/dev/shm` execution at runtime regardless of how the binary arrived
-- **Kiali** would surface any unexpected outbound connections to the ICP canister C2
+- **Kiali** would surface any unexpected outbound connections to the C2 infrastructure
 
 No single layer is sufficient. The combination is what provides resilience.
 
@@ -706,7 +705,7 @@ No single layer is sufficient. The combination is what provides resilience.
 ## Author
 
 **Bary** — Threat Detection & Response Analyst, L2 SOC  
-Master's Thesis — Dept. of Computer Science and Communication Engineering
+Bachelor's Thesis — Dept. of Informatics and Telecommunications  
 GitHub: [@SoloBary](https://github.com/SoloBary)
 
 ---
