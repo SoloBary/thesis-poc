@@ -632,24 +632,18 @@ PERMISSIVE mode allows both plaintext and encrypted traffic and is used for grad
 
 ## MITRE ATT&CK Coverage
 
-| Technique | ID | Detection / Prevention | Layer |
-|---|---|---|---|
-| Supply Chain Compromise | T1195.002 | Trivy | Pre-runtime |
-| Exploitation for Initial Access | T1190 | Trivy | Pre-runtime |
-| Exploitation of Remote Services | T1210 | Trivy | Pre-runtime |
-| Escape to Host | T1611 | Kyverno (disallow-privileged) | Admission |
-| Abuse Elevation Control Mechanism | T1548 | Kyverno (disallow-root-user) | Admission |
-| Resource Hijacking | T1496 | Kyverno (require-resource-limits) | Admission |
-| Container Implantation | T1525 | Kyverno (image policies) | Admission |
-| Valid Accounts — service account token | T1078 | Kyverno | Admission |
-| Credential Access — credentials from files | T1555 | Falco | Runtime |
-| Execution — command and scripting interpreter | T1059 | Falco | Runtime |
-| Defense Evasion — reflective code loading | T1620 | Falco | Runtime |
-| Credential Access — unsecured credentials | T1552 | Falco | Runtime |
-| Defense Evasion — indicator removal on host | T1070 | Falco | Runtime |
-| Discovery — container and resource discovery | T1613 | Falco + Kiali | Runtime + Network |
-| Lateral Movement — cross-namespace traffic | — | Istio / Kiali | Network |
-| Command & Control — ingress tool transfer | T1105 | Falco | Runtime |
+The table below lists only techniques that have been **demonstrated with concrete evidence** in this PoC — either through alert screenshots, vulnerability reports, or Kiali service graph captures. Theoretical capabilities that have not been validated against the kube-goat target are not included.
+
+| Technique | ID | Detection / Prevention | Layer | Evidence |
+|---|---|---|---|---|
+| Supply Chain Compromise | T1195.002 | Trivy | Pre-runtime | VulnerabilityReport CRDs with 2 CRITICAL + 10 HIGH CVEs in `k8s-goat-home` image |
+| Valid Accounts — service account token exposure | T1078 | Kyverno | Admission | PolicyReport violations on `hunger-check` (runs as root, mounted SA token) |
+| Credential Access — credentials from files | T1555 | Falco | Runtime | PoC 1 — `Read sensitive file untrusted` on `cat /etc/shadow` |
+| Execution — command and scripting interpreter | T1059 | Falco | Runtime | PoC 2 — `Terminal shell in container`; PoC 6 — `Netcat Remote Code Execution in Container` |
+| Defense Evasion — reflective code loading | T1620 | Falco | Runtime | PoC 3 — `Execution from /dev/shm` (Critical) |
+| Credential Access — unsecured credentials | T1552 | Falco | Runtime | PoC 4 — `Search Private Keys or Passwords` |
+| Defense Evasion — indicator removal on host | T1070 | Falco | Runtime | PoC 5 — `Clear Log Activities` |
+| Lateral Movement — cross-namespace service access | — | Istio / Kiali | Network | Kiali service graph: `hunger-check` (big-monolith) → `metadata-db` (default) |
 
 ---
 
