@@ -632,17 +632,23 @@ PERMISSIVE mode allows both plaintext and encrypted traffic and is used for grad
 
 ## MITRE ATT&CK Coverage
 
-| Technique | ID | Detection | Layer |
+| Technique | ID | Detection / Prevention | Layer |
 |---|---|---|---|
-| Supply Chain Compromise — vulnerable base images | T1195 | Trivy | Pre-runtime |
-| Valid Accounts — service account token exposure | T1078 | Kyverno | Admission |
+| Supply Chain Compromise | T1195.002 | Trivy | Pre-runtime |
+| Exploitation for Initial Access | T1190 | Trivy | Pre-runtime |
+| Exploitation of Remote Services | T1210 | Trivy | Pre-runtime |
+| Escape to Host | T1611 | Kyverno (disallow-privileged) | Admission |
+| Abuse Elevation Control Mechanism | T1548 | Kyverno (disallow-root-user) | Admission |
+| Resource Hijacking | T1496 | Kyverno (require-resource-limits) | Admission |
+| Container Implantation | T1525 | Kyverno (image policies) | Admission |
+| Valid Accounts — service account token | T1078 | Kyverno | Admission |
 | Credential Access — credentials from files | T1555 | Falco | Runtime |
 | Execution — command and scripting interpreter | T1059 | Falco | Runtime |
-| Defense Evasion — reflective code loading (/dev/shm) | T1620 | Falco | Runtime |
+| Defense Evasion — reflective code loading | T1620 | Falco | Runtime |
 | Credential Access — unsecured credentials | T1552 | Falco | Runtime |
 | Defense Evasion — indicator removal on host | T1070 | Falco | Runtime |
 | Discovery — container and resource discovery | T1613 | Falco + Kiali | Runtime + Network |
-| Lateral Movement — cross-namespace service access | — | Istio / Kiali | Network |
+| Lateral Movement — cross-namespace traffic | — | Istio / Kiali | Network |
 | Command & Control — ingress tool transfer | T1105 | Falco | Runtime |
 
 ---
