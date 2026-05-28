@@ -581,28 +581,63 @@ sum by (drop) (rate(falcosecurity_scap_n_drops_buffer_total[1m]))
 
 ```
 thesis-poc/
+│
 ├── falco/
-│   ├── custom-rules.yaml             # Rule overrides and noise reduction
-│   └── screenshots/                  # Falcosidekick UI evidence
+│   ├── helm-values.yaml          # Falco + custom rules (noise reduction, disabled rules)
+│   ├── custom-rules.yaml         # Detection rules (SA token, curl/wget)
+│   ├── Attacks PoC.txt           # Attack documentation per PoC
+│   ├── falco-attack1-devshm-execution.png
+│   ├── falco-attack2-sensitive-file-shadow.png
+│   ├── falco-attack3-serviceaccount-token.png
+│   ├── falco-attack4-curl-c2.png
+│   └── falco-attack5-k8s-api-lateral-movement.png
+│
 ├── grafana/
-│   ├── falco-dashboard.json          # Custom dashboard (falcosecurity_* metrics)
-│   └── screenshots/
+│   ├── grafana-falco-dashboard-kernel-host.png
+│   └── grafana-falco-dashboard-overview.png
+│
 ├── istio/
-│   ├── mtls/
-│   │   └── peer-authentication.yaml  # STRICT mTLS per namespace
-│   └── screenshots/                  # Kiali service graph
+│   ├── kiali-health-check-istio-validation-warning.png
+│   ├── kiali-health-check-workload-overview.png
+│   ├── kiali-kubernetes-goat-home-envoy-logs.png
+│   ├── kiali-kubernetes-goat-home-inbound-metrics.png  
+│   ├── kiali-mesh-view-control-plane.png
+│   └── kiali-traffic-graph-service-mesh.png
+│
 ├── kyverno/
+│   ├── helm-values.yaml
 │   ├── policies/
-│   │   ├── disallow-privileged.yaml
-│   │   ├── disallow-root.yaml
-│   │   └── disallow-latest-tag.yaml
-│   └── screenshots/
+│   │   ├── block-host-namespaces.yaml
+│   │   ├── block-latest-tag.yaml
+│   │   ├── block-privileged.yaml
+│   │   ├── require-non-root.yaml
+│   │   └── require-resource-limits.yaml
+│   ├── kyverno-block-host-namespaces.png
+│   ├── kyverno-block-latest-nonroot-limits.png
+│   ├── kyverno-block-latest-tag.png
+│   ├── kyverno-block-root-user.png
+│   ├── kyverno-clusterpolicies-all-5-ready.png
+│   ├── kyverno-clusterpolicies-initial-2.png
+│   ├── kyverno-policy-violation-events.png
+│   └── test.txt
+│
+├── loki/
+│   └── loki-falco-warning-logs-explore.png
+│
 ├── prometheus/
-│   ├── falco-servicemonitor.yaml
-│   └── screenshots/
+│   ├── helm-values.yaml
+│   ├── servicemonitors.yaml
+│   ├── prometheus-falco-rules-rate-graph.png
+│   ├── prometheus-falco-rules-total-graph.png
+│   └── prometheus-falco-rules-total-table.png
+│
 ├── trivy/
-│   └── screenshots/                  # VulnerabilityReport findings
-├── PoC.txt                           # Installation reference
+│   ├── helm-values.yaml
+│   ├── [vulnerability report .txt files]
+│   ├── trivy-vulnerability-report-detail.png
+│   └── trivy-vulnerability-reports-all-namespaces.png
+│
+├── PoC.txt
 └── README.md
 ```
 
