@@ -22,9 +22,11 @@ customRules:
         condition: append
 
     - rule: Contact K8S API Server From Container
-      enabled: false
+      condition: >
+        k8s_api_server_connection
+        and not k8s.ns.name in (kube-system, monitoring, falco, trivy-system, istio-system, kyverno)
       override:
-        enabled: replace
+        condition: replace
 
     - rule: Redirect STDOUT/STDIN to Network Connection in Container
       enabled: false
