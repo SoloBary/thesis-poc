@@ -682,28 +682,6 @@ The table below lists only techniques that have been **demonstrated with concret
 
 ---
 
-## Lessons Learned
-
-**Falco rule `override: enabled: replace` requires the rule to exist in the loaded ruleset.**  
-If the rule name does not match exactly — including capitalization and punctuation — Falco fails at startup with a validation error. Always verify the exact rule name with `grep "^- rule:" /etc/falco/falco_rules.yaml` before writing overrides. The colon in `Falco internal: metrics snapshot` must be quoted in YAML.
-
-**Falco internal metrics snapshots bypass `minimumpriority`.**  
-The `Falco internal: metrics snapshot` events are not emitted as standard rule matches — they bypass the priority filter in Falcosidekick and flood the UI. The correct fix is `--set falco.metrics.output_rule=false` at the Falco level, not a filter in Falcosidekick.
-
-**kind nodes require explicit host mounts for eBPF.**  
-Without mounting `/proc`, `/sys`, and `/` from the host into the control-plane node container, Falco's eBPF probe cannot access host kernel data. This is not documented prominently in the Falco kind quickstart.
-
-**Kyverno namespace exceptions must cover all system tooling.**  
-Applying policies to `kube-system`, `monitoring`, `falco`, `trivy-system`, `istio-system`, and `kyverno` itself is mandatory before switching any policy to `Enforce` mode. Without exceptions, Kyverno blocks its own DaemonSets and the entire security stack fails to start.
-
-**Trivy DB mirror reliability.**  
-`mirror.gcr.io` is periodically unavailable. The stable alternative is `public.ecr.aws/aquasecurity/trivy-db`. Set this as the DB repository in the Trivy Operator values if scans fail with download errors.
-
-**The `falcosecurity_*` metric prefix is breaking.**  
-Any Grafana dashboard, alert rule, or PromQL query using the legacy `falco_*` prefix will return no data against Falco 0.38+. The Grafana community dashboard ID 11914 is built against the old prefix and will show empty panels. The dashboard in this repo uses the correct current metric names.
-
----
-
 ## Real-World Threat Context
 
 During the development of this thesis (March 2026), a real supply chain attack targeted the Trivy scanner itself. Threat actor **TeamPCP** published malicious versions of `trivy`, `trivy-action`, and `setup-trivy` to GitHub, containing a credential stealer paired with a self-propagating worm named **CanisterWorm**. The worm spread across 141 npm packages by harvesting npm authentication tokens and republishing infected versions autonomously.
