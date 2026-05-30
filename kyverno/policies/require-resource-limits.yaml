@@ -18,5 +18,5 @@ spec:
             containers:
               - resources:
                   limits:
-                    cpu: ?*
-                    memory: ?*
+                    cpu: "?*"
+                    memory: "?*"

@@ -145,12 +145,8 @@ helm install kyverno kyverno/kyverno \
 # Verify Kyverno controllers
 kubectl get pods -n kyverno
 
-# Apply custom thesis policies (5 policies total)
-kubectl apply -f kyverno/policies/block-host-namespaces.yaml
-kubectl apply -f kyverno/policies/block-latest-tag.yaml
-kubectl apply -f kyverno/policies/block-privileged.yaml
-kubectl apply -f kyverno/policies/require-non-root.yaml
-kubectl apply -f kyverno/policies/require-resource-limits.yaml
+# Apply all 5 custom thesis policies
+kubectl apply -f kyverno/policies/
 
 # Verify all 5 policies are loaded and ready
 kubectl get clusterpolicy
@@ -159,8 +155,28 @@ kubectl get clusterpolicy
 kubectl get policyreport -A
 kubectl get clusterpolicyreport
 
-# Test policy enforcement
-kubectl get events -n kyverno
+# Validate enforcement against kube-goat (hunger-check)
+# This demonstrates that Kyverno blocks the vulnerable workload at admission time
+kubectl get deployment hunger-check-deployment -n big-monolith -o yaml > /tmp/hunger-check.yaml
+kubectl delete deployment hunger-check-deployment -n big-monolith
+kubectl apply -f /tmp/hunger-check.yaml -n big-monolith
+# Expected output:
+# Error from server: admission webhook "validate.kyverno.svc-fail" denied the request:
+# require-non-root: autogen-require-non-root failed at path
+#   /spec/template/spec/containers/0/securityContext/
+# require-resource-limits: autogen-require-limits failed at path
+#   /spec/template/spec/containers/0/resources/limits/
+
+# Restore hunger-check (switch policies to Audit temporarily)
+kubectl patch clusterpolicy require-non-root --type=json \
+  -p='[{"op":"replace","path":"/spec/validationFailureAction","value":"Audit"}]'
+kubectl patch clusterpolicy require-resource-limits --type=json \
+  -p='[{"op":"replace","path":"/spec/validationFailureAction","value":"Audit"}]'
+kubectl apply -f /tmp/hunger-check.yaml -n big-monolith
+kubectl patch clusterpolicy require-non-root --type=json \
+  -p='[{"op":"replace","path":"/spec/validationFailureAction","value":"Enforce"}]'
+kubectl patch clusterpolicy require-resource-limits --type=json \
+  -p='[{"op":"replace","path":"/spec/validationFailureAction","value":"Enforce"}]'
 
 
 ----------------------------------------------------------------
@@ -176,8 +192,10 @@ helm repo update
 #         prebuilt driver required. Works on any BTF-enabled kernel (5.8+).
 # Note 2: falco-exporter is deprecated since Falco 0.38 — native metrics
 #         are exposed at :8765/metrics with falcosecurity_* prefix.
-# Note 3: helm-values.yaml contains all custom configuration including
-#         metrics, webserver, http_output and custom rules
+# Note 3: Configuration is split across two files:
+#         helm-values.yaml — driver, metrics, webserver, http_output,
+#                            noise reduction rules, disabled rules
+#         custom-rules.yaml — detection rules for PoC attack scenarios
 kubectl create namespace falco
 
 helm install falco falcosecurity/falco \
@@ -386,37 +404,34 @@ ATTACK SCENARIOS — PoC Triggers
 TARGET=$(kubectl get pod -n big-monolith -o jsonpath='{.items[0].metadata.name}')
 
 # PoC 1 — Sensitive File Access (T1555)
-# Evidence: falco-attack2-sensitive-file-shadow.png
+# Evidence: falco/falco-attack2-sensitive-file-shadow.png
+# Rule: Read sensitive file untrusted (Warning)
 kubectl exec -n big-monolith $TARGET -- cat /etc/shadow
-# Detected by: Read sensitive file untrusted (Warning)
 
-# PoC 2 — Terminal Shell in Container (T1059)
-kubectl exec -it -n big-monolith $TARGET -- /bin/bash
-# Detected by: Terminal shell in container (Notice)
-
-# PoC 3 — Fileless Malware via /dev/shm (T1620)
-# Evidence: falco-attack1-devshm-execution.png
+# PoC 2 — Fileless Malware via /dev/shm (T1620)
+# Evidence: falco/falco-attack1-devshm-execution.png
+# Rule: Execution from /dev/shm (Critical)
 kubectl exec -n big-monolith $TARGET -- \
   sh -c "cp /bin/sh /dev/shm/evil && /dev/shm/evil -c id"
-# Detected by: Execution from /dev/shm (Critical)
 
-# PoC 4 — Service Account Token Access (T1528)
-# Evidence: falco-attack3-serviceaccount-token.png
+# PoC 3 — Service Account Token Access (T1528)
+# Evidence: falco/falco-attack3-serviceaccount-token.png
+# Rule: Read Kubernetes Service Account Token (Warning) — custom rule
 kubectl exec -n big-monolith $TARGET -- \
   cat /var/run/secrets/kubernetes.io/serviceaccount/token
-# Detected by: Read sensitive file untrusted (Warning)
 
-# PoC 5 — C2 Outbound Connection (T1105)
-# Evidence: falco-attack4-curl-c2.png
+# PoC 4 — C2 Outbound Connection (T1105)
+# Evidence: falco/falco-attack4-curl-c2.png
+# Rule: Detect curl or wget inside container (Warning) — custom rule
 kubectl exec -n big-monolith $TARGET -- \
   curl -s http://example.com
-# Detected by: Network tool execution in container (Warning)
 
-# PoC 6 — K8s API Lateral Movement (T1613)
-# Evidence: falco-attack5-k8s-api-lateral-movement.png
+# PoC 5 — K8s API Lateral Movement (T1613)
+# Evidence: falco/falco-attack5-k8s-api-lateral-movement.png
+# Rule: Contact K8S API Server From Container (Notice)
+# Also visible in Kiali service graph as cross-namespace traffic
 kubectl exec -n big-monolith $TARGET -- \
   curl -k https://kubernetes.default.svc/api/v1/namespaces
-# Visible in Kiali service graph as cross-namespace traffic
 
 
 ----------------------------------------------------------------
