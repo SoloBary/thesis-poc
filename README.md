@@ -678,17 +678,11 @@ The table below lists only techniques **demonstrated with concrete evidence** in
 **Falco rule `override: enabled: replace` requires the rule to exist in the loaded ruleset.**  
 If the rule name does not match exactly — including capitalization and punctuation — Falco fails at startup with a validation error. Verify with `grep "^- rule:" /etc/falco/falco_rules.yaml` before writing overrides.
 
-**Falco internal metrics snapshots bypass `minimumpriority`.**  
-`Falco internal: metrics snapshot` events bypass the priority filter in Falcosidekick. The fix is `--set falco.metrics.output_rule=false` at the Falco level, not a downstream filter.
-
 **kind nodes require explicit host mounts for eBPF.**  
 Without mounting `/proc`, `/sys`, and `/` from the host, Falco's eBPF probe loads but cannot instrument syscalls.
 
 **Kyverno namespace exceptions must cover all system tooling.**  
 Before switching any policy to `Enforce`, add exceptions for `kube-system`, `monitoring`, `falco`, `trivy-system`, `istio-system`, and `kyverno`. Without them, Kyverno blocks its own DaemonSets.
-
-**Trivy DB mirror reliability.**  
-`mirror.gcr.io` is periodically unavailable. Use `public.ecr.aws/aquasecurity/trivy-db` as the stable alternative.
 
 **The `falcosecurity_*` metric prefix is breaking.**  
 Any PromQL query or Grafana dashboard using the legacy `falco_*` prefix returns no data against Falco 0.38+. Grafana community dashboard ID 11914 is incompatible.
