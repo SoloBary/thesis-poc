@@ -597,12 +597,8 @@ thesis-poc/
 │   │   ├── block-privileged.yaml
 │   │   ├── require-non-root.yaml
 │   │   └── require-resource-limits.yaml
-│   ├── kyverno-block-host-namespaces.png
-│   ├── kyverno-block-latest-nonroot-limits.png
-│   ├── kyverno-block-latest-tag.png
-│   ├── kyverno-block-root-user.png
 │   ├── kyverno-clusterpolicies-all-5-ready.png
-│   ├── kyverno-clusterpolicies-initial-2.png
+│   ├── kyverno-hunger-check.png
 │   ├── kyverno-policy-violation-events.png
 │   └── test.txt
 │
@@ -618,7 +614,11 @@ thesis-poc/
 │
 ├── trivy/
 │   ├── helm-values.yaml
-│   ├── [vulnerability report .txt files]
+│   ├── default_replicaset-d59fd5d4c.txt
+│   ├── default_replicaset-internal-proxy-deployment-789cdcf4f9-internal-api.txt
+│   ├── default_replicaset-poor-registry-deployment-57597689b5-poor-registry.txt
+│   ├── default_replicaset-system-monitor-deployment-576f894bc6-system-monitor.txt
+│   ├── secure-middleware_replicaset-cache-store-deployment-77dd448588-cache-store.txt
 │   ├── trivy-vulnerability-report-detail.png
 │   └── trivy-vulnerability-reports-all-namespaces.png
 │
