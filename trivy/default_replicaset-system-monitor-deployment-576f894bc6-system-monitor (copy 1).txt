@@ -1,0 +1,1829 @@
+apiVersion: aquasecurity.github.io/v1alpha1
+kind: VulnerabilityReport
+metadata:
+  annotations:
+    trivy-operator.aquasecurity.github.io/report-ttl: 24h0m0s
+  creationTimestamp: "2026-04-06T14:16:31Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/managed-by: trivy-operator
+    resource-spec-hash: 6789b947d6
+    trivy-operator.container.name: system-monitor
+    trivy-operator.resource.kind: ReplicaSet
+    trivy-operator.resource.name: system-monitor-deployment-576f894bc6
+    trivy-operator.resource.namespace: default
+  name: replicaset-system-monitor-deployment-576f894bc6-system-monitor
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: false
+    controller: true
+    kind: ReplicaSet
+    name: system-monitor-deployment-576f894bc6
+    uid: 033369ee-e3b2-4fb4-86f7-e3dedf4ebde6
+  resourceVersion: "2142521"
+  uid: ea08c9f5-540c-4945-b48b-5cba9ffe9cb4
+report:
+  artifact:
+    digest: sha256:79cf7b573ba2b189c8c9a4c90a7da64874c697b050bbffec3169c6a95fa2170b
+    repository: madhuakula/k8s-goat-system-monitor
+    tag: latest
+  os:
+    family: ubuntu
+    name: "24.04"
+  registry:
+    server: index.docker.io
+  scanner:
+    name: Trivy
+    vendor: Aqua Security
+    version: 0.69.3
+  summary:
+    criticalCount: 0
+    highCount: 1
+    lowCount: 52
+    mediumCount: 81
+    noneCount: 0
+    unknownCount: 0
+  updateTimestamp: "2026-04-06T14:16:31Z"
+  vulnerabilities:
+  - fixedVersion: 8.5.0-2ubuntu10.4
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2025-07-30T19:42:16Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-8096
+    publishedDate: "2024-09-11T10:15:02Z"
+    resource: curl
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'curl: OCSP stapling bypass with GnuTLS'
+    vulnerabilityID: CVE-2024-8096
+  - fixedVersion: 8.5.0-2ubuntu10.7
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-01-27T21:29:39Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-14017
+    publishedDate: "2026-01-08T10:15:45Z"
+    resource: curl
+    score: 4.8
+    severity: MEDIUM
+    target: ""
+    title: 'curl: curl: Security bypass due to global TLS option changes in multi-threaded
+      LDAPS transfers'
+    vulnerabilityID: CVE-2025-14017
+  - fixedVersion: 8.5.0-2ubuntu10.8
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-03-12T14:11:19Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-1965
+    publishedDate: "2026-03-11T11:15:59Z"
+    resource: curl
+    score: 6.8
+    severity: MEDIUM
+    target: ""
+    title: 'curl: curl: Authentication bypass due to incorrect connection reuse with
+      Negotiate authentication'
+    vulnerabilityID: CVE-2026-1965
+  - fixedVersion: 8.5.0-2ubuntu10.8
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-03-12T14:10:37Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-3783
+    publishedDate: "2026-03-11T11:16:00Z"
+    resource: curl
+    score: 5.7
+    severity: MEDIUM
+    target: ""
+    title: 'curl: curl: Information disclosure via OAuth2 bearer token leakage during
+      HTTP(S) redirect'
+    vulnerabilityID: CVE-2026-3783
+  - fixedVersion: 8.5.0-2ubuntu10.6
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2025-11-03T21:16:04Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-11053
+    publishedDate: "2024-12-11T08:15:05Z"
+    resource: curl
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'curl: curl netrc password leak'
+    vulnerabilityID: CVE-2024-11053
+  - fixedVersion: 8.5.0-2ubuntu10.5
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2025-11-03T21:18:48Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-9681
+    publishedDate: "2024-11-06T08:15:03Z"
+    resource: curl
+    score: 3.9
+    severity: LOW
+    target: ""
+    title: 'curl: HSTS subdomain overwrites parent cache entry'
+    vulnerabilityID: CVE-2024-9681
+  - fixedVersion: 8.5.0-2ubuntu10.8
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2025-07-30T19:41:45Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0167
+    publishedDate: "2025-02-05T10:15:22Z"
+    resource: curl
+    severity: LOW
+    target: ""
+    title: When asked to use a `.netrc` file for credentials **and** to follow HT
+      ...
+    vulnerabilityID: CVE-2025-0167
+  - fixedVersion: 8.5.0-2ubuntu10.7
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-01-20T14:55:47Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-10148
+    publishedDate: "2025-09-12T06:15:40Z"
+    resource: curl
+    score: 4.8
+    severity: LOW
+    target: ""
+    title: 'curl: predictable WebSocket mask'
+    vulnerabilityID: CVE-2025-10148
+  - fixedVersion: 8.5.0-2ubuntu10.7
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-01-20T14:53:11Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-14524
+    publishedDate: "2026-01-08T10:15:46Z"
+    resource: curl
+    severity: LOW
+    target: ""
+    title: When an OAuth2 bearer token is used for an HTTP(S) transfer, and that  ...
+    vulnerabilityID: CVE-2025-14524
+  - fixedVersion: 8.5.0-2ubuntu10.7
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-01-20T14:51:26Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-14819
+    publishedDate: "2026-01-08T10:15:46Z"
+    resource: curl
+    severity: LOW
+    target: ""
+    title: When doing TLS related transfers with reused easy or multi handles and
+      ...
+    vulnerabilityID: CVE-2025-14819
+  - fixedVersion: 8.5.0-2ubuntu10.7
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-01-20T14:50:24Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15079
+    publishedDate: "2026-01-08T10:15:47Z"
+    resource: curl
+    severity: LOW
+    target: ""
+    title: When doing SSH-based transfers using either SCP or SFTP, and setting t
+      ...
+    vulnerabilityID: CVE-2025-15079
+  - fixedVersion: 8.5.0-2ubuntu10.7
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-01-20T14:47:52Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15224
+    publishedDate: "2026-01-08T10:15:47Z"
+    resource: curl
+    severity: LOW
+    target: ""
+    title: When doing SSH-based transfers using either SCP or SFTP, and asked to  ...
+    vulnerabilityID: CVE-2025-15224
+  - fixedVersion: 8.5.0-2ubuntu10.8
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-03-12T14:09:50Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/curl@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-3784
+    publishedDate: "2026-03-11T11:16:00Z"
+    resource: curl
+    score: 6.5
+    severity: LOW
+    target: ""
+    title: 'curl: curl: Unauthorized access due to improper HTTP proxy connection
+      reuse'
+    vulnerabilityID: CVE-2026-3784
+  - fixedVersion: 1.22.6ubuntu6.5
+    installedVersion: 1.22.6ubuntu6
+    lastModifiedDate: "2025-08-19T17:50:38Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/dpkg@1.22.6ubuntu6?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-6297
+    publishedDate: "2025-07-01T17:15:30Z"
+    resource: dpkg
+    severity: LOW
+    target: ""
+    title: It was discovered that dpkg-deb does not properly sanitize directory p
+      ...
+    vulnerabilityID: CVE-2025-6297
+  - fixedVersion: 2.4.4-2ubuntu17.4
+    installedVersion: 2.4.4-2ubuntu17
+    lastModifiedDate: "2026-01-14T19:16:46Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/gpgv@2.4.4-2ubuntu17?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-68973
+    publishedDate: "2025-12-28T17:16:01Z"
+    resource: gpgv
+    score: 7.8
+    severity: HIGH
+    target: ""
+    title: 'GnuPG: GnuPG: Information disclosure and potential arbitrary code execution
+      via out-of-bounds write'
+    vulnerabilityID: CVE-2025-68973
+  - fixedVersion: 2.4.4-2ubuntu17.2
+    installedVersion: 2.4.4-2ubuntu17
+    lastModifiedDate: "2025-10-16T16:53:07Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/gpgv@2.4.4-2ubuntu17?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-30258
+    publishedDate: "2025-03-19T20:15:20Z"
+    resource: gpgv
+    score: 2.7
+    severity: MEDIUM
+    target: ""
+    title: 'gnupg: verification DoS due to a malicious subkey in the keyring'
+    vulnerabilityID: CVE-2025-30258
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-03-25T20:15:21Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/krb5-locales@1.20.1-6ubuntu2.1?arch=all&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26462
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: krb5-locales
+    score: 7.5
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/kdc/ndr.c'
+    vulnerabilityID: CVE-2024-26462
+  - fixedVersion: 1.20.1-6ubuntu2.3
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-11-04T18:16:31Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/krb5-locales@1.20.1-6ubuntu2.1?arch=all&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-3596
+    publishedDate: "2024-07-09T12:15:20Z"
+    resource: krb5-locales
+    score: 9
+    severity: MEDIUM
+    target: ""
+    title: 'freeradius: forgery attack'
+    vulnerabilityID: CVE-2024-3596
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2026-01-26T15:05:57Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/krb5-locales@1.20.1-6ubuntu2.1?arch=all&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-24528
+    publishedDate: "2026-01-16T18:16:06Z"
+    resource: krb5-locales
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: overflow when calculating ulog block size'
+    vulnerabilityID: CVE-2025-24528
+  - fixedVersion: 1.20.1-6ubuntu2.6
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-09-02T10:15:34Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/krb5-locales@1.20.1-6ubuntu2.1?arch=all&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-3576
+    publishedDate: "2025-04-15T06:15:44Z"
+    resource: krb5-locales
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: Kerberos RC4-HMAC-MD5 Checksum Vulnerability Enabling Message Spoofing
+      via MD5 Collisions'
+    vulnerabilityID: CVE-2025-3576
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-05-23T15:39:31Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/krb5-locales@1.20.1-6ubuntu2.1?arch=all&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26458
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: krb5-locales
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c'
+    vulnerabilityID: CVE-2024-26458
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-05-23T15:30:30Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/krb5-locales@1.20.1-6ubuntu2.1?arch=all&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26461
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: krb5-locales
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c'
+    vulnerabilityID: CVE-2024-26461
+  - fixedVersion: 2.39-0ubuntu8.4
+    installedVersion: 2.39-0ubuntu8.2
+    lastModifiedDate: "2026-02-04T21:15:56Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libc-bin@2.39-0ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0395
+    publishedDate: "2025-01-22T13:15:20Z"
+    resource: libc-bin
+    score: 5.5
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: buffer overflow in the GNU C Library''s assert()'
+    vulnerabilityID: CVE-2025-0395
+  - fixedVersion: 2.39-0ubuntu8.7
+    installedVersion: 2.39-0ubuntu8.2
+    lastModifiedDate: "2026-02-05T17:43:18Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libc-bin@2.39-0ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15281
+    publishedDate: "2026-01-20T14:16:07Z"
+    resource: libc-bin
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized
+      memory'
+    vulnerabilityID: CVE-2025-15281
+  - fixedVersion: 2.39-0ubuntu8.5
+    installedVersion: 2.39-0ubuntu8.2
+    lastModifiedDate: "2025-10-01T15:37:50Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libc-bin@2.39-0ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-5702
+    publishedDate: "2025-06-05T19:15:31Z"
+    resource: libc-bin
+    score: 5.6
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: Vector register overwrite bug in glibc'
+    vulnerabilityID: CVE-2025-5702
+  - fixedVersion: 2.39-0ubuntu8.6
+    installedVersion: 2.39-0ubuntu8.2
+    lastModifiedDate: "2025-11-04T22:16:44Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libc-bin@2.39-0ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-8058
+    publishedDate: "2025-07-23T20:15:27Z"
+    resource: libc-bin
+    score: 4.2
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: Double free in glibc'
+    vulnerabilityID: CVE-2025-8058
+  - fixedVersion: 2.39-0ubuntu8.7
+    installedVersion: 2.39-0ubuntu8.2
+    lastModifiedDate: "2026-02-03T18:26:25Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libc-bin@2.39-0ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-0861
+    publishedDate: "2026-01-14T21:15:52Z"
+    resource: libc-bin
+    score: 8.1
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: Integer overflow in memalign leads to heap corruption'
+    vulnerabilityID: CVE-2026-0861
+  - fixedVersion: 2.39-0ubuntu8.7
+    installedVersion: 2.39-0ubuntu8.2
+    lastModifiedDate: "2026-01-23T19:36:50Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libc-bin@2.39-0ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-0915
+    publishedDate: "2026-01-15T22:16:12Z"
+    resource: libc-bin
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: glibc: Information disclosure via zero-valued network query'
+    vulnerabilityID: CVE-2026-0915
+  - fixedVersion: 2.39-0ubuntu8.4
+    installedVersion: 2.39-0ubuntu8.2
+    lastModifiedDate: "2026-02-04T21:15:56Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libc6@2.39-0ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0395
+    publishedDate: "2025-01-22T13:15:20Z"
+    resource: libc6
+    score: 5.5
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: buffer overflow in the GNU C Library''s assert()'
+    vulnerabilityID: CVE-2025-0395
+  - fixedVersion: 2.39-0ubuntu8.7
+    installedVersion: 2.39-0ubuntu8.2
+    lastModifiedDate: "2026-02-05T17:43:18Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libc6@2.39-0ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15281
+    publishedDate: "2026-01-20T14:16:07Z"
+    resource: libc6
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized
+      memory'
+    vulnerabilityID: CVE-2025-15281
+  - fixedVersion: 2.39-0ubuntu8.5
+    installedVersion: 2.39-0ubuntu8.2
+    lastModifiedDate: "2025-10-01T15:37:50Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libc6@2.39-0ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-5702
+    publishedDate: "2025-06-05T19:15:31Z"
+    resource: libc6
+    score: 5.6
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: Vector register overwrite bug in glibc'
+    vulnerabilityID: CVE-2025-5702
+  - fixedVersion: 2.39-0ubuntu8.6
+    installedVersion: 2.39-0ubuntu8.2
+    lastModifiedDate: "2025-11-04T22:16:44Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libc6@2.39-0ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-8058
+    publishedDate: "2025-07-23T20:15:27Z"
+    resource: libc6
+    score: 4.2
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: Double free in glibc'
+    vulnerabilityID: CVE-2025-8058
+  - fixedVersion: 2.39-0ubuntu8.7
+    installedVersion: 2.39-0ubuntu8.2
+    lastModifiedDate: "2026-02-03T18:26:25Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libc6@2.39-0ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-0861
+    publishedDate: "2026-01-14T21:15:52Z"
+    resource: libc6
+    score: 8.1
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: Integer overflow in memalign leads to heap corruption'
+    vulnerabilityID: CVE-2026-0861
+  - fixedVersion: 2.39-0ubuntu8.7
+    installedVersion: 2.39-0ubuntu8.2
+    lastModifiedDate: "2026-01-23T19:36:50Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libc6@2.39-0ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-0915
+    publishedDate: "2026-01-15T22:16:12Z"
+    resource: libc6
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'glibc: glibc: Information disclosure via zero-valued network query'
+    vulnerabilityID: CVE-2026-0915
+  - fixedVersion: 1:2.66-5ubuntu2.2
+    installedVersion: 1:2.66-5ubuntu2
+    lastModifiedDate: "2025-02-18T03:15:10Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcap2@2.66-5ubuntu2?arch=amd64&distro=ubuntu-24.04&epoch=1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-1390
+    publishedDate: "2025-02-18T03:15:10Z"
+    resource: libcap2
+    score: 6.1
+    severity: MEDIUM
+    target: ""
+    title: 'libcap: pam_cap: Fix potential configuration parsing error'
+    vulnerabilityID: CVE-2025-1390
+  - fixedVersion: 1:2.66-5ubuntu2.2
+    installedVersion: 1:2.66-5ubuntu2
+    lastModifiedDate: "2025-02-18T03:15:10Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcap2-bin@2.66-5ubuntu2?arch=amd64&distro=ubuntu-24.04&epoch=1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-1390
+    publishedDate: "2025-02-18T03:15:10Z"
+    resource: libcap2-bin
+    score: 6.1
+    severity: MEDIUM
+    target: ""
+    title: 'libcap: pam_cap: Fix potential configuration parsing error'
+    vulnerabilityID: CVE-2025-1390
+  - fixedVersion: 8.5.0-2ubuntu10.4
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2025-07-30T19:42:16Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-8096
+    publishedDate: "2024-09-11T10:15:02Z"
+    resource: libcurl4t64
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'curl: OCSP stapling bypass with GnuTLS'
+    vulnerabilityID: CVE-2024-8096
+  - fixedVersion: 8.5.0-2ubuntu10.7
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-01-27T21:29:39Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-14017
+    publishedDate: "2026-01-08T10:15:45Z"
+    resource: libcurl4t64
+    score: 4.8
+    severity: MEDIUM
+    target: ""
+    title: 'curl: curl: Security bypass due to global TLS option changes in multi-threaded
+      LDAPS transfers'
+    vulnerabilityID: CVE-2025-14017
+  - fixedVersion: 8.5.0-2ubuntu10.8
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-03-12T14:11:19Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-1965
+    publishedDate: "2026-03-11T11:15:59Z"
+    resource: libcurl4t64
+    score: 6.8
+    severity: MEDIUM
+    target: ""
+    title: 'curl: curl: Authentication bypass due to incorrect connection reuse with
+      Negotiate authentication'
+    vulnerabilityID: CVE-2026-1965
+  - fixedVersion: 8.5.0-2ubuntu10.8
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-03-12T14:10:37Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-3783
+    publishedDate: "2026-03-11T11:16:00Z"
+    resource: libcurl4t64
+    score: 5.7
+    severity: MEDIUM
+    target: ""
+    title: 'curl: curl: Information disclosure via OAuth2 bearer token leakage during
+      HTTP(S) redirect'
+    vulnerabilityID: CVE-2026-3783
+  - fixedVersion: 8.5.0-2ubuntu10.6
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2025-11-03T21:16:04Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-11053
+    publishedDate: "2024-12-11T08:15:05Z"
+    resource: libcurl4t64
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'curl: curl netrc password leak'
+    vulnerabilityID: CVE-2024-11053
+  - fixedVersion: 8.5.0-2ubuntu10.5
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2025-11-03T21:18:48Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-9681
+    publishedDate: "2024-11-06T08:15:03Z"
+    resource: libcurl4t64
+    score: 3.9
+    severity: LOW
+    target: ""
+    title: 'curl: HSTS subdomain overwrites parent cache entry'
+    vulnerabilityID: CVE-2024-9681
+  - fixedVersion: 8.5.0-2ubuntu10.8
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2025-07-30T19:41:45Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-0167
+    publishedDate: "2025-02-05T10:15:22Z"
+    resource: libcurl4t64
+    severity: LOW
+    target: ""
+    title: When asked to use a `.netrc` file for credentials **and** to follow HT
+      ...
+    vulnerabilityID: CVE-2025-0167
+  - fixedVersion: 8.5.0-2ubuntu10.7
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-01-20T14:55:47Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-10148
+    publishedDate: "2025-09-12T06:15:40Z"
+    resource: libcurl4t64
+    score: 4.8
+    severity: LOW
+    target: ""
+    title: 'curl: predictable WebSocket mask'
+    vulnerabilityID: CVE-2025-10148
+  - fixedVersion: 8.5.0-2ubuntu10.7
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-01-20T14:53:11Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-14524
+    publishedDate: "2026-01-08T10:15:46Z"
+    resource: libcurl4t64
+    severity: LOW
+    target: ""
+    title: When an OAuth2 bearer token is used for an HTTP(S) transfer, and that  ...
+    vulnerabilityID: CVE-2025-14524
+  - fixedVersion: 8.5.0-2ubuntu10.7
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-01-20T14:51:26Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-14819
+    publishedDate: "2026-01-08T10:15:46Z"
+    resource: libcurl4t64
+    severity: LOW
+    target: ""
+    title: When doing TLS related transfers with reused easy or multi handles and
+      ...
+    vulnerabilityID: CVE-2025-14819
+  - fixedVersion: 8.5.0-2ubuntu10.7
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-01-20T14:50:24Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15079
+    publishedDate: "2026-01-08T10:15:47Z"
+    resource: libcurl4t64
+    severity: LOW
+    target: ""
+    title: When doing SSH-based transfers using either SCP or SFTP, and setting t
+      ...
+    vulnerabilityID: CVE-2025-15079
+  - fixedVersion: 8.5.0-2ubuntu10.7
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-01-20T14:47:52Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15224
+    publishedDate: "2026-01-08T10:15:47Z"
+    resource: libcurl4t64
+    severity: LOW
+    target: ""
+    title: When doing SSH-based transfers using either SCP or SFTP, and asked to  ...
+    vulnerabilityID: CVE-2025-15224
+  - fixedVersion: 8.5.0-2ubuntu10.8
+    installedVersion: 8.5.0-2ubuntu10.3
+    lastModifiedDate: "2026-03-12T14:09:50Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libcurl4t64@8.5.0-2ubuntu10.3?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-3784
+    publishedDate: "2026-03-11T11:16:00Z"
+    resource: libcurl4t64
+    score: 6.5
+    severity: LOW
+    target: ""
+    title: 'curl: curl: Unauthorized access due to improper HTTP proxy connection
+      reuse'
+    vulnerabilityID: CVE-2026-3784
+  - fixedVersion: 3.8.3-1.1ubuntu3.3
+    installedVersion: 3.8.3-1.1ubuntu3.1
+    lastModifiedDate: "2026-03-24T23:17:07Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgnutls30t64@3.8.3-1.1ubuntu3.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-12243
+    publishedDate: "2025-02-10T16:15:37Z"
+    resource: libgnutls30t64
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'gnutls: GnuTLS Impacted by Inefficient DER Decoding in libtasn1 Leading
+      to Remote DoS'
+    vulnerabilityID: CVE-2024-12243
+  - fixedVersion: 3.8.3-1.1ubuntu3.5
+    installedVersion: 3.8.3-1.1ubuntu3.1
+    lastModifiedDate: "2026-04-06T11:17:02Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgnutls30t64@3.8.3-1.1ubuntu3.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-14831
+    publishedDate: "2026-02-09T15:16:09Z"
+    resource: libgnutls30t64
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'gnutls: GnuTLS: Denial of Service via excessive resource consumption during
+      certificate verification'
+    vulnerabilityID: CVE-2025-14831
+  - fixedVersion: 3.8.3-1.1ubuntu3.4
+    installedVersion: 3.8.3-1.1ubuntu3.1
+    lastModifiedDate: "2026-03-26T17:16:26Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgnutls30t64@3.8.3-1.1ubuntu3.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-32988
+    publishedDate: "2025-07-10T08:15:24Z"
+    resource: libgnutls30t64
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'gnutls: Vulnerability in GnuTLS otherName SAN export'
+    vulnerabilityID: CVE-2025-32988
+  - fixedVersion: 3.8.3-1.1ubuntu3.4
+    installedVersion: 3.8.3-1.1ubuntu3.1
+    lastModifiedDate: "2025-12-01T22:15:48Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgnutls30t64@3.8.3-1.1ubuntu3.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-32989
+    publishedDate: "2025-07-10T08:15:24Z"
+    resource: libgnutls30t64
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'gnutls: Vulnerability in GnuTLS SCT extension parsing'
+    vulnerabilityID: CVE-2025-32989
+  - fixedVersion: 3.8.3-1.1ubuntu3.4
+    installedVersion: 3.8.3-1.1ubuntu3.1
+    lastModifiedDate: "2025-12-01T22:15:48Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgnutls30t64@3.8.3-1.1ubuntu3.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-32990
+    publishedDate: "2025-07-10T10:15:33Z"
+    resource: libgnutls30t64
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'gnutls: Vulnerability in GnuTLS certtool template parsing'
+    vulnerabilityID: CVE-2025-32990
+  - fixedVersion: 3.8.3-1.1ubuntu3.4
+    installedVersion: 3.8.3-1.1ubuntu3.1
+    lastModifiedDate: "2025-12-01T22:15:51Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgnutls30t64@3.8.3-1.1ubuntu3.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-6395
+    publishedDate: "2025-07-10T16:15:25Z"
+    resource: libgnutls30t64
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'gnutls: NULL pointer dereference in _gnutls_figure_common_ciphersuite()'
+    vulnerabilityID: CVE-2025-6395
+  - fixedVersion: 3.8.3-1.1ubuntu3.5
+    installedVersion: 3.8.3-1.1ubuntu3.1
+    lastModifiedDate: "2026-03-24T11:16:22Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgnutls30t64@3.8.3-1.1ubuntu3.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9820
+    publishedDate: "2026-01-26T20:16:09Z"
+    resource: libgnutls30t64
+    score: 4
+    severity: LOW
+    target: ""
+    title: 'gnutls: Stack-based Buffer Overflow in gnutls_pkcs11_token_init() Function'
+    vulnerabilityID: CVE-2025-9820
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-03-25T20:15:21Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgssapi-krb5-2@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26462
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: libgssapi-krb5-2
+    score: 7.5
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/kdc/ndr.c'
+    vulnerabilityID: CVE-2024-26462
+  - fixedVersion: 1.20.1-6ubuntu2.3
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-11-04T18:16:31Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgssapi-krb5-2@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-3596
+    publishedDate: "2024-07-09T12:15:20Z"
+    resource: libgssapi-krb5-2
+    score: 9
+    severity: MEDIUM
+    target: ""
+    title: 'freeradius: forgery attack'
+    vulnerabilityID: CVE-2024-3596
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2026-01-26T15:05:57Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgssapi-krb5-2@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-24528
+    publishedDate: "2026-01-16T18:16:06Z"
+    resource: libgssapi-krb5-2
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: overflow when calculating ulog block size'
+    vulnerabilityID: CVE-2025-24528
+  - fixedVersion: 1.20.1-6ubuntu2.6
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-09-02T10:15:34Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgssapi-krb5-2@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-3576
+    publishedDate: "2025-04-15T06:15:44Z"
+    resource: libgssapi-krb5-2
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: Kerberos RC4-HMAC-MD5 Checksum Vulnerability Enabling Message Spoofing
+      via MD5 Collisions'
+    vulnerabilityID: CVE-2025-3576
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-05-23T15:39:31Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgssapi-krb5-2@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26458
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: libgssapi-krb5-2
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c'
+    vulnerabilityID: CVE-2024-26458
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-05-23T15:30:30Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libgssapi-krb5-2@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26461
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: libgssapi-krb5-2
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c'
+    vulnerabilityID: CVE-2024-26461
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-03-25T20:15:21Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libk5crypto3@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26462
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: libk5crypto3
+    score: 7.5
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/kdc/ndr.c'
+    vulnerabilityID: CVE-2024-26462
+  - fixedVersion: 1.20.1-6ubuntu2.3
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-11-04T18:16:31Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libk5crypto3@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-3596
+    publishedDate: "2024-07-09T12:15:20Z"
+    resource: libk5crypto3
+    score: 9
+    severity: MEDIUM
+    target: ""
+    title: 'freeradius: forgery attack'
+    vulnerabilityID: CVE-2024-3596
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2026-01-26T15:05:57Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libk5crypto3@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-24528
+    publishedDate: "2026-01-16T18:16:06Z"
+    resource: libk5crypto3
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: overflow when calculating ulog block size'
+    vulnerabilityID: CVE-2025-24528
+  - fixedVersion: 1.20.1-6ubuntu2.6
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-09-02T10:15:34Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libk5crypto3@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-3576
+    publishedDate: "2025-04-15T06:15:44Z"
+    resource: libk5crypto3
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: Kerberos RC4-HMAC-MD5 Checksum Vulnerability Enabling Message Spoofing
+      via MD5 Collisions'
+    vulnerabilityID: CVE-2025-3576
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-05-23T15:39:31Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libk5crypto3@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26458
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: libk5crypto3
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c'
+    vulnerabilityID: CVE-2024-26458
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-05-23T15:30:30Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libk5crypto3@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26461
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: libk5crypto3
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c'
+    vulnerabilityID: CVE-2024-26461
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-03-25T20:15:21Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libkrb5-3@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26462
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: libkrb5-3
+    score: 7.5
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/kdc/ndr.c'
+    vulnerabilityID: CVE-2024-26462
+  - fixedVersion: 1.20.1-6ubuntu2.3
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-11-04T18:16:31Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libkrb5-3@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-3596
+    publishedDate: "2024-07-09T12:15:20Z"
+    resource: libkrb5-3
+    score: 9
+    severity: MEDIUM
+    target: ""
+    title: 'freeradius: forgery attack'
+    vulnerabilityID: CVE-2024-3596
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2026-01-26T15:05:57Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libkrb5-3@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-24528
+    publishedDate: "2026-01-16T18:16:06Z"
+    resource: libkrb5-3
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: overflow when calculating ulog block size'
+    vulnerabilityID: CVE-2025-24528
+  - fixedVersion: 1.20.1-6ubuntu2.6
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-09-02T10:15:34Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libkrb5-3@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-3576
+    publishedDate: "2025-04-15T06:15:44Z"
+    resource: libkrb5-3
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: Kerberos RC4-HMAC-MD5 Checksum Vulnerability Enabling Message Spoofing
+      via MD5 Collisions'
+    vulnerabilityID: CVE-2025-3576
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-05-23T15:39:31Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libkrb5-3@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26458
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: libkrb5-3
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c'
+    vulnerabilityID: CVE-2024-26458
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-05-23T15:30:30Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libkrb5-3@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26461
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: libkrb5-3
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c'
+    vulnerabilityID: CVE-2024-26461
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-03-25T20:15:21Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libkrb5support0@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26462
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: libkrb5support0
+    score: 7.5
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/kdc/ndr.c'
+    vulnerabilityID: CVE-2024-26462
+  - fixedVersion: 1.20.1-6ubuntu2.3
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-11-04T18:16:31Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libkrb5support0@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-3596
+    publishedDate: "2024-07-09T12:15:20Z"
+    resource: libkrb5support0
+    score: 9
+    severity: MEDIUM
+    target: ""
+    title: 'freeradius: forgery attack'
+    vulnerabilityID: CVE-2024-3596
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2026-01-26T15:05:57Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libkrb5support0@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-24528
+    publishedDate: "2026-01-16T18:16:06Z"
+    resource: libkrb5support0
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: overflow when calculating ulog block size'
+    vulnerabilityID: CVE-2025-24528
+  - fixedVersion: 1.20.1-6ubuntu2.6
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-09-02T10:15:34Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libkrb5support0@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-3576
+    publishedDate: "2025-04-15T06:15:44Z"
+    resource: libkrb5support0
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'krb5: Kerberos RC4-HMAC-MD5 Checksum Vulnerability Enabling Message Spoofing
+      via MD5 Collisions'
+    vulnerabilityID: CVE-2025-3576
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-05-23T15:39:31Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libkrb5support0@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26458
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: libkrb5support0
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c'
+    vulnerabilityID: CVE-2024-26458
+  - fixedVersion: 1.20.1-6ubuntu2.5
+    installedVersion: 1.20.1-6ubuntu2.1
+    lastModifiedDate: "2025-05-23T15:30:30Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libkrb5support0@1.20.1-6ubuntu2.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-26461
+    publishedDate: "2024-02-29T01:44:18Z"
+    resource: libkrb5support0
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c'
+    vulnerabilityID: CVE-2024-26461
+  - fixedVersion: 5.6.1+really5.4.5-1ubuntu0.2
+    installedVersion: 5.6.1+really5.4.5-1
+    lastModifiedDate: "2025-04-07T14:18:34Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/liblzma5@5.6.1%2Breally5.4.5-1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-31115
+    publishedDate: "2025-04-03T17:15:30Z"
+    resource: liblzma5
+    score: 7.5
+    severity: MEDIUM
+    target: ""
+    title: 'xz: XZ has a heap-use-after-free bug in threaded .xz decoder'
+    vulnerabilityID: CVE-2025-31115
+  - fixedVersion: 1:2.66-5ubuntu2.2
+    installedVersion: 1:2.66-5ubuntu2
+    lastModifiedDate: "2025-02-18T03:15:10Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libpam-cap@2.66-5ubuntu2?arch=amd64&distro=ubuntu-24.04&epoch=1
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-1390
+    publishedDate: "2025-02-18T03:15:10Z"
+    resource: libpam-cap
+    score: 6.1
+    severity: MEDIUM
+    target: ""
+    title: 'libcap: pam_cap: Fix potential configuration parsing error'
+    vulnerabilityID: CVE-2025-1390
+  - fixedVersion: 1.5.3-5ubuntu5.5
+    installedVersion: 1.5.3-5ubuntu5.1
+    lastModifiedDate: "2026-03-24T17:16:23Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libpam-modules@1.5.3-5ubuntu5.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-10963
+    publishedDate: "2024-11-07T16:15:17Z"
+    resource: libpam-modules
+    score: 7.4
+    severity: MEDIUM
+    target: ""
+    title: 'pam: Improper Hostname Interpretation in pam_access Leads to Access Control
+      Bypass'
+    vulnerabilityID: CVE-2024-10963
+  - fixedVersion: 1.5.3-5ubuntu5.4
+    installedVersion: 1.5.3-5ubuntu5.1
+    lastModifiedDate: "2026-03-17T16:16:18Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libpam-modules@1.5.3-5ubuntu5.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-6020
+    publishedDate: "2025-06-17T13:15:21Z"
+    resource: libpam-modules
+    score: 7.8
+    severity: MEDIUM
+    target: ""
+    title: 'linux-pam: Linux-pam directory Traversal'
+    vulnerabilityID: CVE-2025-6020
+  - fixedVersion: 1.5.3-5ubuntu5.5
+    installedVersion: 1.5.3-5ubuntu5.1
+    lastModifiedDate: "2026-03-24T17:16:23Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libpam-modules-bin@1.5.3-5ubuntu5.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-10963
+    publishedDate: "2024-11-07T16:15:17Z"
+    resource: libpam-modules-bin
+    score: 7.4
+    severity: MEDIUM
+    target: ""
+    title: 'pam: Improper Hostname Interpretation in pam_access Leads to Access Control
+      Bypass'
+    vulnerabilityID: CVE-2024-10963
+  - fixedVersion: 1.5.3-5ubuntu5.4
+    installedVersion: 1.5.3-5ubuntu5.1
+    lastModifiedDate: "2026-03-17T16:16:18Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libpam-modules-bin@1.5.3-5ubuntu5.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-6020
+    publishedDate: "2025-06-17T13:15:21Z"
+    resource: libpam-modules-bin
+    score: 7.8
+    severity: MEDIUM
+    target: ""
+    title: 'linux-pam: Linux-pam directory Traversal'
+    vulnerabilityID: CVE-2025-6020
+  - fixedVersion: 1.5.3-5ubuntu5.5
+    installedVersion: 1.5.3-5ubuntu5.1
+    lastModifiedDate: "2026-03-24T17:16:23Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libpam-runtime@1.5.3-5ubuntu5.1?arch=all&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-10963
+    publishedDate: "2024-11-07T16:15:17Z"
+    resource: libpam-runtime
+    score: 7.4
+    severity: MEDIUM
+    target: ""
+    title: 'pam: Improper Hostname Interpretation in pam_access Leads to Access Control
+      Bypass'
+    vulnerabilityID: CVE-2024-10963
+  - fixedVersion: 1.5.3-5ubuntu5.4
+    installedVersion: 1.5.3-5ubuntu5.1
+    lastModifiedDate: "2026-03-17T16:16:18Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libpam-runtime@1.5.3-5ubuntu5.1?arch=all&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-6020
+    publishedDate: "2025-06-17T13:15:21Z"
+    resource: libpam-runtime
+    score: 7.8
+    severity: MEDIUM
+    target: ""
+    title: 'linux-pam: Linux-pam directory Traversal'
+    vulnerabilityID: CVE-2025-6020
+  - fixedVersion: 1.5.3-5ubuntu5.5
+    installedVersion: 1.5.3-5ubuntu5.1
+    lastModifiedDate: "2026-03-24T17:16:23Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libpam0g@1.5.3-5ubuntu5.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-10963
+    publishedDate: "2024-11-07T16:15:17Z"
+    resource: libpam0g
+    score: 7.4
+    severity: MEDIUM
+    target: ""
+    title: 'pam: Improper Hostname Interpretation in pam_access Leads to Access Control
+      Bypass'
+    vulnerabilityID: CVE-2024-10963
+  - fixedVersion: 1.5.3-5ubuntu5.4
+    installedVersion: 1.5.3-5ubuntu5.1
+    lastModifiedDate: "2026-03-17T16:16:18Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libpam0g@1.5.3-5ubuntu5.1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-6020
+    publishedDate: "2025-06-17T13:15:21Z"
+    resource: libpam0g
+    score: 7.8
+    severity: MEDIUM
+    target: ""
+    title: 'linux-pam: Linux-pam directory Traversal'
+    vulnerabilityID: CVE-2025-6020
+  - fixedVersion: 0.10.6-2ubuntu0.1
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2025-08-20T14:39:07Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-4877
+    publishedDate: "2025-08-20T13:15:28Z"
+    resource: libssh-4
+    score: 4.5
+    severity: MEDIUM
+    target: ""
+    title: 'libssh: Write beyond bounds in binary to base64 conversion functions'
+    vulnerabilityID: CVE-2025-4877
+  - fixedVersion: 0.10.6-2ubuntu0.1
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2025-07-29T20:15:27Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-4878
+    publishedDate: "2025-07-22T15:15:36Z"
+    resource: libssh-4
+    score: 3.6
+    severity: MEDIUM
+    target: ""
+    title: 'libssh: Use of uninitialized variable in privatekey_from_file()'
+    vulnerabilityID: CVE-2025-4878
+  - fixedVersion: 0.10.6-2ubuntu0.1
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2026-02-27T17:16:24Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-5318
+    publishedDate: "2025-06-24T14:15:30Z"
+    resource: libssh-4
+    score: 8.1
+    severity: MEDIUM
+    target: ""
+    title: 'libssh: out-of-bounds read in sftp_handle()'
+    vulnerabilityID: CVE-2025-5318
+  - fixedVersion: 0.10.6-2ubuntu0.1
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2026-01-08T04:15:54Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-5351
+    publishedDate: "2025-07-04T09:15:37Z"
+    resource: libssh-4
+    score: 6.5
+    severity: MEDIUM
+    target: ""
+    title: 'libssh: Double Free Vulnerability in libssh Key Export Functions'
+    vulnerabilityID: CVE-2025-5351
+  - fixedVersion: 0.10.6-2ubuntu0.1
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2025-12-10T19:16:14Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-5372
+    publishedDate: "2025-07-04T06:15:24Z"
+    resource: libssh-4
+    score: 5
+    severity: MEDIUM
+    target: ""
+    title: 'libssh: Incorrect Return Code Handling in ssh_kdf() in libssh'
+    vulnerabilityID: CVE-2025-5372
+  - fixedVersion: 0.10.6-2ubuntu0.1
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2026-03-20T21:17:12Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-5987
+    publishedDate: "2025-07-07T15:15:28Z"
+    resource: libssh-4
+    score: 8.1
+    severity: MEDIUM
+    target: ""
+    title: 'libssh: Invalid return code for chacha20 poly1305 with OpenSSL backend'
+    vulnerabilityID: CVE-2025-5987
+  - fixedVersion: 0.10.6-2ubuntu0.3
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2026-03-30T13:26:50Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-0964
+    publishedDate: "2026-03-26T21:17:00Z"
+    resource: libssh-4
+    score: 5
+    severity: MEDIUM
+    target: ""
+    title: 'libssh: Improper sanitation of paths received from SCP servers'
+    vulnerabilityID: CVE-2026-0964
+  - fixedVersion: 0.10.6-2ubuntu0.3
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2026-04-02T17:28:27Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-0967
+    publishedDate: "2026-03-26T21:17:00Z"
+    resource: libssh-4
+    score: 2.2
+    severity: MEDIUM
+    target: ""
+    title: 'libssh: libssh: Denial of Service via inefficient regular expression processing'
+    vulnerabilityID: CVE-2026-0967
+  - fixedVersion: 0.10.6-2ubuntu0.3
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2026-04-03T20:06:16Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-0968
+    publishedDate: "2026-03-26T21:17:01Z"
+    resource: libssh-4
+    score: 3.1
+    severity: MEDIUM
+    target: ""
+    title: 'libssh: libssh: Denial of Service due to malformed SFTP message'
+    vulnerabilityID: CVE-2026-0968
+  - fixedVersion: 0.10.6-2ubuntu0.4
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2026-03-12T19:02:31Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-3731
+    publishedDate: "2026-03-08T11:15:50Z"
+    resource: libssh-4
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'libssh: libssh: Denial of Service via out-of-bounds read in SFTP extension
+      name handler'
+    vulnerabilityID: CVE-2026-3731
+  - fixedVersion: 0.10.6-2ubuntu0.2
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2025-11-17T21:15:58Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-8114
+    publishedDate: "2025-07-24T15:15:27Z"
+    resource: libssh-4
+    score: 4.7
+    severity: LOW
+    target: ""
+    title: 'libssh: NULL Pointer Dereference in libssh KEX Session ID Calculation'
+    vulnerabilityID: CVE-2025-8114
+  - fixedVersion: 0.10.6-2ubuntu0.3
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2025-09-09T16:28:43Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-8277
+    publishedDate: "2025-09-09T12:15:30Z"
+    resource: libssh-4
+    score: 3.1
+    severity: LOW
+    target: ""
+    title: 'libssh: Memory Exhaustion via Repeated Key Exchange in libssh'
+    vulnerabilityID: CVE-2025-8277
+  - fixedVersion: 0.10.6-2ubuntu0.3
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2026-04-02T17:33:46Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-0965
+    publishedDate: "2026-03-26T21:17:00Z"
+    resource: libssh-4
+    score: 3.3
+    severity: LOW
+    target: ""
+    title: 'libssh: libssh: Denial of Service via improper configuration file handling'
+    vulnerabilityID: CVE-2026-0965
+  - fixedVersion: 0.10.6-2ubuntu0.3
+    installedVersion: 0.10.6-2build2
+    lastModifiedDate: "2026-03-30T13:26:50Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssh-4@0.10.6-2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-0966
+    publishedDate: "2026-03-26T21:17:00Z"
+    resource: libssh-4
+    score: 6.5
+    severity: LOW
+    target: ""
+    title: 'libssh: Buffer underflow in ssh_get_hexa() on invalid input'
+    vulnerabilityID: CVE-2026-0966
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-03-19T19:16:19Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15467
+    publishedDate: "2026-01-27T16:16:14Z"
+    resource: libssl3t64
+    score: 9.8
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Remote code execution or Denial of Service via oversized
+      Initialization Vector in CMS parsing'
+    vulnerabilityID: CVE-2025-15467
+  - fixedVersion: 3.0.13-0ubuntu3.6
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2025-11-04T22:16:45Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9230
+    publishedDate: "2025-09-30T14:15:41Z"
+    resource: libssl3t64
+    score: 5.6
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Out-of-bounds read & write in RFC 3211 KEK Unwrap'
+    vulnerabilityID: CVE-2025-9230
+  - fixedVersion: 3.0.13-0ubuntu3.5
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2025-11-03T20:16:08Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-13176
+    publishedDate: "2025-01-20T14:15:26Z"
+    resource: libssl3t64
+    score: 4.7
+    severity: LOW
+    target: ""
+    title: 'openssl: Timing side-channel in ECDSA signature computation'
+    vulnerabilityID: CVE-2024-13176
+  - fixedVersion: 3.0.13-0ubuntu3.5
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2025-11-03T23:17:33Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-9143
+    publishedDate: "2024-10-16T17:15:18Z"
+    resource: libssl3t64
+    score: 3.7
+    severity: LOW
+    target: ""
+    title: 'openssl: Low-level invalid GF(2^m) parameters lead to OOB memory access'
+    vulnerabilityID: CVE-2024-9143
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-02T18:36:57Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-68160
+    publishedDate: "2026-01-27T16:16:15Z"
+    resource: libssl3t64
+    score: 4.7
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service due to out-of-bounds write in BIO
+      filter'
+    vulnerabilityID: CVE-2025-68160
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-02T18:36:03Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69418
+    publishedDate: "2026-01-27T16:16:33Z"
+    resource: libssl3t64
+    score: 4
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Information disclosure and data tampering via specific
+      low-level OCB encryption/decryption calls'
+    vulnerabilityID: CVE-2025-69418
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-02T18:35:02Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69419
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: libssl3t64
+    score: 7.4
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Arbitrary code execution due to out-of-bounds write
+      in PKCS#12 processing'
+    vulnerabilityID: CVE-2025-69419
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-02T18:33:30Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69420
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: libssl3t64
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via malformed TimeStamp Response'
+    vulnerabilityID: CVE-2025-69420
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-28T04:16:17Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69421
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: libssl3t64
+    score: 6.5
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via malformed PKCS#12 file processing'
+    vulnerabilityID: CVE-2025-69421
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-02T18:41:14Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-22795
+    publishedDate: "2026-01-27T16:16:35Z"
+    resource: libssl3t64
+    score: 5.5
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service due to type confusion in PKCS#12 file
+      processing'
+    vulnerabilityID: CVE-2026-22795
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-02T18:40:27Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libssl3t64@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-22796
+    publishedDate: "2026-01-27T16:16:35Z"
+    resource: libssl3t64
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via type confusion in PKCS#7 signature
+      verification'
+    vulnerabilityID: CVE-2026-22796
+  - fixedVersion: 255.4-1ubuntu8.8
+    installedVersion: 255.4-1ubuntu8.2
+    lastModifiedDate: "2026-02-02T10:16:05Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libsystemd0@255.4-1ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-4598
+    publishedDate: "2025-05-30T14:15:23Z"
+    resource: libsystemd0
+    score: 4.7
+    severity: MEDIUM
+    target: ""
+    title: 'systemd-coredump: race condition that allows a local attacker to crash
+      a SUID program and gain read access to the resulting core dump'
+    vulnerabilityID: CVE-2025-4598
+  - fixedVersion: 255.4-1ubuntu8.14
+    installedVersion: 255.4-1ubuntu8.2
+    lastModifiedDate: "2026-03-24T15:53:48Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libsystemd0@255.4-1ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-29111
+    publishedDate: "2026-03-23T22:16:26Z"
+    resource: libsystemd0
+    score: 7.8
+    severity: MEDIUM
+    target: ""
+    title: 'systemd: systemd: Arbitrary code execution or Denial of Service via spurious
+      IPC API call data'
+    vulnerabilityID: CVE-2026-29111
+  - fixedVersion: 4.19.0-3ubuntu0.24.04.1
+    installedVersion: 4.19.0-3build1
+    lastModifiedDate: "2026-03-24T23:17:06Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libtasn1-6@4.19.0-3build1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-12133
+    publishedDate: "2025-02-10T16:15:37Z"
+    resource: libtasn1-6
+    score: 5.3
+    severity: MEDIUM
+    target: ""
+    title: 'libtasn1: Inefficient DER Decoding in libtasn1 Leading to Potential Remote
+      DoS'
+    vulnerabilityID: CVE-2024-12133
+  - fixedVersion: 4.19.0-3ubuntu0.24.04.2
+    installedVersion: 4.19.0-3build1
+    lastModifiedDate: "2026-02-02T19:27:23Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libtasn1-6@4.19.0-3build1?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-13151
+    publishedDate: "2026-01-07T22:15:43Z"
+    resource: libtasn1-6
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'libtasn1: libtasn1: Denial of Service via stack-based buffer overflow
+      in asn1_expend_octet_string'
+    vulnerabilityID: CVE-2025-13151
+  - fixedVersion: 255.4-1ubuntu8.8
+    installedVersion: 255.4-1ubuntu8.2
+    lastModifiedDate: "2026-02-02T10:16:05Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libudev1@255.4-1ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-4598
+    publishedDate: "2025-05-30T14:15:23Z"
+    resource: libudev1
+    score: 4.7
+    severity: MEDIUM
+    target: ""
+    title: 'systemd-coredump: race condition that allows a local attacker to crash
+      a SUID program and gain read access to the resulting core dump'
+    vulnerabilityID: CVE-2025-4598
+  - fixedVersion: 255.4-1ubuntu8.14
+    installedVersion: 255.4-1ubuntu8.2
+    lastModifiedDate: "2026-03-24T15:53:48Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/libudev1@255.4-1ubuntu8.2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-29111
+    publishedDate: "2026-03-23T22:16:26Z"
+    resource: libudev1
+    score: 7.8
+    severity: MEDIUM
+    target: ""
+    title: 'systemd: systemd: Arbitrary code execution or Denial of Service via spurious
+      IPC API call data'
+    vulnerabilityID: CVE-2026-29111
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-03-19T19:16:19Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/openssl@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-15467
+    publishedDate: "2026-01-27T16:16:14Z"
+    resource: openssl
+    score: 9.8
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: OpenSSL: Remote code execution or Denial of Service via oversized
+      Initialization Vector in CMS parsing'
+    vulnerabilityID: CVE-2025-15467
+  - fixedVersion: 3.0.13-0ubuntu3.6
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2025-11-04T22:16:45Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/openssl@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-9230
+    publishedDate: "2025-09-30T14:15:41Z"
+    resource: openssl
+    score: 5.6
+    severity: MEDIUM
+    target: ""
+    title: 'openssl: Out-of-bounds read & write in RFC 3211 KEK Unwrap'
+    vulnerabilityID: CVE-2025-9230
+  - fixedVersion: 3.0.13-0ubuntu3.5
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2025-11-03T20:16:08Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/openssl@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-13176
+    publishedDate: "2025-01-20T14:15:26Z"
+    resource: openssl
+    score: 4.7
+    severity: LOW
+    target: ""
+    title: 'openssl: Timing side-channel in ECDSA signature computation'
+    vulnerabilityID: CVE-2024-13176
+  - fixedVersion: 3.0.13-0ubuntu3.5
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2025-11-03T23:17:33Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/openssl@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-9143
+    publishedDate: "2024-10-16T17:15:18Z"
+    resource: openssl
+    score: 3.7
+    severity: LOW
+    target: ""
+    title: 'openssl: Low-level invalid GF(2^m) parameters lead to OOB memory access'
+    vulnerabilityID: CVE-2024-9143
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-02T18:36:57Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/openssl@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-68160
+    publishedDate: "2026-01-27T16:16:15Z"
+    resource: openssl
+    score: 4.7
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service due to out-of-bounds write in BIO
+      filter'
+    vulnerabilityID: CVE-2025-68160
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-02T18:36:03Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/openssl@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69418
+    publishedDate: "2026-01-27T16:16:33Z"
+    resource: openssl
+    score: 4
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Information disclosure and data tampering via specific
+      low-level OCB encryption/decryption calls'
+    vulnerabilityID: CVE-2025-69418
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-02T18:35:02Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/openssl@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69419
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: openssl
+    score: 7.4
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Arbitrary code execution due to out-of-bounds write
+      in PKCS#12 processing'
+    vulnerabilityID: CVE-2025-69419
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-02T18:33:30Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/openssl@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69420
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: openssl
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via malformed TimeStamp Response'
+    vulnerabilityID: CVE-2025-69420
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-28T04:16:17Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/openssl@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-69421
+    publishedDate: "2026-01-27T16:16:34Z"
+    resource: openssl
+    score: 6.5
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via malformed PKCS#12 file processing'
+    vulnerabilityID: CVE-2025-69421
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-02T18:41:14Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/openssl@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-22795
+    publishedDate: "2026-01-27T16:16:35Z"
+    resource: openssl
+    score: 5.5
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service due to type confusion in PKCS#12 file
+      processing'
+    vulnerabilityID: CVE-2026-22795
+  - fixedVersion: 3.0.13-0ubuntu3.7
+    installedVersion: 3.0.13-0ubuntu3.4
+    lastModifiedDate: "2026-02-02T18:40:27Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/openssl@3.0.13-0ubuntu3.4?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2026-22796
+    publishedDate: "2026-01-27T16:16:35Z"
+    resource: openssl
+    score: 5.9
+    severity: LOW
+    target: ""
+    title: 'openssl: OpenSSL: Denial of Service via type confusion in PKCS#7 signature
+      verification'
+    vulnerabilityID: CVE-2026-22796
+  - fixedVersion: 5.38.2-3.2ubuntu0.1
+    installedVersion: 5.38.2-3.2build2
+    lastModifiedDate: "2025-10-16T14:15:34Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/perl-base@5.38.2-3.2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2024-56406
+    publishedDate: "2025-04-13T14:15:14Z"
+    resource: perl-base
+    score: 7.3
+    severity: MEDIUM
+    target: ""
+    title: 'perl: Perl 5.34, 5.36, 5.38 and 5.40 are vulnerable to a heap buffer overflow
+      when transliterating non-ASCII bytes'
+    vulnerabilityID: CVE-2024-56406
+  - fixedVersion: 5.38.2-3.2ubuntu0.2
+    installedVersion: 5.38.2-3.2build2
+    lastModifiedDate: "2025-11-03T19:15:52Z"
+    links: []
+    packagePURL: pkg:deb/ubuntu/perl-base@5.38.2-3.2build2?arch=amd64&distro=ubuntu-24.04
+    primaryLink: https://avd.aquasec.com/nvd/cve-2025-40909
+    publishedDate: "2025-05-30T13:15:22Z"
+    resource: perl-base
+    score: 5.9
+    severity: MEDIUM
+    target: ""
+    title: 'perl: Perl threads have a working directory race condition where file
+      operations may target unintended paths'
+    vulnerabilityID: CVE-2025-40909
