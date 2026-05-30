@@ -18,6 +18,7 @@
 - [Repository Structure](#repository-structure)
 - [Key Technical Decisions](#key-technical-decisions)
 - [MITRE ATT&CK Coverage](#mitre-attck-coverage)
+-[Performance & Security Metrics ](#performance-security-metrics)
 - [Lessons Learned](#lessons-learned)
 - [Real-World Threat Context](#real-world-threat-context)
 - [References](#references)
@@ -670,6 +671,87 @@ The table below lists only techniques **demonstrated with concrete evidence** in
 | Command & Control — ingress tool transfer | T1105 | Falco | Runtime | `falco/falco-attack4-curl-c2.png` |
 | Discovery — container and resource discovery | T1613 | Falco + Kiali | Runtime + Network | `falco/falco-attack5-k8s-api-lateral-movement.png` |
 | Lateral Movement — cross-namespace service access | — | Istio / Kiali | Network | `istio/kiali-traffic-graph-service-mesh.png` |
+
+---
+
+## Performance & Security Metrics
+
+The following measurements were collected from the live cluster during PoC execution.
+
+### Runtime Detection Overhead (Falco)
+
+| Metric | Value |
+|---|---|
+| CPU usage | 5.5% |
+| Memory (RSS) | 158 MB |
+| Syscall throughput | 8,823 events/sec |
+| Event drop rate | 0% |
+
+Falco processed over 8,800 syscalls per second with zero event drops, meaning no syscall
+was missed during the observation window. The CPU and memory footprint remained within
+acceptable bounds for a production DaemonSet.
+
+### Alert Accuracy
+
+After noise reduction tuning, only three rules produced alerts across the entire observation
+period — all corresponding to deliberate PoC attack commands:
+
+| Rule | Alerts |
+|---|---|
+| Read sensitive file untrusted | 11 |
+| Execution from /dev/shm | 2 |
+| Contact K8S API Server From Container | 1 |
+
+Zero alerts were produced by legitimate system activity (kubelet, Prometheus, node-exporter),
+confirming that the macro extension approach eliminated false positives without creating
+blind spots on the attack surface.
+
+### Vulnerability Surface (Trivy)
+
+Trivy scanned all kube-goat workloads before any attack was launched:
+
+| Image | Critical | High | Medium | Low |
+|---|---|---|---|---|
+| `metadata-db` | 89 | 930 | 942 | 86 |
+| `build-code` | 20 | 101 | 90 | 8 |
+| `batch-check` | 15 | 92 | 102 | 28 |
+| `poor-registry` | 5 | 55 | 60 | 4 |
+| `internal-api` | 2 | 37 | 29 | 40 |
+| `k8s-goat-home` | 2 | 21 | 14 | 23 |
+| `cache-store` | 0 | 4 | 16 | 14 |
+| `hidden-in-layers` | 0 | 4 | 16 | 14 |
+| `system-monitor` | 0 | 1 | 111 | 68 |
+| **Total** | **133** | **1,245** | **1,380** | **279** |
+
+133 CRITICAL and 1,245 HIGH CVEs were identified across kube-goat workloads before
+a single attack command was executed.
+
+### Policy Compliance (Kyverno)
+
+| Namespace | Pass | Fail | Violation Rate |
+|---|---|---|---|
+| `default` (kube-goat) | 132 | 68 | 34% |
+| `secure-middleware` (kube-goat) | 12 | 8 | 40% |
+| `falco` | 24 | 0 | 0% |
+| `kyverno` | 70 | 15 | 18% |
+| `istio-system` | 57 | 18 | 24% |
+| `monitoring` | 50 | 30 | 38% |
+| `kube-system` | 28 | 32 | 53% |
+
+The kube-goat namespaces show a 34-40% policy violation rate, confirming the intentional
+misconfigurations. The `falco` namespace shows 0% violations, validating that namespace
+exceptions are correctly configured.
+
+### Network Enforcement (Istio)
+
+| Namespace | PeerAuthentication | Mode |
+|---|---|---|
+| `default` | ✅ Active | STRICT |
+| `big-monolith` | ✅ Active | STRICT |
+| `secure-middleware` | ✅ Active | STRICT |
+
+All kube-goat namespaces enforce mTLS STRICT mode — plaintext service-to-service
+connections are rejected at the Envoy proxy level.
 
 ---
 
