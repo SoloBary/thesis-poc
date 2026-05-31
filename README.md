@@ -567,6 +567,13 @@ falcosecurity_falco_cpu_usage_ratio * 100
 
 ```
 thesis-poc/
+|
+├── Metrics/
+│   ├── Metrics.txt
+│   ├── trivy-metrics.png
+│   ├── kyverno-metrics.png
+│   ├── Detection Latency (Falco).png
+│   └── all-metrics.png
 │
 ├── falco/
 │   ├── helm-values.yaml              # Falco config + noise reduction rules
