@@ -18,7 +18,7 @@
 - [Repository Structure](#repository-structure)
 - [Key Technical Decisions](#key-technical-decisions)
 - [MITRE ATT&CK Coverage](#mitre-attck-coverage)
--[Performance & Security Metrics ](#performance-security-metrics)
+- [Performance & Security Metrics](#performance-security-metrics)
 - [Lessons Learned](#lessons-learned)
 - [Real-World Threat Context](#real-world-threat-context)
 - [References](#references)
