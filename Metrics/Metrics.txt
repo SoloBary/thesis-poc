@@ -1,0 +1,31 @@
+# Falco CPU overhead 
+falcosecurity_falco_cpu_usage_ratio * 100
+Result: 5.5%
+
+# Falco Memory
+falcosecurity_falco_memory_rss_bytes / 1024 / 1024
+Result: 158MB
+
+# Syscall throughput — πόσα events επεξεργάζεται ανά δευτερόλεπτο
+rate(falcosecurity_scap_n_evts_total[1m])
+Result: 8823
+
+# Event drops — data quality
+sum(falcosecurity_scap_n_drops_buffer_total)
+Result: 0
+
+#Vulnerability Coverage (Trivy):
+bashkubectl get vulnerabilityreports -A -o custom-columns=\
+"NAMESPACE:.metadata.namespace,\
+NAME:.metadata.name,\
+CRITICAL:.report.summary.criticalCount,\
+HIGH:.report.summary.highCount,\
+MEDIUM:.report.summary.mediumCount,\
+LOW:.report.summary.lowCount" | grep -E "default|secure-middleware"
+
+#Policy Violation Count (Kyverno)
+kubectl get policyreport -A -o custom-columns=\
+"NAMESPACE:.metadata.namespace,\
+PASS:.summary.pass,\
+FAIL:.summary.fail" | awk 'NR>1 {pass[$1]+=$2; fail[$1]+=$3} END {for (ns in pass) print ns, pass[ns], fail[ns]}' | sort
+
