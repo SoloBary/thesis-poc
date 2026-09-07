@@ -815,7 +815,7 @@ No single layer is sufficient. The combination is what provides resilience.
 ## Author
 
 **Bary** — Threat Detection & Response Analyst, L2 SOC  
-Bachelor's Thesis — Dept. of Informatics and Telecommunications  
+Master's Thesis — Dept. of Informatics and Telecommunications  
 GitHub: [@SoloBary](https://github.com/SoloBary)
 
 ---
