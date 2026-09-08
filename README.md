@@ -1,6 +1,6 @@
 # Multi-Layered-Security-Monitoring-for-Kubernetes-and-Containers-with-Open-Source-Tools
 
-> **Master's Thesis — Proof of Concept**  
+> **BSc's Thesis — Proof of Concept**  
 > A layered security monitoring stack for Kubernetes, validated against [kube-goat](https://github.com/madhuakula/kubernetes-goat) as the intentionally vulnerable target. Each layer catches a distinct class of attack that the previous one cannot.
 
 ---
@@ -815,7 +815,7 @@ No single layer is sufficient. The combination is what provides resilience.
 ## Author
 
 **Bary** — Threat Detection & Response Analyst, L2 SOC  
-Master's Thesis — Dept. of Informatics and Telecommunications  
+BSc's Thesis — Dept. of Informatics and Telecommunications  
 GitHub: [@SoloBary](https://github.com/SoloBary)
 
 ---
