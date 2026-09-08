@@ -1,4 +1,4 @@
-# Kubernetes & Container Security Monitoring with Open Source Tools
+# Multi-Layered-Security-Monitoring-for-Kubernetes-and-Containers-with-Open-Source-Tools
 
 > **Master's Thesis — Proof of Concept**  
 > A layered security monitoring stack for Kubernetes, validated against [kube-goat](https://github.com/madhuakula/kubernetes-goat) as the intentionally vulnerable target. Each layer catches a distinct class of attack that the previous one cannot.
